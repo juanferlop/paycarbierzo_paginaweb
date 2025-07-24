@@ -1,0 +1,149 @@
+html, body {
+  height: 100%;
+  margin: 0;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  font-family: Arial, sans-serif;
+}
+
+main {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+header {
+  background-color: #333;
+  color: white;
+  padding: 1rem;
+}
+
+nav {
+  margin-top: 0.5rem;
+}
+
+nav a {
+  color: white;
+  margin-right: 1rem;
+  text-decoration: none;
+}
+
+/* Responsivo */
+@media (max-width: 768px) {
+  nav a {
+    display: block;
+    margin: 0.5rem 0;
+  }
+}
+
+/* carrusel.css */
+.carrusel {
+  width: 100%;
+  max-width: 100%;
+  height: 200px; /* Altura por defecto */
+  margin-bottom: 2rem;
+  border-radius: 12px;
+  overflow: hidden;
+  background-color: #ffffff;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Más alto en pantallas pequeñas */
+@media (max-width: 640px) {
+  .carrusel {
+    height: 500px;
+  }
+}
+
+/* Más alto en pantallas medianas (opcional) */
+@media (min-width: 768px) {
+  .carrusel {
+    height: 730px;
+  }
+}
+
+/* Contenedor del header en grid */
+.header-grid {
+  display: grid;
+  grid-template-columns: 4fr 1fr;
+  grid-template-rows: auto; /* grid-template-rows: auto auto;  Esto seria para 2 filas*/
+  background-color: #333;
+  color: white;
+  padding: 0rem;
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+  .header-grid {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto auto auto auto;
+  }
+}
+
+/* Navbar */
+.navbar {
+  grid-column: 1 / 4;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-wrap: wrap;
+  margin-top: 0.25rem;
+  padding: 0.25rem;
+}
+
+.navbar a {
+  color: white;
+  text-decoration: none;
+  padding: 0.25rem;
+}
+
+.navbar a:hover {
+  text-decoration: underline;
+  background-color: #555;
+  border-radius: 4px;
+}
+
+.font-merriweather {
+  font-family: 'Merriweather', serif;
+}
+
+footer{
+  text-align: center;
+}
+
+/* Estilo para las imagenes del catálogo de trabajos realizdos */
+
+/* Estilo base minimalista */
+.swiper-button-next::after,
+.swiper-button-prev::after {
+  color: black;              /* Ícono en negro */
+  font-size: 1.25rem;        /* Tamaño pequeño */
+  opacity: 0.6;              /* Más sutil */
+  transition: opacity 0.3s ease;
+}
+
+.swiper-button-next,
+.swiper-button-prev {
+  background: transparent !important;
+  width: 2rem;
+  height: 2rem;
+}
+
+/* Mostrar más visible al pasar el ratón por el contenedor */
+.swiper:hover .swiper-button-next::after,
+.swiper:hover .swiper-button-prev::after {
+  opacity: 1;
+}
+
+
+
+
+
