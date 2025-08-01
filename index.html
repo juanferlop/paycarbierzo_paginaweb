@@ -11,51 +11,108 @@
 
 </head>
 
-<body class="bg-gray-100">
+<body class="bg-gray-100 font-merriweather">
+  <!-- Header responsivo -->
   <header class="bg-white shadow-md">
     <div class="max-w-7xl mx-auto px-4 py-4 flex justify-between items-center">
-
       <!-- Logo + Nombre -->
       <div class="flex items-center space-x-3">
         <img src="multimedia/imagenes/logo.jpeg" alt="Logo Paycar Bierzo" class="h-10 w-auto">
         <h1 class="text-2xl font-bold text-gray-800 font-merriweather">Paycar Bierzo S.L.</h1>
       </div>
-
+      <!-- Botón hamburguesa solo en móvil -->
+      <button id="menu-btn" class="md:hidden text-gray-700 focus:outline-none text-2xl">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+        </svg>
+      </button>
       <!-- Menú de navegación -->
-      <nav class="space-x-4">
-        <a href="index.html" class="text-gray-700 hover:text-blue-600 transition">Inicio</a>
-        <a href="sobre-nosotros.html" class="text-gray-700 hover:text-blue-600 transition">Sobre Nosotros</a>
-        <a href="trabajos.html" class="text-gray-700 hover:text-blue-600 transition">Trabajos Realizados</a>
-        <a href="contacto.html" class="text-gray-700 hover:text-blue-600 transition">Contacto</a>
+      <nav id="menu"
+        class="hidden md:flex flex-col md:flex-row space-y-2 md:space-y-0 md:space-x-4 absolute md:static top-16 left-0 w-full md:w-auto bg-white md:bg-transparent shadow md:shadow-none z-50">
+        <a href="index.html" class="block px-4 py-2 text-gray-700 hover:text-blue-600 transition">Inicio</a>
+        <a href="sobre-nosotros.html" class="block px-4 py-2 text-gray-700 hover:text-blue-600 transition">Sobre
+          Nosotros</a>
+        <a href="trabajos.html" class="block px-4 py-2 text-gray-700 hover:text-blue-600 transition">Trabajos
+          Realizados</a>
+        <a href="contacto.html" class="block px-4 py-2 text-gray-700 hover:text-blue-600 transition">Contacto</a>
       </nav>
-
     </div>
   </header>
 
-
   <main>
-    <!-- Carrusel con estilo de marco -->
     <section class="carrusel">
-      <img id="carrusel-img" src="multimedia/imagenes/img4.jpeg" alt="Carrusel de trabajos" class="carrusel-img" />
+      <img id="carrusel-img" src="multimedia/imagenes/panoramica-cubicos-2.jpeg" alt="Carrusel de trabajos"
+        class="carrusel-img" />
+    </section>
+
+    <section class="w-full bg-white flex justify-center items-center py-12">
+      <img src="multimedia/imagenes/logo-paycar-bierzo.png" alt="Logo Paycar Bierzo"
+        class="w-full max-w-[600px] max-h-[350px] h-auto object-contain transition duration-300 transform hover:scale-105 will-change-transform">
+    </section>
+
+    <section class="relative w-full h-[500px] overflow-hidden group rounded-xl shadow-lg mt-16">
+
+      <!-- Video de fondo -->
+      <video autoplay muted loop playsinline tabindex="-1" class="absolute inset-0 w-full h-full object-cover">
+        <source src="multimedia/videos/video-hormigon.mp4" type="video/mp4">
+        Tu navegador no soporta la reproducción de video.
+      </video>
+
+      <!-- Capa de oscurecimiento (opcional para contraste) -->
+      <div class="absolute inset-0 bg-black bg-opacity-40"></div>
+
+      <!-- Texto centrado que aparece al pasar el mouse -->
+      <div
+        class="absolute inset-0 flex flex-col justify-center items-center text-center px-6 opacity-0 group-hover:opacity-100 transition-opacity duration-500 text-white">
+        <h2 class="text-4xl font-extrabold mb-4">Bienvenidos a Nuestra Web</h2>
+        <p class="text-lg max-w-2xl mb-4">
+          Nos complace darte la bienvenida a nuestro sitio web. Aquí podrás conocer más sobre nuestra empresa,
+          nuestros valores, servicios, proyectos y mucho más.
+        </p>
+        <a href="sobre-nosotros.html"
+          class="mt-4 inline-block bg-orange-500 hover:bg-orange-600 transition px-6 py-3 rounded-full font-semibold shadow">
+          Conócenos más
+        </a>
+      </div>
     </section>
   </main>
 
-  <!-- Sección de bienvenida -->
-  <section class="text-center px-4 py-12 max-w-4xl mx-auto">
-    <h2 class="text-4xl font-extrabold text-gray-800 mb-4">Bienvenidos a Nuestra Web</h2>
-    <p class="text-gray-600 text-lg leading-relaxed">
-      Nos complace darte la bienvenida a nuestro sitio. Aquí podrás conocer más sobre quiénes somos, los servicios que
-      ofrecemos y cómo podemos ayudarte.
-      Esperamos que esta página sea útil tanto para nuestros clientes actuales como para quienes estén interesados en
-      contratarnos, o simplemente quieran saber más sobre nuestro trabajo y experiencia en el mundo de la construcción.
-    </p>
-  </section>
 
-  <footer>
-    <p>&copy; 2025 Paycar Bierzo S.L. Todos los derechos reservados.</p>
+
+  <!-- Footer -->
+  <footer class="bg-white shadow-md mt-12">
+    <div class="max-w-7xl mx-auto px-4 py-6 text-center text-gray-500 text-sm">
+      &copy; 2025 Paycar Bierzo S.L. Todos los derechos reservados.
+    </div>
   </footer>
-  <!-- <script src="js/carrusel.js"></script> -->
+
   <script src="https://cdn.tailwindcss.com"></script> <!-- Tailwind, framework de css. -->
+  <script src="js/carrusel.js"></script>
+
+  <!-- Para el header nuevo para telfonos móviles -->
+  <script>
+    // Menú hamburguesa
+    const btn = document.getElementById('menu-btn');
+    const menu = document.getElementById('menu');
+    btn.addEventListener('click', () => {
+      menu.classList.toggle('hidden');
+    });
+  </script>
+
+  <!-- Para en el nav del header hacer que en la seccion en la que se este se coloree de naranja -->
+  <script>
+    const links = document.querySelectorAll("nav a");
+    const currentPath = location.pathname.split("/").pop() || "index.html";
+
+    links.forEach(link => {
+      link.classList.add("nav-link");
+
+      if (link.getAttribute("href") === currentPath) {
+        link.classList.add("active");
+      }
+    });
+  </script>
+
 
 </body>
 

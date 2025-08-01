@@ -51,3 +51,5 @@ const swiperMain3 = new Swiper(".mySwiper2-proyecto3", {
     swiper: swiperThumbs3,
   },
 });
+
+
