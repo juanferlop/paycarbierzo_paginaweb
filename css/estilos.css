@@ -28,14 +28,15 @@ header {
   display: grid;
   grid-template-columns: 4fr 1fr;
   grid-template-rows: auto;
-  /* grid-template-rows: auto auto;  Esto seria para 2 filas*/
+
+  /* grid-template-rows: auto auto;  Esto seria para 2 filas */
   background-color: #333;
   color: white;
-  padding: 0rem;
+  padding: 0;
 }
 
 /* RESPONSIVE */
-@media (max-width: 768px) {
+@media (width <= 768px) {
   .header-grid {
     grid-template-columns: 1fr;
     grid-template-rows: auto auto auto auto;
@@ -53,7 +54,7 @@ nav a {
 }
 
 /* Responsivo */
-@media (max-width: 768px) {
+@media (width <= 768px) {
   nav a {
     display: block;
     margin: 0.5rem 0;
@@ -84,11 +85,13 @@ nav a {
 }
 
 /* Para que en el nav se sepa en que sección se esta, resaltandola */
+
 /* Estilo base para todos los enlaces del menú */
 .nav-link {
   display: block;
   padding: 0.5rem 1rem;
   color: #374151;
+
   /* text-gray-700 */
   position: relative;
   transition: color 0.3s ease;
@@ -98,12 +101,14 @@ nav a {
 /* Hover general */
 .nav-link:hover {
   color: #f97316;
+
   /* text-orange-500 */
 }
 
 /* Enlace activo (la página actual) */
 .nav-link.active {
   color: #f97316;
+
   /* text-orange-500 */
   font-weight: 600;
 }
@@ -117,6 +122,7 @@ nav a {
   bottom: 0.25rem;
   height: 2px;
   background-color: #f97316;
+
   /* text-orange-500 */
   border-radius: 9999px;
   transition: width 0.3s ease;
@@ -127,34 +133,34 @@ nav a {
   width: 100%;
   max-width: 100%;
   height: 400px;
+
   /* Altura por defecto */
   margin-bottom: 2rem;
   border-radius: 12px;
   overflow: hidden;
-  background-color: #ffffff;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
-
+  background-color: #fff;
+  box-shadow: 0 4px 20px rgb(0 0 0 / 10%);
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
 /* Más alto en pantallas pequeñas */
-@media (max-width: 640px) {
+@media (width <= 640px) {
   .carrusel {
     height: 320px;
   }
 }
 
 /* Más alto en pantallas medianas (opcional) */
-@media (min-width: 768px) {
+@media (width >= 768px) {
   .carrusel {
     height: 730px;
   }
 }
 
 .font-merriweather {
-  font-family: 'Merriweather', serif;
+  font-family: Merriweather, serif;
 }
 
 footer {
@@ -167,10 +173,13 @@ footer {
 .swiper-button-next::after,
 .swiper-button-prev::after {
   color: black;
+
   /* Ícono en negro */
   font-size: 1.25rem;
+
   /* Tamaño pequeño */
   opacity: 0.6;
+
   /* Más sutil */
   transition: opacity 0.3s ease;
 }
@@ -224,4 +233,24 @@ footer {
   width: 100%;
   height: auto;
   object-fit: cover;
+}
+
+/* Fuerza la altura fija solo para la imagen principal de cada proyecto */
+[id^='main-img-'] {
+  height: 100% !important;
+  width: 100% !important;
+  object-fit: cover !important;
+}
+
+/* Choices.js para el desplegable de los filtros para los proyectos */
+/* stylelint-disable-next-line selector-class-pattern */
+.choices__inner {
+  border-radius: 0.5rem;
+  padding: 0.5rem;
+}
+
+/* stylelint-disable-next-line selector-class-pattern */
+.choices__list--dropdown {
+  max-height: 200px;
+  overflow-y: auto;
 }

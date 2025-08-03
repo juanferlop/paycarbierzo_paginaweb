@@ -1,129 +1,206 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sobre Nosotros | Paycar Bierzo</title>
+    <link rel="icon" type="image/jpeg" href="multimedia/imagenes/logo.jpeg" />
+    <link rel="stylesheet" href="css/estilos.min.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
 
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Sobre Nosotros | Paycar Bierzo</title>
-  <link rel="icon" type="image/jpeg" href="multimedia/imagenes/logo.jpeg">
-  <link rel="stylesheet" href="css/estilos.css" />
-  <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&display=swap" rel="stylesheet">
-  <script src="https://cdn.tailwindcss.com"></script>
-</head>
-
-<body class="bg-gray-100 font-merriweather">
-
-  <!-- Header responsivo -->
-  <header class="bg-white shadow-md">
-    <div class="max-w-7xl mx-auto px-4 py-4 flex justify-between items-center">
-      <!-- Logo + Nombre -->
-      <div class="flex items-center space-x-3">
-        <img src="multimedia/imagenes/logo.jpeg" alt="Logo Paycar Bierzo" class="h-10 w-auto">
-        <h1 class="text-2xl font-bold text-gray-800 font-merriweather">Paycar Bierzo S.L.</h1>
-      </div>
-      <!-- Botón hamburguesa solo en móvil -->
-      <button id="menu-btn" class="md:hidden text-gray-700 focus:outline-none text-2xl">
-        <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
-        </svg>
-      </button>
-      <!-- Menú de navegación -->
-      <nav id="menu"
-        class="hidden md:flex flex-col md:flex-row space-y-2 md:space-y-0 md:space-x-4 absolute md:static top-16 left-0 w-full md:w-auto bg-white md:bg-transparent shadow md:shadow-none z-50">
-        <a href="index.html" class="block px-4 py-2 text-gray-700 hover:text-blue-600 transition">Inicio</a>
-        <a href="sobre-nosotros.html" class="block px-4 py-2 text-gray-700 hover:text-blue-600 transition">Sobre
-          Nosotros</a>
-        <a href="trabajos.html" class="block px-4 py-2 text-gray-700 hover:text-blue-600 transition">Trabajos
-          Realizados</a>
-        <a href="contacto.html" class="block px-4 py-2 text-gray-700 hover:text-blue-600 transition">Contacto</a>
-      </nav>
-    </div>
-  </header>
-
-  <!-- Main Content -->
-  <main class="max-w-6xl mx-auto px-4 py-12">
-    <section class="text-center mb-12">
-      <h2 class="text-4xl font-bold text-gray-800 mb-4">Nuestra historia</h2>
-      <p class="text-gray-600 text-lg">Más de 15 años construyendo sueños de hormigón.</p>
-    </section>
-
-    <!-- Timeline -->
-    <section class="space-y-16">
-
-      <!-- Pasado -->
-      <div class="grid md:grid-cols-2 gap-10 items-center">
-        <img src="multimedia/imagenes/furgoneta.jpg" alt="Nuestros inicios"
-          class="rounded-2xl shadow-lg w-full h-64 object-cover">
-        <div>
-          <h3 class="text-2xl font-semibold text-gray-800 mb-2">Nuestros Inicios</h3>
-          <p class="text-gray-700 leading-relaxed">Fundada en 2007, Paycar Bierzo comenzó como una pequeña empresa
-            familiar dedicada a las estructuras de hormigón. Con esfuerzo y compromiso, fuimos ganando la confianza de
-            nuestros clientes y prosperando gracias a nuestra profesionalidad y seriedad.</p>
+  <body class="bg-gray-100 font-merriweather">
+    <!-- Header responsivo -->
+    <header class="bg-white shadow-md">
+      <div
+        class="max-w-7xl mx-auto px-4 py-4 flex justify-between items-center"
+      >
+        <!-- Logo + Nombre -->
+        <div class="flex items-center space-x-3">
+          <img
+            src="multimedia/imagenes/logo.jpeg"
+            alt="Logo Paycar Bierzo"
+            class="h-10 w-auto"
+          />
+          <h1 class="text-2xl font-bold text-gray-800 font-merriweather">
+            Paycar Bierzo S.L.
+          </h1>
         </div>
+        <!-- Botón hamburguesa solo en móvil -->
+        <button
+          id="menu-btn"
+          class="md:hidden text-gray-700 focus:outline-none text-2xl"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            class="h-8 w-8"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M4 6h16M4 12h16M4 18h16"
+            />
+          </svg>
+        </button>
+        <!-- Menú de navegación -->
+        <nav
+          id="menu"
+          class="hidden md:flex flex-col md:flex-row space-y-2 md:space-y-0 md:space-x-4 absolute md:static top-16 left-0 w-full md:w-auto bg-white md:bg-transparent shadow md:shadow-none z-50"
+        >
+          <a
+            href="index.html"
+            class="block px-4 py-2 text-gray-700 hover:text-blue-600 transition"
+            >Inicio</a
+          >
+          <a
+            href="sobre-nosotros.html"
+            class="block px-4 py-2 text-gray-700 hover:text-blue-600 transition"
+            >Sobre Nosotros</a
+          >
+          <a
+            href="trabajos.html"
+            class="block px-4 py-2 text-gray-700 hover:text-blue-600 transition"
+            >Trabajos Realizados</a
+          >
+          <a
+            href="contacto.html"
+            class="block px-4 py-2 text-gray-700 hover:text-blue-600 transition"
+            >Contacto</a
+          >
+        </nav>
       </div>
+    </header>
 
-      <!-- Presente -->
-      <div class="grid md:grid-cols-2 gap-10 items-center md:flex-row-reverse">
-        <img src="multimedia/imagenes/sanroman.jpg" alt="Estado actual"
-          class="rounded-2xl shadow-lg w-full h-64 object-cover">
-        <div>
-          <h3 class="text-2xl font-semibold text-gray-800 mb-2">Nuestro Presente</h3>
-          <p class="text-gray-700 leading-relaxed">Hoy somos una empresa consolidada en el sector de la construcción
-            en la comarca, con un equipo cualificado debido a su dilatada experiencia profesional.
-            Nos especializamos en el encofrado de hormigón con el cual podemos realizar estructuras de chalets,
-            edificios residenciales, muros...etc.</p>
+    <!-- Main Content -->
+    <main class="max-w-6xl mx-auto px-4 py-12">
+      <section class="w-full text-center mb-12 bg-gray-50 shadow py-12">
+        <h2 class="text-4xl font-bold text-gray-800 mb-4">Nuestra historia</h2>
+        <p class="text-gray-700 text-lg">
+          18 años completando proyectos con seriedad, calidad y compromiso.
+        </p>
+      </section>
+
+      <!-- Timeline -->
+      <section class="space-y-16">
+        <!-- Pasado -->
+        <div class="grid md:grid-cols-2 gap-16 items-center">
+          <img
+            src="multimedia/imagenes/pasado.png"
+            alt="Nuestros inicios"
+            class="rounded-2xl shadow-lg w-full h-64 object-cover"
+          />
+          <div
+            class="bg-gray rounded-xl shadow px-6 py-6 border-l-4 border-orange-300"
+          >
+            <h3 class="text-2xl font-semibold text-gray-800 mb-2">
+              Nuestros Inicios
+            </h3>
+            <p class="text-gray-700 leading-relaxed">
+              Paycar Bierzo nació en 2007 como una empresa familiar, impulsada
+              por la idea de poder realizar nuestros propios proyectos de manera
+              autónoma. Desde el principio, la experiencia y dedicación de
+              nuestro personal nos permitió afrontar cada obra con
+              profesionalidad y cercanía, ganando la confianza de quienes nos
+              eligieron.
+            </p>
+          </div>
         </div>
-      </div>
 
-      <!-- Futuro -->
-      <div class="grid md:grid-cols-2 gap-10 items-center">
-        <img src="multimedia/imagenes/pdf.jpg" alt="Futuro de la empresa"
-          class="rounded-2xl shadow-lg w-full h-64 object-cover">
-        <div>
-          <h3 class="text-2xl font-semibold text-gray-800 mb-2">Nuestra Visión</h3>
-          <p class="text-gray-700 leading-relaxed">Creemos fuertemente en nuestros valores los cuales podríamos resumir
-            en seriedad, compromiso y calidad. Seguiremos trabajando con esta filosofía para satisfacer a nuestros
-            clientes y hacer realidad sus deseos.</p>
+        <!-- Presente -->
+        <div
+          class="grid md:grid-cols-2 gap-16 items-center md:flex-row-reverse"
+        >
+          <img
+            src="multimedia/imagenes/presente.png"
+            alt="Estado actual"
+            class="rounded-2xl shadow-lg w-full h-64 object-cover"
+          />
+          <div
+            class="bg-gray rounded-xl shadow px-6 py-6 border-l-4 border-orange-300"
+          >
+            <h3 class="text-2xl font-semibold text-gray-800 mb-2">
+              Nuestro Presente
+            </h3>
+            <p class="text-gray-700 leading-relaxed">
+              Hoy, tras años de trabajo constante y aprendizaje, somos una
+              empresa consolidada en la comarca. Nuestro equipo, formado por
+              profesionales con una vida dedicada al sector, afronta cada reto
+              con seriedad, compromiso y esfuerzo. Nos especializamos en el
+              encofrado de hormigón, realizando estructuras de todo tipo con la
+              máxima calidad.
+            </p>
+          </div>
         </div>
+
+        <!-- Futuro -->
+        <div class="grid md:grid-cols-2 gap-16 items-center">
+          <img
+            src="multimedia/imagenes/futuro.png"
+            alt="Futuro de la empresa"
+            class="rounded-2xl shadow-lg w-full h-64 object-cover"
+          />
+          <div
+            class="bg-gray rounded-xl shadow px-6 py-6 border-l-4 border-orange-300"
+          >
+            <h3 class="text-2xl font-semibold text-gray-800 mb-2">
+              Nuestra Visión
+            </h3>
+            <p class="text-gray-700 leading-relaxed">
+              Miramos al futuro con la convicción de que nuestros valores
+              —calidad, compromiso y esfuerzo— son la base para seguir creciendo
+              y superando expectativas. Creemos que, gracias a nuestro trabajo y
+              experiencia, podemos construir cualquier proyecto que se nos
+              plantee y que requiera un encofrado de hormigón.
+            </p>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="bg-white shadow-inner mt-12">
+      <div
+        class="max-w-7xl mx-auto px-4 py-6 text-center text-gray-500 text-sm"
+      >
+        &copy; <span id="anio-actual">2025</span> Paycar Bierzo S.L. Todos los
+        derechos reservados.
       </div>
+      <script>
+        // Inserta automáticamente el año actual en el footer
+        document.getElementById('anio-actual').textContent =
+          new Date().getFullYear();
+      </script>
+    </footer>
 
-    </section>
+    <!-- Para el header nuevo, que será responsivo para telefonos moviles -->
+    <script>
+      // Menú hamburguesa
+      const btn = document.getElementById('menu-btn');
+      const menu = document.getElementById('menu');
+      btn.addEventListener('click', () => {
+        menu.classList.toggle('hidden');
+      });
+    </script>
 
-  </main>
+    <!-- Para en el nav del header hacer que en la seccion en la que se este se colore de naranja -->
+    <script>
+      const links = document.querySelectorAll('nav a');
+      const currentPath = location.pathname.split('/').pop() || 'index.html';
 
+      links.forEach((link) => {
+        link.classList.add('nav-link');
 
-
-  <!-- Footer -->
-  <footer class="bg-white shadow-md mt-12">
-    <div class="max-w-7xl mx-auto px-4 py-6 text-center text-gray-500 text-sm">
-      &copy; 2025 Paycar Bierzo S.L. Todos los derechos reservados.
-    </div>
-  </footer>
-
-  <!-- Para el header nuevo, que será responsivo para telefonos moviles -->
-  <script>
-    // Menú hamburguesa
-    const btn = document.getElementById('menu-btn');
-    const menu = document.getElementById('menu');
-    btn.addEventListener('click', () => {
-      menu.classList.toggle('hidden');
-    });
-  </script>
-
-  <!-- Para en el nav del header hacer que en la seccion en la que se este se colore de naranja -->
-  <script>
-    const links = document.querySelectorAll("nav a");
-    const currentPath = location.pathname.split("/").pop() || "index.html";
-
-    links.forEach(link => {
-      link.classList.add("nav-link");
-
-      if (link.getAttribute("href") === currentPath) {
-        link.classList.add("active");
-      }
-    });
-  </script>
-
-</body>
-
+        if (link.getAttribute('href') === currentPath) {
+          link.classList.add('active');
+        }
+      });
+    </script>
+  </body>
 </html>

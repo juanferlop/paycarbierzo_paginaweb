@@ -1,0 +1,168 @@
+[
+  {
+    "pueblo": "Ponferrada",
+    "tipo": "Edificio Residencial",
+    "fecha": "08-2024",
+    "imagenes": [
+      "multimedia/imagenes/cubicos-1.jpg",
+      "multimedia/imagenes/cubicos-2.jpg",
+      "multimedia/imagenes/cubicos-3.jpeg",
+      "multimedia/imagenes/cubicos-4.jpeg",
+      "multimedia/imagenes/cubicos-5.jpeg",
+      "multimedia/imagenes/cubicos-6.jpeg",
+      "multimedia/imagenes/cubicos-7.jpeg",
+      "multimedia/imagenes/cubicos-8.jpeg",
+      "multimedia/imagenes/cubicos-9.jpeg",
+      "multimedia/imagenes/cubicos-10.jpeg",
+      "multimedia/imagenes/cubicos-11.jpeg",
+      "multimedia/imagenes/cubicos-12.jpeg",
+      "multimedia/imagenes/cubicos-13.jpeg"
+    ]
+  },
+  {
+    "pueblo": "Becerrea",
+    "tipo": "Vivienda Unifamiliar",
+    "fecha": "06-2025",
+    "imagenes": [
+      "multimedia/imagenes/becerrea-1.jpeg",
+      "multimedia/imagenes/becerrea-2.jpeg"
+    ]
+  },
+  {
+    "pueblo": "Almazcara",
+    "tipo": "Vivienda Unifamiliar",
+    "fecha": "11-2024",
+    "imagenes": [
+      "multimedia/imagenes/almazcara-1.jpeg",
+      "multimedia/imagenes/almazcara-2.jpeg",
+      "multimedia/imagenes/almazcara-3.jpeg"
+    ]
+  },
+  {
+    "pueblo": "Cacabelos",
+    "tipo": "Vivienda Unifamiliar",
+    "fecha": "07-2025",
+    "imagenes": [
+      "multimedia/imagenes/cacabelos-1.jpg",
+      "multimedia/imagenes/cacabelos-2.jpeg",
+      "multimedia/imagenes/cacabelos-3.jpg",
+      "multimedia/imagenes/cacabelos-4.jpg",
+      "multimedia/imagenes/cacabelos-5.jpg"
+    ]
+  },
+  {
+    "pueblo": "Ponferrada",
+    "tipo": "Obra Civil",
+    "fecha": "06-2025",
+    "imagenes": [
+      "multimedia/imagenes/hospital-1.jpeg",
+      "multimedia/imagenes/hospital-2.jpeg",
+      "multimedia/imagenes/hospital-3.jpeg",
+      "multimedia/imagenes/hospital-4.jpeg",
+      "multimedia/imagenes/hospital-5.jpeg",
+      "multimedia/imagenes/hospital-6.jpeg"
+    ]
+  },
+  {
+    "pueblo": "Cortiguera",
+    "tipo": "Obra Civil",
+    "fecha": "08-2025",
+    "imagenes": [
+      "multimedia/imagenes/inca-1.jpg",
+      "multimedia/imagenes/inca-2.jpg",
+      "multimedia/imagenes/inca-3.jpg",
+      "multimedia/imagenes/inca-4.jpg",
+      "multimedia/imagenes/inca-5.jpg"
+    ]
+  },
+  {
+    "pueblo": "Magaz de Abajo",
+    "tipo": "Vivienda Unifamiliar",
+    "fecha": "07-2025",
+    "imagenes": [
+      "multimedia/imagenes/magazDeAbajo_2-1.jpg",
+      "multimedia/imagenes/magazDeAbajo_2-2.jpg"
+    ]
+  },
+  {
+    "pueblo": "Magaz de Abajo",
+    "tipo": "Vivienda Unifamiliar",
+    "fecha": "05-2025",
+    "imagenes": ["multimedia/imagenes/magazDeAbajo-1.jpeg"]
+  },
+  {
+    "pueblo": "Puente de Domingo Flórez",
+    "tipo": "Vivienda Unifamiliar",
+    "fecha": "08-2025",
+    "imagenes": [
+      "multimedia/imagenes/puente-1.jpeg",
+      "multimedia/imagenes/puente-2.jpg"
+    ]
+  },
+  {
+    "pueblo": "Rodanillo",
+    "tipo": "Vivienda Unifamiliar",
+    "fecha": "06-2025",
+    "imagenes": [
+      "multimedia/imagenes/rodanillo-1.jpeg",
+      "multimedia/imagenes/rodanillo-2.jpeg",
+      "multimedia/imagenes/rodanillo-3.jpeg",
+      "multimedia/imagenes/rodanillo-4.jpeg",
+      "multimedia/imagenes/rodanillo-5.jpeg"
+    ]
+  },
+  {
+    "pueblo": "San Román de Bembibre",
+    "tipo": "Vivienda Unifamiliar",
+    "fecha": "07-2025",
+    "imagenes": [
+      "multimedia/imagenes/sanroman-1.jpg",
+      "multimedia/imagenes/sanroman-2.jpg"
+    ]
+  },
+  {
+    "pueblo": "León",
+    "tipo": "Edificio Residencial",
+    "fecha": "05-2025",
+    "imagenes": [
+      "multimedia/imagenes/leon-1.jpeg",
+      "multimedia/imagenes/leon-2.jpeg",
+      "multimedia/imagenes/leon-3.jpeg",
+      "multimedia/imagenes/leon-4.jpeg",
+      "multimedia/imagenes/leon-5.jpeg"
+    ]
+  },
+  {
+    "pueblo": "Toral de los Vados",
+    "tipo": "Vivienda Unifamiliar",
+    "fecha": "05-2025",
+    "imagenes": [
+      "multimedia/imagenes/toralDeLosVados-1.jpeg",
+      "multimedia/imagenes/toralDeLosVados-2.jpeg",
+      "multimedia/imagenes/toralDeLosVados-3.jpeg",
+      "multimedia/imagenes/toralDeLosVados-4.jpeg",
+      "multimedia/imagenes/toralDeLosVados-5.jpeg"
+    ]
+  },
+  {
+    "pueblo": "Valtuille de Abajo",
+    "tipo": "Nave Agrícola",
+    "fecha": "08-2025",
+    "imagenes": [
+      "multimedia/imagenes/valtuille-1.jpg",
+      "multimedia/imagenes/valtuille-2.jpg",
+      "multimedia/imagenes/valtuille-3.jpg",
+      "multimedia/imagenes/valtuille-4.jpg",
+      "multimedia/imagenes/valtuille-5.jpeg"
+    ]
+  },
+  {
+    "pueblo": "Vega de Espinareda",
+    "tipo": "Edificio Residencial",
+    "fecha": "06-2025",
+    "imagenes": [
+      "multimedia/imagenes/vegaDeEspinareda-1.jpeg",
+      "multimedia/imagenes/vegaDeEspinareda-2.jpeg"
+    ]
+  }
+]

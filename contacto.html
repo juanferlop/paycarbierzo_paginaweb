@@ -1,180 +1,233 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Contacto | Paycar Bierzo</title>
+    <link rel="icon" type="image/jpeg" href="multimedia/imagenes/logo.jpeg" />
 
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Contacto | Paycar Bierzo</title>
-  <link rel="icon" type="image/jpeg" href="multimedia/imagenes/logo.jpeg">
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
 
-  <!-- Tailwind CSS -->
-  <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="css/estilos.min.css" />
 
-  <link rel="stylesheet" href="css/estilos.css" />
+    <!-- Font Awesome para íconos -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+      referrerpolicy="no-referrer"
+    />
 
-  <!-- Font Awesome para íconos -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
-    referrerpolicy="no-referrer" />
+    <!-- Fuente -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
 
-  <!-- Fuente -->
-  <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&display=swap" rel="stylesheet">
+    <!-- Para el carrusel -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+    />
+  </head>
 
-  <!-- Para el carrusel -->
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
-
-</head>
-
-<body class="bg-gray-100 font-merriweather">
-
-  <!-- Header responsivo -->
-  <header class="bg-white shadow-md">
-    <div class="max-w-7xl mx-auto px-4 py-4 flex justify-between items-center">
-      <!-- Logo + Nombre -->
-      <div class="flex items-center space-x-3">
-        <img src="multimedia/imagenes/logo.jpeg" alt="Logo Paycar Bierzo" class="h-10 w-auto">
-        <h1 class="text-2xl font-bold text-gray-800 font-merriweather">Paycar Bierzo S.L.</h1>
+  <body class="bg-gray-100 font-merriweather">
+    <!-- Header responsivo -->
+    <header class="bg-white shadow-md">
+      <div
+        class="max-w-7xl mx-auto px-4 py-4 flex justify-between items-center"
+      >
+        <!-- Logo + Nombre -->
+        <div class="flex items-center space-x-3">
+          <img
+            src="multimedia/imagenes/logo.jpeg"
+            alt="Logo Paycar Bierzo"
+            class="h-10 w-auto"
+          />
+          <h1 class="text-2xl font-bold text-gray-800 font-merriweather">
+            Paycar Bierzo S.L.
+          </h1>
+        </div>
+        <!-- Botón hamburguesa solo en móvil -->
+        <button
+          id="menu-btn"
+          class="md:hidden text-gray-700 focus:outline-none text-2xl"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            class="h-8 w-8"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M4 6h16M4 12h16M4 18h16"
+            />
+          </svg>
+        </button>
+        <!-- Menú de navegación -->
+        <nav
+          id="menu"
+          class="hidden md:flex flex-col md:flex-row space-y-2 md:space-y-0 md:space-x-4 absolute md:static top-16 left-0 w-full md:w-auto bg-white md:bg-transparent shadow md:shadow-none z-50"
+        >
+          <a
+            href="index.html"
+            class="block px-4 py-2 text-gray-700 hover:text-blue-600 transition"
+            >Inicio</a
+          >
+          <a
+            href="sobre-nosotros.html"
+            class="block px-4 py-2 text-gray-700 hover:text-blue-600 transition"
+            >Sobre Nosotros</a
+          >
+          <a
+            href="trabajos.html"
+            class="block px-4 py-2 text-gray-700 hover:text-blue-600 transition"
+            >Trabajos Realizados</a
+          >
+          <a
+            href="contacto.html"
+            class="block px-4 py-2 text-gray-700 hover:text-blue-600 transition"
+            >Contacto</a
+          >
+        </nav>
       </div>
-      <!-- Botón hamburguesa solo en móvil -->
-      <button id="menu-btn" class="md:hidden text-gray-700 focus:outline-none text-2xl">
-        <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
-        </svg>
-      </button>
-      <!-- Menú de navegación -->
-      <nav id="menu"
-        class="hidden md:flex flex-col md:flex-row space-y-2 md:space-y-0 md:space-x-4 absolute md:static top-16 left-0 w-full md:w-auto bg-white md:bg-transparent shadow md:shadow-none z-50">
-        <a href="index.html" class="block px-4 py-2 text-gray-700 hover:text-blue-600 transition">Inicio</a>
-        <a href="sobre-nosotros.html" class="block px-4 py-2 text-gray-700 hover:text-blue-600 transition">Sobre
-          Nosotros</a>
-        <a href="trabajos.html" class="block px-4 py-2 text-gray-700 hover:text-blue-600 transition">Trabajos
-          Realizados</a>
-        <a href="contacto.html" class="block px-4 py-2 text-gray-700 hover:text-blue-600 transition">Contacto</a>
-      </nav>
+    </header>
+
+    <!-- Carrusel -->
+    <div class="w-full h-96" style="height: 400px">
+      <img
+        id="carrusel-amigos"
+        src="multimedia/imagenes/cubicos-14.jpeg"
+        class="w-full h-full object-cover transition-opacity duration-500"
+        alt="Carrusel amigos"
+      />
     </div>
-  </header>
 
-  <!-- Carrusel -->
-  <div class="w-full h-96overflow-hidden" style="height: 400px;">
-    <img id="carrusel-amigos" src="multimedia/imagenes/panoramica-cubicos-4.jpeg"
-      class="w-full h-full object-cover transition-opacity duration-500" alt="Carrusel amigos">
-  </div>
+    <!-- Sección de Contacto -->
+    <section id="contacto" class="bg-white py-16 mt-12">
+      <div class="max-w-7xl mx-auto px-6 text-center">
+        <h2 class="text-3xl font-bold text-gray-800 mb-4">Contáctanos</h2>
+        <p class="text-gray-600 mb-12">
+          Estamos a tu disposición para ayudarte en lo que necesites.
+        </p>
 
+        <div class="grid md:grid-cols-3 gap-8 text-left">
+          <!-- Teléfono -->
+          <a
+            href="tel:+34619761685"
+            class="block bg-gray-100 p-6 rounded-xl shadow hover:shadow-xl hover:scale-105 transform transition duration-300 no-underline"
+          >
+            <div
+              class="flex items-center mb-2 text-blue-600 text-xl font-semibold"
+            >
+              <i class="fas fa-phone-alt mr-2"></i> Teléfono
+            </div>
+            <p class="text-gray-700 text-base">+34 619 76 16 85</p>
+          </a>
 
+          <!-- Dirección -->
+          <a
+            href="https://www.google.com/maps?q=Dehesas,+Ponferrada,+León"
+            target="_blank"
+            class="block bg-gray-100 p-6 rounded-xl shadow hover:shadow-xl hover:scale-105 transform transition duration-300 no-underline"
+          >
+            <div
+              class="flex items-center mb-2 text-blue-600 text-xl font-semibold"
+            >
+              <i class="fas fa-map-marker-alt mr-2"></i> Ubicación
+            </div>
+            <p class="text-gray-700 text-base">Dehesas, Ponferrada (León)</p>
+          </a>
 
-  <!-- Sección de Contacto -->
-  <section id="contacto" class="bg-white py-16">
-    <div class="max-w-7xl mx-auto px-6 text-center">
-      <h2 class="text-3xl font-bold text-gray-800 mb-4">Contáctanos</h2>
-      <p class="text-gray-600 mb-12">Estamos a tu disposición para ayudarte en lo que necesites.</p>
-
-      <div class="grid md:grid-cols-3 gap-8 text-left">
-
-        <!-- Teléfono -->
-        <a href="tel:+34619761685"
-          class="block bg-gray-100 p-6 rounded-xl shadow hover:shadow-xl hover:scale-105 transform transition duration-300 no-underline">
-          <div class="flex items-center mb-2 text-blue-600 text-xl font-semibold">
-            <i class="fas fa-phone-alt mr-2"></i> Teléfono
-          </div>
-          <p class="text-gray-700 text-base">+34 619 76 16 85</p>
-        </a>
-
-        <!-- Dirección -->
-        <a href="https://www.google.com/maps?q=Dehesas,+Ponferrada,+León" target="_blank"
-          class="block bg-gray-100 p-6 rounded-xl shadow hover:shadow-xl hover:scale-105 transform transition duration-300 no-underline">
-          <div class="flex items-center mb-2 text-blue-600 text-xl font-semibold">
-            <i class="fas fa-map-marker-alt mr-2"></i> Ubicación
-          </div>
-          <p class="text-gray-700 text-base">Dehesas, Ponferrada (León)</p>
-        </a>
-
-        <!-- Correo -->
-        <!-- <a href="mailto:carlosfernandez_pyc@hotmail.com"
-          class="block bg-gray-100 p-6 rounded-xl shadow hover:shadow-xl hover:scale-105 transform transition duration-300 no-underline">
-          <div class="flex items-center mb-2 text-blue-600 text-xl font-semibold">
-            <i class="fas fa-envelope mr-2"></i> Correo Electrónico
-          </div>
-          <p class="text-gray-700 text-base">carlosfernandez_pyc@hotmail.com</p>
-        </a>  -->
-
-        <!-- Enlace protegido contra spam -->
-        <a id="correo-enlace"
-          class="block bg-gray-100 p-6 rounded-xl shadow hover:shadow-xl hover:scale-105 transform transition duration-300 no-underline hover:text-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500">
-          <div class="flex items-center mb-2 text-blue-600 text-xl font-semibold">
-            <i class="fas fa-envelope mr-2" aria-hidden="true"></i> Correo Electrónico
-          </div>
-          <p id="correo-texto" class="text-gray-700 text-base break-all"></p>
-        </a>
-
+          <!-- Enlace protegido contra spam -->
+          <a
+            id="correo-enlace"
+            class="block bg-gray-100 p-6 rounded-xl shadow hover:shadow-xl hover:scale-105 transform transition duration-300 no-underline hover:text-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500"
+          >
+            <div
+              class="flex items-center mb-2 text-blue-600 text-xl font-semibold"
+            >
+              <i class="fas fa-envelope mr-2" aria-hidden="true"></i> Correo
+              Electrónico
+            </div>
+            <p id="correo-texto" class="text-gray-700 text-base break-all"></p>
+          </a>
+        </div>
       </div>
-    </div>
-  </section>
+    </section>
 
+    <footer class="bg-white shadow-inner mt-12">
+      <div
+        class="max-w-7xl mx-auto px-4 py-6 text-center text-gray-500 text-sm"
+      >
+        &copy; <span id="anio-actual">2025</span> Paycar Bierzo S.L. Todos los
+        derechos reservados.
+      </div>
+      <script>
+        // Inserta automáticamente el año actual en el footer
+        document.getElementById('anio-actual').textContent =
+          new Date().getFullYear();
+      </script>
+    </footer>
 
-  <!-- Footer -->
-  <footer class="bg-white shadow-inner mt-12">
-    <div class="max-w-7xl mx-auto px-4 py-6 text-center text-gray-500 text-sm">
-      &copy; 2025 Paycar Bierzo S.L. Todos los derechos reservados.
-    </div>
-  </footer>
+    <!-- Script para evitar spam en el correo -->
+    <script>
+      const user = 'carlosfernandez_pyc';
+      const domain = 'hotmail.com';
+      const correo = `${user}@${domain}`;
 
-  <!-- Script para evitar spam en el correo -->
-  <script>
-    const user = "carlosfernandez_pyc";
-    const domain = "hotmail.com";
-    const correo = `${user}@${domain}`;
+      const enlace = document.getElementById('correo-enlace');
+      const texto = document.getElementById('correo-texto');
 
-    const enlace = document.getElementById("correo-enlace");
-    const texto = document.getElementById("correo-texto");
+      enlace.href = `mailto:${correo}`;
+      texto.textContent = correo;
+    </script>
 
-    enlace.href = `mailto:${correo}`;
-    texto.textContent = correo;
-  </script>
+    <script>
+      // Selecciona todos los elementos que quieras animar
+      const tarjetas = document.querySelectorAll('.card-contacto');
 
-  <script>
-    // Selecciona todos los elementos que quieras animar
-    const tarjetas = document.querySelectorAll('.card-contacto');
+      tarjetas.forEach((card) => {
+        card.addEventListener('mouseenter', () => {
+          card.style.transform = 'scale(1.05)';
+          card.style.transition = 'transform 0.3s ease';
+        });
 
-    tarjetas.forEach((card) => {
-      card.addEventListener('mouseenter', () => {
-        card.style.transform = 'scale(1.05)';
-        card.style.transition = 'transform 0.3s ease';
+        card.addEventListener('mouseleave', () => {
+          card.style.transform = 'scale(1)';
+        });
       });
+    </script>
 
-      card.addEventListener('mouseleave', () => {
-        card.style.transform = 'scale(1)';
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script src="js/carrusel-contacto.js"></script>
+
+    <!-- Para el header nuevo, que será responsivo para telefonos moviles -->
+    <script>
+      // Menú hamburguesa
+      const btn = document.getElementById('menu-btn');
+      const menu = document.getElementById('menu');
+      btn.addEventListener('click', () => {
+        menu.classList.toggle('hidden');
       });
-    });
-  </script>
+    </script>
 
-  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-  <script src="js/carrusel.js"></script>
+    <!-- Para en el nav del header hacer que en la seccion en la que se este se colore de naranja -->
+    <script>
+      const links = document.querySelectorAll('nav a');
+      const currentPath = location.pathname.split('/').pop() || 'index.html';
 
+      links.forEach((link) => {
+        link.classList.add('nav-link');
 
-  <!-- Para el header nuevo, que será responsivo para telefonos moviles -->
-  <script>
-    // Menú hamburguesa
-    const btn = document.getElementById('menu-btn');
-    const menu = document.getElementById('menu');
-    btn.addEventListener('click', () => {
-      menu.classList.toggle('hidden');
-    });
-  </script>
-
-  <!-- Para en el nav del header hacer que en la seccion en la que se este se colore de naranja -->
-  <script>
-    const links = document.querySelectorAll("nav a");
-    const currentPath = location.pathname.split("/").pop() || "index.html";
-
-    links.forEach(link => {
-      link.classList.add("nav-link");
-
-      if (link.getAttribute("href") === currentPath) {
-        link.classList.add("active");
-      }
-    }); 
-  </script>
-
-
-</body>
-
+        if (link.getAttribute('href') === currentPath) {
+          link.classList.add('active');
+        }
+      });
+    </script>
+  </body>
 </html>
