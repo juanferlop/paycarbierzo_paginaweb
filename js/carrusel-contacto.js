@@ -1,9 +1,9 @@
 const imagenes = [
-  'multimedia/imagenes/cubicos-14.jpeg',
-  'multimedia/imagenes/rodanillo-5.jpeg',
-  'multimedia/imagenes/cubicos-5.jpeg',
-  'multimedia/imagenes/puente-1.jpeg',
-  'multimedia/imagenes/inca-2.jpg',
+  'multimedia/imagenes/cubicos-14.webp',
+  'multimedia/imagenes/rodanillo-5.webp',
+  'multimedia/imagenes/cubicos-5.webp',
+  'multimedia/imagenes/puente-1.webp',
+  'multimedia/imagenes/inca-2.webp',
 ];
 
 let indiceAmigos = 0;

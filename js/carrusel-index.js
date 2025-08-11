@@ -1,12 +1,10 @@
-
 const imagenes = [
-  'multimedia/imagenes/magazDeAbajo_2-2.jpg',
-  'multimedia/imagenes/cubicos-12.jpeg',
-  'multimedia/imagenes/leon-4.jpeg',
-  'multimedia/imagenes/cubicos-14.jpeg',
-  'multimedia/imagenes/valtuille-3.jpg',
-  'multimedia/imagenes/cubicos-10.jpeg',
-
+  'multimedia/imagenes/magazDeAbajo_2-2.webp',
+  'multimedia/imagenes/cubicos-12.webp',
+  'multimedia/imagenes/leon-4.webp',
+  'multimedia/imagenes/cubicos-14.webp',
+  'multimedia/imagenes/valtuille-3.webp',
+  'multimedia/imagenes/cubicos-10.webp',
 ];
 
 let indiceAmigos = 0;

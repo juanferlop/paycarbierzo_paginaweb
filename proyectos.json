@@ -4,19 +4,19 @@
     "tipo": "Edificio Residencial",
     "fecha": "08-2024",
     "imagenes": [
-      "multimedia/imagenes/cubicos-1.jpg",
-      "multimedia/imagenes/cubicos-2.jpg",
-      "multimedia/imagenes/cubicos-3.jpeg",
-      "multimedia/imagenes/cubicos-4.jpeg",
-      "multimedia/imagenes/cubicos-5.jpeg",
-      "multimedia/imagenes/cubicos-6.jpeg",
-      "multimedia/imagenes/cubicos-7.jpeg",
-      "multimedia/imagenes/cubicos-8.jpeg",
-      "multimedia/imagenes/cubicos-9.jpeg",
-      "multimedia/imagenes/cubicos-10.jpeg",
-      "multimedia/imagenes/cubicos-11.jpeg",
-      "multimedia/imagenes/cubicos-12.jpeg",
-      "multimedia/imagenes/cubicos-13.jpeg"
+      "multimedia/imagenes/webp/cubicos-1.webp",
+      "multimedia/imagenes/webp/cubicos-2.webp",
+      "multimedia/imagenes/webp/cubicos-3.webp",
+      "multimedia/imagenes/webp/cubicos-4.webp",
+      "multimedia/imagenes/webp/cubicos-5.webp",
+      "multimedia/imagenes/webp/cubicos-6.webp",
+      "multimedia/imagenes/webp/cubicos-7.webp",
+      "multimedia/imagenes/webp/cubicos-8.webp",
+      "multimedia/imagenes/webp/cubicos-9.webp",
+      "multimedia/imagenes/webp/cubicos-10.webp",
+      "multimedia/imagenes/webp/cubicos-11.webp",
+      "multimedia/imagenes/webp/cubicos-12.webp",
+      "multimedia/imagenes/webp/cubicos-13.webp"
     ]
   },
   {
@@ -24,8 +24,8 @@
     "tipo": "Vivienda Unifamiliar",
     "fecha": "06-2025",
     "imagenes": [
-      "multimedia/imagenes/becerrea-1.jpeg",
-      "multimedia/imagenes/becerrea-2.jpeg"
+      "multimedia/imagenes/webp/becerrea-1.webp",
+      "multimedia/imagenes/webp/becerrea-2.webp"
     ]
   },
   {
@@ -33,9 +33,9 @@
     "tipo": "Vivienda Unifamiliar",
     "fecha": "11-2024",
     "imagenes": [
-      "multimedia/imagenes/almazcara-1.jpeg",
-      "multimedia/imagenes/almazcara-2.jpeg",
-      "multimedia/imagenes/almazcara-3.jpeg"
+      "multimedia/imagenes/webp/almazcara-1.webp",
+      "multimedia/imagenes/webp/almazcara-2.webp",
+      "multimedia/imagenes/webp/almazcara-3.webp"
     ]
   },
   {
@@ -43,11 +43,11 @@
     "tipo": "Vivienda Unifamiliar",
     "fecha": "07-2025",
     "imagenes": [
-      "multimedia/imagenes/cacabelos-1.jpg",
-      "multimedia/imagenes/cacabelos-2.jpeg",
-      "multimedia/imagenes/cacabelos-3.jpg",
-      "multimedia/imagenes/cacabelos-4.jpg",
-      "multimedia/imagenes/cacabelos-5.jpg"
+      "multimedia/imagenes/webp/cacabelos-1.webp",
+      "multimedia/imagenes/webp/cacabelos-2.webp",
+      "multimedia/imagenes/webp/cacabelos-3.webp",
+      "multimedia/imagenes/webp/cacabelos-4.webp",
+      "multimedia/imagenes/webp/cacabelos-5.webp"
     ]
   },
   {
@@ -55,12 +55,12 @@
     "tipo": "Obra Civil",
     "fecha": "06-2025",
     "imagenes": [
-      "multimedia/imagenes/hospital-1.jpeg",
-      "multimedia/imagenes/hospital-2.jpeg",
-      "multimedia/imagenes/hospital-3.jpeg",
-      "multimedia/imagenes/hospital-4.jpeg",
-      "multimedia/imagenes/hospital-5.jpeg",
-      "multimedia/imagenes/hospital-6.jpeg"
+      "multimedia/imagenes/webp/hospital-1.webp",
+      "multimedia/imagenes/webp/hospital-2.webp",
+      "multimedia/imagenes/webp/hospital-3.webp",
+      "multimedia/imagenes/webp/hospital-4.webp",
+      "multimedia/imagenes/webp/hospital-5.webp",
+      "multimedia/imagenes/webp/hospital-6.webp"
     ]
   },
   {
@@ -68,11 +68,11 @@
     "tipo": "Obra Civil",
     "fecha": "08-2025",
     "imagenes": [
-      "multimedia/imagenes/inca-1.jpg",
-      "multimedia/imagenes/inca-2.jpg",
-      "multimedia/imagenes/inca-3.jpg",
-      "multimedia/imagenes/inca-4.jpg",
-      "multimedia/imagenes/inca-5.jpg"
+      "multimedia/imagenes/webp/inca-1.webp",
+      "multimedia/imagenes/webp/inca-2.webp",
+      "multimedia/imagenes/webp/inca-3.webp",
+      "multimedia/imagenes/webp/inca-4.webp",
+      "multimedia/imagenes/webp/inca-5.webp"
     ]
   },
   {
@@ -80,23 +80,23 @@
     "tipo": "Vivienda Unifamiliar",
     "fecha": "07-2025",
     "imagenes": [
-      "multimedia/imagenes/magazDeAbajo_2-1.jpg",
-      "multimedia/imagenes/magazDeAbajo_2-2.jpg"
+      "multimedia/imagenes/webp/magazDeAbajo_2-1.webp",
+      "multimedia/imagenes/webp/magazDeAbajo_2-2.webp"
     ]
   },
   {
     "pueblo": "Magaz de Abajo",
     "tipo": "Vivienda Unifamiliar",
     "fecha": "05-2025",
-    "imagenes": ["multimedia/imagenes/magazDeAbajo-1.jpeg"]
+    "imagenes": ["multimedia/imagenes/webp/magazDeAbajo-1.webp"]
   },
   {
     "pueblo": "Puente de Domingo Flórez",
     "tipo": "Vivienda Unifamiliar",
     "fecha": "08-2025",
     "imagenes": [
-      "multimedia/imagenes/puente-1.jpeg",
-      "multimedia/imagenes/puente-2.jpg"
+      "multimedia/imagenes/webp/puente-1.webp",
+      "multimedia/imagenes/webp/puente-2.webp"
     ]
   },
   {
@@ -104,11 +104,11 @@
     "tipo": "Vivienda Unifamiliar",
     "fecha": "06-2025",
     "imagenes": [
-      "multimedia/imagenes/rodanillo-1.jpeg",
-      "multimedia/imagenes/rodanillo-2.jpeg",
-      "multimedia/imagenes/rodanillo-3.jpeg",
-      "multimedia/imagenes/rodanillo-4.jpeg",
-      "multimedia/imagenes/rodanillo-5.jpeg"
+      "multimedia/imagenes/webp/rodanillo-1.webp",
+      "multimedia/imagenes/webp/rodanillo-2.webp",
+      "multimedia/imagenes/webp/rodanillo-3.webp",
+      "multimedia/imagenes/webp/rodanillo-4.webp",
+      "multimedia/imagenes/webp/rodanillo-5.webp"
     ]
   },
   {
@@ -116,8 +116,8 @@
     "tipo": "Vivienda Unifamiliar",
     "fecha": "07-2025",
     "imagenes": [
-      "multimedia/imagenes/sanroman-1.jpg",
-      "multimedia/imagenes/sanroman-2.jpg"
+      "multimedia/imagenes/webp/sanroman-1.webp",
+      "multimedia/imagenes/webp/sanroman-2.webp"
     ]
   },
   {
@@ -125,11 +125,11 @@
     "tipo": "Edificio Residencial",
     "fecha": "05-2025",
     "imagenes": [
-      "multimedia/imagenes/leon-1.jpeg",
-      "multimedia/imagenes/leon-2.jpeg",
-      "multimedia/imagenes/leon-3.jpeg",
-      "multimedia/imagenes/leon-4.jpeg",
-      "multimedia/imagenes/leon-5.jpeg"
+      "multimedia/imagenes/webp/leon-1.webp",
+      "multimedia/imagenes/webp/leon-2.webp",
+      "multimedia/imagenes/webp/leon-3.webp",
+      "multimedia/imagenes/webp/leon-4.webp",
+      "multimedia/imagenes/webp/leon-5.webp"
     ]
   },
   {
@@ -137,11 +137,11 @@
     "tipo": "Vivienda Unifamiliar",
     "fecha": "05-2025",
     "imagenes": [
-      "multimedia/imagenes/toralDeLosVados-1.jpeg",
-      "multimedia/imagenes/toralDeLosVados-2.jpeg",
-      "multimedia/imagenes/toralDeLosVados-3.jpeg",
-      "multimedia/imagenes/toralDeLosVados-4.jpeg",
-      "multimedia/imagenes/toralDeLosVados-5.jpeg"
+      "multimedia/imagenes/webp/toralDeLosVados-1.webp",
+      "multimedia/imagenes/webp/toralDeLosVados-2.webp",
+      "multimedia/imagenes/webp/toralDeLosVados-3.webp",
+      "multimedia/imagenes/webp/toralDeLosVados-4.webp",
+      "multimedia/imagenes/webp/toralDeLosVados-5.webp"
     ]
   },
   {
@@ -149,11 +149,11 @@
     "tipo": "Nave Agrícola",
     "fecha": "08-2025",
     "imagenes": [
-      "multimedia/imagenes/valtuille-1.jpg",
-      "multimedia/imagenes/valtuille-2.jpg",
-      "multimedia/imagenes/valtuille-3.jpg",
-      "multimedia/imagenes/valtuille-4.jpg",
-      "multimedia/imagenes/valtuille-5.jpeg"
+      "multimedia/imagenes/webp/valtuille-1.webp",
+      "multimedia/imagenes/webp/valtuille-2.webp",
+      "multimedia/imagenes/webp/valtuille-3.webp",
+      "multimedia/imagenes/webp/valtuille-4.webp",
+      "multimedia/imagenes/webp/valtuille-5.webp"
     ]
   },
   {
@@ -161,8 +161,8 @@
     "tipo": "Edificio Residencial",
     "fecha": "06-2025",
     "imagenes": [
-      "multimedia/imagenes/vegaDeEspinareda-1.jpeg",
-      "multimedia/imagenes/vegaDeEspinareda-2.jpeg"
+      "multimedia/imagenes/webp/vegaDeEspinareda-1.webp",
+      "multimedia/imagenes/webp/vegaDeEspinareda-2.webp"
     ]
   }
 ]
