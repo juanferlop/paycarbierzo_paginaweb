@@ -1,0 +1,165 @@
+[
+  {
+    "pueblo": "Ponferrada",
+    "tipo": "Edificio Residencial",
+    "fecha": "08-2024",
+    "imagenes": [
+      "assets/img/webp/cubicos-1.webp",
+      "assets/img/webp/cubicos-4.webp",
+      "assets/img/webp/cubicos-5.webp",
+      "assets/img/webp/cubicos-6.webp",
+      "assets/img/webp/cubicos-7.webp",
+      "assets/img/webp/cubicos-8.webp",
+      "assets/img/webp/cubicos-9.webp",
+      "assets/img/webp/cubicos-10.webp",
+      "assets/img/webp/cubicos-11.webp",
+      "assets/img/webp/cubicos-12.webp",
+      "assets/img/webp/cubicos-13.webp"
+    ]
+  },
+  {
+    "pueblo": "Becerrea",
+    "tipo": "Vivienda Unifamiliar",
+    "fecha": "06-2025",
+    "imagenes": [
+      "assets/img/webp/becerrea-1.webp",
+      "assets/img/webp/becerrea-2.webp"
+    ]
+  },
+  {
+    "pueblo": "Almazcara",
+    "tipo": "Vivienda Unifamiliar",
+    "fecha": "11-2024",
+    "imagenes": [
+      "assets/img/webp/almazcara-1.webp",
+      "assets/img/webp/almazcara-2.webp",
+      "assets/img/webp/almazcara-3.webp"
+    ]
+  },
+  {
+    "pueblo": "Cacabelos",
+    "tipo": "Vivienda Unifamiliar",
+    "fecha": "07-2025",
+    "imagenes": [
+      "assets/img/webp/cacabelos-1.webp",
+      "assets/img/webp/cacabelos-2.webp",
+      "assets/img/webp/cacabelos-3.webp",
+      "assets/img/webp/cacabelos-4.webp",
+      "assets/img/webp/cacabelos-5.webp"
+    ]
+  },
+  {
+    "pueblo": "Ponferrada",
+    "tipo": "Obra Civil",
+    "fecha": "06-2025",
+    "imagenes": [
+      "assets/img/webp/hospital-1.webp",
+      "assets/img/webp/hospital-2.webp",
+      "assets/img/webp/hospital-3.webp",
+      "assets/img/webp/hospital-4.webp",
+      "assets/img/webp/hospital-5.webp",
+      "assets/img/webp/hospital-6.webp"
+    ]
+  },
+  {
+    "pueblo": "Cortiguera",
+    "tipo": "Obra Civil",
+    "fecha": "08-2025",
+    "imagenes": [
+      "assets/img/webp/inca-1.webp",
+      "assets/img/webp/inca-2.webp",
+      "assets/img/webp/inca-3.webp",
+      "assets/img/webp/inca-4.webp",
+      "assets/img/webp/inca-5.webp"
+    ]
+  },
+  {
+    "pueblo": "Magaz de Abajo",
+    "tipo": "Vivienda Unifamiliar",
+    "fecha": "07-2025",
+    "imagenes": [
+      "assets/img/webp/magazDeAbajo_2-1.webp",
+      "assets/img/webp/magazDeAbajo_2-2.webp"
+    ]
+  },
+  {
+    "pueblo": "Magaz de Abajo",
+    "tipo": "Vivienda Unifamiliar",
+    "fecha": "05-2025",
+    "imagenes": ["assets/img/webp/magazDeAbajo-1.webp"]
+  },
+  {
+    "pueblo": "Puente de Domingo Flórez",
+    "tipo": "Vivienda Unifamiliar",
+    "fecha": "08-2025",
+    "imagenes": [
+      "assets/img/webp/puente-1.webp",
+      "assets/img/webp/puente-2.webp"
+    ]
+  },
+  {
+    "pueblo": "Rodanillo",
+    "tipo": "Vivienda Unifamiliar",
+    "fecha": "06-2025",
+    "imagenes": [
+      "assets/img/webp/rodanillo-1.webp",
+      "assets/img/webp/rodanillo-2.webp",
+      "assets/img/webp/rodanillo-3.webp",
+      "assets/img/webp/rodanillo-4.webp",
+      "assets/img/webp/rodanillo-5.webp"
+    ]
+  },
+  {
+    "pueblo": "San Román de Bembibre",
+    "tipo": "Vivienda Unifamiliar",
+    "fecha": "07-2025",
+    "imagenes": [
+      "assets/img/webp/sanroman-1.webp",
+      "assets/img/webp/sanroman-2.webp"
+    ]
+  },
+  {
+    "pueblo": "León",
+    "tipo": "Edificio Residencial",
+    "fecha": "05-2025",
+    "imagenes": [
+      "assets/img/webp/leon-1.webp",
+      "assets/img/webp/leon-2.webp",
+      "assets/img/webp/leon-3.webp",
+      "assets/img/webp/leon-4.webp",
+      "assets/img/webp/leon-5.webp"
+    ]
+  },
+  {
+    "pueblo": "Toral de los Vados",
+    "tipo": "Vivienda Unifamiliar",
+    "fecha": "05-2025",
+    "imagenes": [
+      "assets/img/webp/toralDeLosVados-1.webp",
+      "assets/img/webp/toralDeLosVados-2.webp",
+      "assets/img/webp/toralDeLosVados-3.webp",
+      "assets/img/webp/toralDeLosVados-4.webp",
+      "assets/img/webp/toralDeLosVados-5.webp"
+    ]
+  },
+  {
+    "pueblo": "Valtuille de Abajo",
+    "tipo": "Nave Agrícola",
+    "fecha": "08-2025",
+    "imagenes": [
+      "assets/img/webp/valtuille-1.webp",
+      "assets/img/webp/valtuille-2.webp",
+      "assets/img/webp/valtuille-3.webp",
+      "assets/img/webp/valtuille-4.webp"
+    ]
+  },
+  {
+    "pueblo": "Vega de Espinareda",
+    "tipo": "Edificio Residencial",
+    "fecha": "06-2025",
+    "imagenes": [
+      "assets/img/webp/vegaDeEspinareda-1.webp",
+      "assets/img/webp/vegaDeEspinareda-2.webp"
+    ]
+  }
+]

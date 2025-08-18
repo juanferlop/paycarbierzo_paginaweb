@@ -1,13 +1,17 @@
 {
-  "extends": [
-    "stylelint-config-standard-scss"
-  ],
+  "extends": ["stylelint-config-standard-scss"],
   "rules": {
     "selector-class-pattern": [
       "^[a-z][a-z0-9\\-]*$",
       {
         "message": "Usa kebab-case para las clases."
       }
+    ]
+  },
+  "rules": {
+    "at-rule-no-unknown": [
+      true,
+      { "ignoreAtRules": ["tailwind", "layer", "apply"] }
     ]
   }
 }

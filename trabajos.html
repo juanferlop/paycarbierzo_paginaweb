@@ -1,21 +1,15 @@
 <!doctype html>
-<html lang="es">
+<html lang="es" class="dark">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Trabajos Realizados | Paycar Bierzo</title>
-    <link
-      rel="icon"
-      type="image/jpeg"
-      href="multimedia/imagenes/webp/logo.webp"
-    />
-    <link rel="stylesheet" href="css/estilos.min.css" />
-    <!-- Google Font, Merriweather -->
+    <link rel="icon" type="image/webp" href="assets/img/webp/logo.webp" />
     <link
       href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&display=swap"
       rel="stylesheet"
     />
-    <!-- Choices.js para los desplegables del filtro de los tipos, lugares de los proyectos -->
+    <!-- Choices -->
     <link
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/choices.js/public/assets/styles/choices.min.css"
@@ -24,76 +18,31 @@
       src="https://cdn.jsdelivr.net/npm/choices.js/public/assets/scripts/choices.min.js"
       defer
     ></script>
-    <!-- GLightBox para ampliar las imagenes de los proyectos -->
+    <!-- GLightbox -->
     <link
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/glightbox/dist/css/glightbox.min.css"
     />
+    <!-- 1) Fijar tema antes de pintar nada 
+    antes de que cargue Tailwind CSS para evitar el “flash” de color al iniciar-->
+    <script src="js/theme-init.js"></script>
+    <!-- Tailwind -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- 2) Config de Tailwind para CDN -->
+    <script>
+      // Coloca este bloque en <head>, ANTES del CDN
+      window.tailwind = window.tailwind || {};
+      window.tailwind.config = {
+        darkMode: 'class',
+      };
+    </script>
   </head>
 
-  <body class="bg-gray-100 font-merriweather">
-    <!-- Header responsivo -->
-    <header class="bg-white shadow-md">
-      <div class="w-full px-4 md:px-8 py-4 flex justify-between items-center">
-        <!-- Logo + Nombre -->
-        <div class="flex items-center space-x-3">
-          <img
-            src="multimedia/imagenes/webp/logo.webp"
-            alt="Logo Paycar Bierzo"
-            class="h-10 w-auto"
-          />
-          <h1 class="text-2xl font-bold text-gray-800 font-merriweather">
-            Paycar Bierzo S.L.
-          </h1>
-        </div>
-        <!-- Botón hamburguesa solo en móvil -->
-        <button
-          id="menu-btn"
-          class="md:hidden text-gray-700 focus:outline-none text-2xl"
-        >
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            class="h-8 w-8"
-            fill="none"
-            viewBox="0 0 24 24"
-            stroke="currentColor"
-          >
-            <path
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              stroke-width="2"
-              d="M4 6h16M4 12h16M4 18h16"
-            />
-          </svg>
-        </button>
-        <!-- Menú de navegación -->
-        <nav
-          id="menu"
-          class="hidden md:flex flex-col md:flex-row space-y-2 md:space-y-0 md:space-x-4 absolute md:static top-16 left-0 w-full md:w-auto bg-white md:bg-transparent shadow md:shadow-none z-50"
-        >
-          <a
-            href="index.html"
-            class="block px-4 py-2 text-gray-700 hover:text-blue-600 transition"
-            >Inicio</a
-          >
-          <a
-            href="sobre-nosotros.html"
-            class="block px-4 py-2 text-gray-700 hover:text-blue-600 transition"
-            >Sobre Nosotros</a
-          >
-          <a
-            href="trabajos.html"
-            class="block px-4 py-2 text-gray-700 hover:text-blue-600 transition"
-            >Trabajos Realizados</a
-          >
-          <a
-            href="contacto.html"
-            class="block px-4 py-2 text-gray-700 hover:text-blue-600 transition"
-            >Contacto</a
-          >
-        </nav>
-      </div>
-    </header>
+  <body
+    class="bg-gray-100 dark:bg-black text-gray-800 dark:text-gray-100 transition-colors duration-300"
+  >
+    <!-- Header -->
+    <div id="header"></div>
 
     <main>
       <section class="relative w-full h-[500px] overflow-hidden">
@@ -104,58 +53,44 @@
           playsinline
           class="absolute inset-0 w-full h-full object-cover z-0"
         >
-          <source
-            src="multimedia/videos/video-construccion.mp4"
-            type="video/mp4"
-          />
-          Tu navegador no soporta el video HTML5.
+          <source src="assets/video/video-construccion.mp4" type="video/mp4" />
         </video>
         <div class="absolute inset-0 bg-black bg-opacity-30 z-10"></div>
       </section>
 
       <!-- Título -->
       <section class="text-center px-4 pt-12 pb-20 max-w-4xl mx-auto">
-        <h2 class="text-4xl font-extrabold text-gray-800 mb-4">
+        <h2 class="text-4xl font-extrabold text-gray-800 dark:text-white mb-4">
           Trabajos Realizados
         </h2>
-        <p class="text-gray-600 text-lg leading-relaxed">
+        <p class="text-gray-600 dark:text-gray-300 text-lg leading-relaxed">
           A lo largo del tiempo, hemos ejecutado numerosos proyectos en
           distintos puntos del Bierzo y más allá. Aquí puedes ver una selección
           de nuestras obras clasificadas por tipo y ubicación.
         </p>
       </section>
 
-      <!-- <section class="max-w-7xl mx-auto px-4 py-6">
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mb-6">
-        <select id="filtro-fecha" class="w-full border rounded p-2">
-          <option value="reciente">Más recientes</option>
-          <option value="antigua">Más antiguas</option>
-        </select>
-
-        <select id="filtro-pueblo" class="w-full border rounded p-2">
-          <option value="">Todos los pueblos</option>
-        </select>
-
-        <select id="filtro-tipo" class="w-full border rounded p-2">
-          <option value="">Todos los tipos</option>
-        </select>
-      </div>
-      <div id="contenedor-proyectos" class="grid gap-6 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4"></div>
-    </section> -->
       <section class="max-w-7xl mx-auto px-4 pb-12">
-        <!-- Filtros con tarjeta blanca -->
-        <div class="bg-white rounded-xl shadow-md p-6 mb-10">
+        <!-- Filtros con tarjeta -->
+        <div class="bg-white dark:bg-gray-800 rounded-xl shadow-md p-6 mb-10">
           <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
-            <select id="filtro-fecha" class="w-full border rounded p-2">
+            <select
+              id="filtro-fecha"
+              class="w-full border rounded p-2 dark:bg-gray-800 dark:text-gray-200"
+            >
               <option value="reciente">Más recientes</option>
               <option value="antigua">Más antiguas</option>
             </select>
-
-            <select id="filtro-pueblo" class="w-full border rounded p-2">
+            <select
+              id="filtro-pueblo"
+              class="w-full border rounded p-2 dark:bg-gray-800 dark:text-gray-200"
+            >
               <option value="">Todos los pueblos</option>
             </select>
-
-            <select id="filtro-tipo" class="w-full border rounded p-2">
+            <select
+              id="filtro-tipo"
+              class="w-full border rounded p-2 dark:bg-gray-800 dark:text-gray-200"
+            >
               <option value="">Todos los tipos</option>
             </select>
           </div>
@@ -169,51 +104,38 @@
       </section>
     </main>
 
-    <footer class="bg-white shadow-inner mt-12">
-      <div
-        class="max-w-7xl mx-auto px-4 py-6 text-center text-gray-500 text-sm"
-      >
-        &copy; <span id="anio-actual">2025</span> Paycar Bierzo S.L. Todos los
-        derechos reservados.
-      </div>
-      <script>
-        // Inserta automáticamente el año actual en el footer
-        document.getElementById('anio-actual').textContent =
-          new Date().getFullYear();
-      </script>
-    </footer>
+    <!-- Footer -->
+    <div id="footer"></div>
 
-    <!-- Tailwind para el css -->
-    <script src="https://cdn.tailwindcss.com"></script>
-
-    <!-- Para el header nuevo, que será responsivo para telefonos moviles -->
-    <script>
-      // Menú hamburguesa
-      const btn = document.getElementById('menu-btn');
-      const menu = document.getElementById('menu');
-      btn.addEventListener('click', () => {
-        menu.classList.toggle('hidden');
-      });
-    </script>
-
-    <!-- Para en el nav del header hacer que en la seccion en la que se este se colore de naranja -->
-    <script>
-      const links = document.querySelectorAll('nav a');
-      const currentPath = location.pathname.split('/').pop() || 'index.html';
-
-      links.forEach((link) => {
-        link.classList.add('nav-link');
-
-        if (link.getAttribute('href') === currentPath) {
-          link.classList.add('active');
-        }
-      });
-    </script>
-
-    <!-- Para el json de los proyectos -->
+    <!-- Datos + galería -->
     <script src="js/proyectos.js"></script>
-
-    <!-- GLightBox para ampliar las imagenes de los proyectos-->
     <script src="https://cdn.jsdelivr.net/npm/glightbox/dist/js/glightbox.min.js"></script>
+
+    <!-- Botón flotante modo claro/oscuro -->
+    <button
+      id="theme-toggle"
+      type="button"
+      aria-label="Cambiar tema"
+      aria-pressed="false"
+      class="fixed bottom-6 right-6 z-50 inline-flex items-center justify-center rounded-full border shadow-lg p-3 bg-white/90 border-gray-200 text-gray-800 hover:scale-105 active:scale-95 transition dark:bg-gray-900/90 dark:border-gray-700 dark:text-gray-100"
+    >
+      <svg
+        id="theme-icon"
+        xmlns="http://www.w3.org/2000/svg"
+        viewBox="0 0 24 24"
+        width="20"
+        height="20"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="2"
+      ></svg>
+    </button>
+
+    <!-- Scripts de carga -->
+    <script src="js/cargar-header.js"></script>
+    <script src="js/cargar-footer.js"></script>
+    <script src="js/fecha-footer.js"></script>
+    <script src="js/theme-toggle.js" defer></script>
+    <script src="js/menu-responsive.js"></script>
   </body>
 </html>

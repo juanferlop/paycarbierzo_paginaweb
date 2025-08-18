@@ -7,7 +7,7 @@ const filtroTipo = document.getElementById('filtro-tipo');
 
 let proyectos = [];
 
-fetch('proyectos.json')
+fetch('data/proyectos.json')
   .then((res) => res.json())
   .then((data) => {
     proyectos = data;

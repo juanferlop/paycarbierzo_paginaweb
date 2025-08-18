@@ -1,10 +1,10 @@
 const imagenes = [
-  'multimedia/imagenes/magazDeAbajo_2-2.webp',
-  'multimedia/imagenes/cubicos-12.webp',
-  'multimedia/imagenes/leon-4.webp',
-  'multimedia/imagenes/cubicos-14.webp',
-  'multimedia/imagenes/valtuille-3.webp',
-  'multimedia/imagenes/cubicos-10.webp',
+  'assets/img/webp/magazDeAbajo_2-2.webp',
+  'assets/img/webp/cubicos-12.webp',
+  'assets/img/webp/leon-4.webp',
+  'assets/img/webp/cubicos-14.webp',
+  'assets/img/webp/valtuille-3.webp',
+  'assets/img/webp/cubicos-10.webp',
 ];
 
 let indiceAmigos = 0;
@@ -16,4 +16,4 @@ img.src = imagenes[indiceAmigos];
 setInterval(() => {
   indiceAmigos = (indiceAmigos + 1) % imagenes.length;
   img.src = imagenes[indiceAmigos];
-}, 5000);
+}, 7000);

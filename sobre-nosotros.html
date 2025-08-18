@@ -4,205 +4,141 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Sobre Nosotros | Paycar Bierzo</title>
+    <link rel="icon" type="image/webp" href="assets/img/webp/logo.webp" />
+    <!-- Fuentes tipográficas -->
     <link
-      rel="icon"
-      type="image/jpeg"
-      href="multimedia/imagenes/webp/logo.webp"
-    />
-    <link rel="stylesheet" href="css/estilos.min.css" />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Merriweather:wght@400;600;700&family=Roboto+Mono:wght@400;500&display=swap"
       rel="stylesheet"
     />
+    <!-- 1) Fijar tema antes de pintar nada 
+    antes de que cargue Tailwind CSS para evitar el “flash” de color al iniciar-->
+    <script src="js/theme-init.js"></script>
+    <!-- Tailwind -->
     <script src="https://cdn.tailwindcss.com"></script>
+    <!-- 2) Config de Tailwind para CDN -->
+    <script>
+      // Coloca este bloque en <head>, ANTES del CDN
+      window.tailwind = window.tailwind || {};
+      window.tailwind.config = {
+        darkMode: 'class',
+      };
+    </script>
   </head>
 
-  <body class="bg-gray-100 font-merriweather">
-    <!-- Header responsivo -->
-    <header class="bg-white shadow-md">
-      <div class="w-full px-4 md:px-8 py-4 flex justify-between items-center">
-        <!-- Logo + Nombre -->
-        <div class="flex items-center space-x-3">
-          <img
-            src="multimedia/imagenes/webp/logo.webp"
-            alt="Logo Paycar Bierzo"
-            class="h-10 w-auto"
-          />
-          <h1 class="text-2xl font-bold text-gray-800 font-merriweather">
-            Paycar Bierzo S.L.
-          </h1>
-        </div>
-        <!-- Botón hamburguesa solo en móvil -->
-        <button
-          id="menu-btn"
-          class="md:hidden text-gray-700 focus:outline-none text-2xl"
-        >
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            class="h-8 w-8"
-            fill="none"
-            viewBox="0 0 24 24"
-            stroke="currentColor"
-          >
-            <path
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              stroke-width="2"
-              d="M4 6h16M4 12h16M4 18h16"
-            />
-          </svg>
-        </button>
-        <!-- Menú de navegación -->
-        <nav
-          id="menu"
-          class="hidden md:flex flex-col md:flex-row space-y-2 md:space-y-0 md:space-x-4 absolute md:static top-16 left-0 w-full md:w-auto bg-white md:bg-transparent shadow md:shadow-none z-50"
-        >
-          <a
-            href="index.html"
-            class="block px-4 py-2 text-gray-700 hover:text-blue-600 transition"
-            >Inicio</a
-          >
-          <a
-            href="sobre-nosotros.html"
-            class="block px-4 py-2 text-gray-700 hover:text-blue-600 transition"
-            >Sobre Nosotros</a
-          >
-          <a
-            href="trabajos.html"
-            class="block px-4 py-2 text-gray-700 hover:text-blue-600 transition"
-            >Trabajos Realizados</a
-          >
-          <a
-            href="contacto.html"
-            class="block px-4 py-2 text-gray-700 hover:text-blue-600 transition"
-            >Contacto</a
-          >
-        </nav>
-      </div>
-    </header>
+  <body
+    class="bg-gray-100 dark:bg-black text-gray-800 dark:text-gray-100 transition-colors duration-300"
+  >
+    <!-- Header -->
+    <div id="header"></div>
 
-    <!-- Main Content -->
-    <main class="max-w-6xl mx-auto px-4 py-12">
-      <section class="w-full text-center mb-12 bg-gray-50 shadow py-12">
-        <h2 class="text-4xl font-bold text-gray-800 mb-4">Nuestra historia</h2>
-        <p class="text-gray-700 text-lg">
-          18 años completando proyectos con seriedad, calidad y compromiso.
-        </p>
-      </section>
+    <!-- Banner con logo -->
+    <section
+      class="w-full py-12 flex justify-center bg-gradient-to-r from-orange-400 via-amber-300 to-orange-500"
+    >
+      <img
+        src="assets/img/webp/logo-paycar-bierzo.webp"
+        alt="Logo Paycar Bierzo"
+        class="w-full max-w-xs md:max-w-md object-contain drop-shadow-lg"
+      />
+    </section>
 
-      <!-- Timeline -->
-      <section class="space-y-16">
-        <!-- Pasado -->
-        <div class="grid md:grid-cols-2 gap-16 items-center">
-          <img
-            src="multimedia/imagenes/webp/pasado.webp"
-            alt="Nuestros inicios"
-            class="rounded-2xl shadow-lg w-full h-64 object-cover"
-          />
-          <div
-            class="bg-gray rounded-xl shadow px-6 py-6 border-l-4 border-orange-300"
-          >
-            <h3 class="text-2xl font-semibold text-gray-800 mb-2">
-              Nuestros Inicios
-            </h3>
-            <p class="text-gray-700 leading-relaxed">
-              Paycar Bierzo nació en 2007 como una empresa familiar, impulsada
-              por la idea de poder realizar nuestros propios proyectos de manera
-              autónoma. Desde el principio, la experiencia y dedicación de
-              nuestro personal nos permitió afrontar cada obra con
-              profesionalidad y cercanía, ganando la confianza de quienes nos
-              eligieron.
-            </p>
-          </div>
-        </div>
-
-        <!-- Presente -->
+    <!-- Main -->
+    <main class="max-w-6xl mx-auto px-4 py-12 space-y-16">
+      <!-- Pasado -->
+      <div class="grid md:grid-cols-2 gap-16 items-center">
+        <img
+          src="assets/img/webp/pasado.webp"
+          alt="Nuestros inicios"
+          class="rounded-2xl shadow-lg w-full h-64 object-cover"
+          loading="lazy"
+        />
         <div
-          class="grid md:grid-cols-2 gap-16 items-center md:flex-row-reverse"
+          class="rounded-xl shadow px-6 py-6 border-l-4 border-orange-300 bg-white dark:bg-gray-900"
         >
-          <img
-            src="multimedia/imagenes/webp/presente.webp"
-            alt="Estado actual"
-            class="rounded-2xl shadow-lg w-full h-64 object-cover"
-          />
-          <div
-            class="bg-gray rounded-xl shadow px-6 py-6 border-l-4 border-orange-300"
-          >
-            <h3 class="text-2xl font-semibold text-gray-800 mb-2">
-              Nuestro Presente
-            </h3>
-            <p class="text-gray-700 leading-relaxed">
-              Hoy, tras años de trabajo constante y aprendizaje, somos una
-              empresa consolidada en la comarca. Nuestro equipo, formado por
-              profesionales con una vida dedicada al sector, afronta cada reto
-              con seriedad, compromiso y esfuerzo. Nos especializamos en el
-              encofrado de hormigón, realizando estructuras de todo tipo con la
-              máxima calidad.
-            </p>
-          </div>
+          <h2 class="text-3xl md:text-4xl font-bold mb-3">Nuestros Inicios</h2>
+          <p class="text-gray-700 dark:text-gray-300 leading-relaxed">
+            Paycar Bierzo nació en 2007 como una empresa familiar, impulsada por
+            la idea de poder realizar nuestros propios proyectos de manera
+            autónoma. Desde el principio, la experiencia y dedicación de nuestro
+            personal nos permitió afrontar cada obra con profesionalidad y
+            cercanía, ganando la confianza de quienes nos eligieron.
+          </p>
         </div>
+      </div>
 
-        <!-- Futuro -->
-        <div class="grid md:grid-cols-2 gap-16 items-center">
-          <img
-            src="multimedia/imagenes/webp/futuro.webp"
-            alt="Futuro de la empresa"
-            class="rounded-2xl shadow-lg w-full h-64 object-cover"
-          />
-          <div
-            class="bg-gray rounded-xl shadow px-6 py-6 border-l-4 border-orange-300"
-          >
-            <h3 class="text-2xl font-semibold text-gray-800 mb-2">
-              Nuestra Visión
-            </h3>
-            <p class="text-gray-700 leading-relaxed">
-              Miramos al futuro con la convicción de que nuestros valores
-              —calidad, compromiso y esfuerzo— son la base para seguir creciendo
-              y superando expectativas. Creemos que, gracias a nuestro trabajo y
-              experiencia, podemos construir cualquier proyecto que se nos
-              plantee y que requiera un encofrado de hormigón.
-            </p>
-          </div>
+      <!-- Presente -->
+      <div class="grid md:grid-cols-2 gap-16 items-center md:flex-row-reverse">
+        <img
+          src="assets/img/webp/presente.webp"
+          alt="Estado actual"
+          class="rounded-2xl shadow-lg w-full h-64 object-cover"
+          loading="lazy"
+        />
+        <div
+          class="rounded-xl shadow px-6 py-6 border-l-4 border-orange-300 bg-white dark:bg-gray-900"
+        >
+          <h2 class="text-3xl md:text-4xl font-bold mb-3">Nuestro Presente</h2>
+          <p class="text-gray-700 dark:text-gray-300 leading-relaxed">
+            Hoy, tras años de trabajo constante y aprendizaje, somos una empresa
+            consolidada en la comarca. Nuestro equipo, formado por profesionales
+            con una vida dedicada al sector, afronta cada reto con seriedad,
+            compromiso y esfuerzo. Nos especializamos en el encofrado de
+            hormigón, realizando estructuras de todo tipo con la máxima calidad.
+          </p>
         </div>
-      </section>
+      </div>
+
+      <!-- Futuro -->
+      <div class="grid md:grid-cols-2 gap-16 items-center">
+        <img
+          src="assets/img/webp/futuro.webp"
+          alt="Futuro de la empresa"
+          class="rounded-2xl shadow-lg w-full h-64 object-cover"
+          loading="lazy"
+        />
+        <div
+          class="rounded-xl shadow px-6 py-6 border-l-4 border-orange-300 bg-white dark:bg-gray-900"
+        >
+          <h2 class="text-3xl md:text-4xl font-bold mb-3">Nuestra Visión</h2>
+          <p class="text-gray-700 dark:text-gray-300 leading-relaxed">
+            Miramos al futuro con la convicción de que nuestros valores
+            —calidad, compromiso y esfuerzo— son la base para seguir creciendo y
+            superando expectativas. Creemos que, gracias a nuestro trabajo y
+            experiencia, podemos construir cualquier proyecto que se nos plantee
+            y que requiera un encofrado de hormigón.
+          </p>
+        </div>
+      </div>
     </main>
 
-    <footer class="bg-white shadow-inner mt-12">
-      <div
-        class="max-w-7xl mx-auto px-4 py-6 text-center text-gray-500 text-sm"
-      >
-        &copy; <span id="anio-actual">2025</span> Paycar Bierzo S.L. Todos los
-        derechos reservados.
-      </div>
-      <script>
-        // Inserta automáticamente el año actual en el footer
-        document.getElementById('anio-actual').textContent =
-          new Date().getFullYear();
-      </script>
-    </footer>
+    <!-- Footer -->
+    <div id="footer"></div>
 
-    <!-- Para el header nuevo, que será responsivo para telefonos moviles -->
-    <script>
-      // Menú hamburguesa
-      const btn = document.getElementById('menu-btn');
-      const menu = document.getElementById('menu');
-      btn.addEventListener('click', () => {
-        menu.classList.toggle('hidden');
-      });
-    </script>
+    <!-- Botón flotante modo claro/oscuro -->
+    <button
+      id="theme-toggle"
+      type="button"
+      aria-label="Cambiar tema"
+      aria-pressed="false"
+      class="fixed bottom-6 right-6 z-50 inline-flex items-center justify-center rounded-full border shadow-lg p-3 bg-white/90 border-gray-200 text-gray-800 hover:scale-105 active:scale-95 transition dark:bg-gray-900/90 dark:border-gray-700 dark:text-gray-100"
+    >
+      <svg
+        id="theme-icon"
+        xmlns="http://www.w3.org/2000/svg"
+        viewBox="0 0 24 24"
+        width="20"
+        height="20"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="2"
+      ></svg>
+    </button>
 
-    <!-- Para en el nav del header hacer que en la seccion en la que se este se colore de naranja -->
-    <script>
-      const links = document.querySelectorAll('nav a');
-      const currentPath = location.pathname.split('/').pop() || 'index.html';
-
-      links.forEach((link) => {
-        link.classList.add('nav-link');
-
-        if (link.getAttribute('href') === currentPath) {
-          link.classList.add('active');
-        }
-      });
-    </script>
+    <!-- Scripts de carga -->
+    <script src="js/cargar-header.js"></script>
+    <script src="js/cargar-footer.js"></script>
+    <script src="js/fecha-footer.js"></script>
+    <script src="js/theme-toggle.js" defer></script>
+    <script src="js/menu-responsive.js"></script>
   </body>
 </html>
