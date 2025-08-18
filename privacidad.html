@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="es">
+<html lang="es" class="scroll-smooth">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width,initial-scale=1" />
@@ -10,7 +10,6 @@
     />
     <link rel="icon" type="image/webp" href="assets/img/webp/logo.webp" />
     <script src="js/theme-init.js"></script>
-    <!-- Tailwind (igual que en el resto del sitio) -->
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
       tailwind.config = { darkMode: 'class' };
@@ -22,7 +21,7 @@
     <!-- Header -->
     <div id="header"></div>
 
-    <!-- Hero / Encabezado -->
+    <!-- Hero -->
     <section
       class="bg-white/70 dark:bg-gray-900/90 backdrop-blur mt-8 border-b dark:border-gray-800"
     >
@@ -42,256 +41,37 @@
       </div>
     </section>
 
-    <!-- Contenido principal -->
-    <main class="max-w-4xl mx-auto px-6 py-12 space-y-12 leading-relaxed">
-      <!-- Información general / Aviso legal básico -->
-      <section>
-        <h2 class="text-2xl font-bold mb-4">Información general</h2>
-        <p class="text-gray-700 dark:text-gray-300 mb-4">
-          En cumplimiento de la Ley Orgánica 3/2018 (LOPDGDD) y la Ley 34/2002
-          de Servicios de la Sociedad de la Información y de Comercio
-          Electrónico (LSSI-CE), se facilitan los datos de titularidad del sitio
-          web.
-        </p>
-        <div class="grid md:grid-cols-2 gap-4 text-gray-700 dark:text-gray-300">
-          <p><strong>Empresa:</strong> PAYCAR BIERZO S.L.</p>
-          <p><strong>NIF:</strong> B24550006</p>
-          <p><strong>Dirección:</strong> C/ POSADA, 5 – TRAVESÍA Nº 26</p>
-          <p><strong>Localidad:</strong> 24390 – DEHESAS</p>
-          <p><strong>Provincia:</strong> LEÓN</p>
-          <p><strong>Teléfono:</strong> 679 491 360</p>
-          <p class="md:col-span-2">
-            <strong>Email:</strong>
-            <span class="text-orange-600 dark:text-blue-400"
-              >loli_moreda@hotmail.com</span
-            >
-          </p>
+    <!-- Contenido principal con índice lateral -->
+    <main class="max-w-6xl mx-auto px-4 py-10 grid lg:grid-cols-12 gap-8">
+      <!-- Índice sticky -->
+      <aside class="lg:col-span-4">
+        <div
+          class="bg-white dark:bg-gray-900 rounded-2xl shadow-md p-5 border border-gray-200 dark:border-gray-800 lg:sticky lg:top-24"
+        >
+          <h2 class="text-base font-semibold mb-3">Contenido</h2>
+          <nav id="toc" class="text-sm space-y-2"></nav>
         </div>
-      </section>
+      </aside>
 
-      <!-- Términos y condiciones de uso -->
-      <section>
-        <h2 class="text-2xl font-bold mb-4">
-          Términos y condiciones generales de uso
-        </h2>
-        <p class="text-gray-700 dark:text-gray-300 mb-3">
-          El acceso y uso del sitio web regulan estas condiciones. PAYCAR BIERZO
-          S.L. podrá modificar en cualquier momento la presentación y
-          configuración del sitio, contenidos o servicios, e interrumpir,
-          desactivar o cancelar elementos integrados en el mismo.
-        </p>
-        <p class="text-gray-700 dark:text-gray-300 mb-3">
-          El acceso es libre y gratuito (salvo el coste de conexión). Algunos
-          contenidos o servicios pueden requerir suscripción o registro.
-        </p>
-        <h3 class="text-xl font-semibold mt-6 mb-2">Usuario</h3>
-        <p class="text-gray-700 dark:text-gray-300 mb-3">
-          La navegación confiere la condición de usuario e implica la aceptación
-          de estas condiciones y sus modificaciones. El usuario se compromete a
-          hacer un uso diligente y lícito de la información y servicios, así
-          como a aportar datos veraces cuando proceda.
-        </p>
-        <p class="text-gray-700 dark:text-gray-300 mb-3">
-          Los comentarios u otras interacciones que vulneren la ley, la dignidad
-          de las personas o el orden público podrán ser retirados. El sitio está
-          dirigido principalmente a residentes en España.
-        </p>
-        <h3 class="text-xl font-semibold mt-6 mb-2">
-          Acceso y navegación: exclusión de garantías
-        </h3>
-        <p class="text-gray-700 dark:text-gray-300">
-          No se garantiza la continuidad, disponibilidad o utilidad del sitio;
-          ni que el contenido o software esté libre de errores o cause daños al
-          sistema del usuario. PAYCAR BIERZO S.L. no será responsable por
-          pérdidas derivadas del acceso o uso del sitio, ni por caídas o
-          defectos de telecomunicaciones.
-        </p>
-      </section>
-
-      <!-- Marco normativo -->
-      <section>
-        <h2 class="text-2xl font-bold mb-4">
-          Política de privacidad y protección de datos
-        </h2>
-        <p class="text-gray-700 dark:text-gray-300">
-          PAYCAR BIERZO S.L. adopta medidas técnicas y organizativas adecuadas
-          al riesgo para proteger los datos personales, conforme al Reglamento
-          (UE) 2016/679 (RGPD), la Ley Orgánica 3/2018 (LOPDGDD) y la LSSI-CE.
-        </p>
-      </section>
-
-      <!-- Registro y categorías -->
-      <section>
-        <h2 class="text-2xl font-bold mb-4">
-          Registro y categorías de datos personales
-        </h2>
-        <p class="text-gray-700 dark:text-gray-300 mb-3">
-          Los datos recabados mediante formularios del sitio se incorporan a
-          tratamientos responsabilidad del Responsable, para facilitar, agilizar
-          y cumplir compromisos establecidos con el usuario, mantener relaciones
-          derivadas de dichos formularios o atender sus solicitudes.
-        </p>
-        <p class="text-gray-700 dark:text-gray-300">
-          <strong>Categorías tratadas:</strong> exclusivamente datos
-          identificativos. No se tratan categorías especiales de datos del
-          artículo 9 RGPD.
-        </p>
-      </section>
-
-      <!-- Principios RGPD -->
-      <section>
-        <h2 class="text-2xl font-bold mb-4">
-          Principios aplicables al tratamiento
-        </h2>
-        <ul class="list-disc pl-6 space-y-2 text-gray-700 dark:text-gray-300">
-          <li>
-            <strong>Licitud, lealtad y transparencia:</strong> consentimiento
-            informado y claro.
-          </li>
-          <li>
-            <strong>Limitación de la finalidad:</strong> fines determinados,
-            explícitos y legítimos.
-          </li>
-          <li>
-            <strong>Minimización de datos:</strong> tratamiento de los datos
-            necesarios.
-          </li>
-          <li><strong>Exactitud:</strong> datos exactos y actualizados.</li>
-          <li>
-            <strong>Limitación del plazo de conservación:</strong> durante el
-            tiempo necesario para la finalidad.
-          </li>
-          <li>
-            <strong>Integridad y confidencialidad:</strong> seguridad y
-            confidencialidad garantizadas.
-          </li>
-          <li>
-            <strong>Responsabilidad proactiva:</strong> demostración del
-            cumplimiento.
-          </li>
-        </ul>
-      </section>
-
-      <!-- Base legal y finalidades -->
-      <section>
-        <h2 class="text-2xl font-bold mb-4">
-          Base legal y finalidades del tratamiento
-        </h2>
-        <p class="text-gray-700 dark:text-gray-300 mb-3">
-          La base legal principal es el <strong>consentimiento</strong> del
-          usuario, que puede retirarse en cualquier momento; y, en su caso, la
-          <strong>ejecución de un contrato</strong> o el cumplimiento de
-          <strong>obligaciones legales</strong>.
-        </p>
-        <p class="text-gray-700 dark:text-gray-300">
-          <strong>Finalidades:</strong> gestionar consultas y solicitudes;
-          prestar servicios; personalización, operativa y estadísticas; estudios
-          de marketing; mejora de la calidad, funcionamiento y navegación del
-          sitio. En cada formulario se informará del fin específico del
-          tratamiento.
-        </p>
-      </section>
-
-      <!-- Conservación -->
-      <section>
-        <h2 class="text-2xl font-bold mb-4">Plazos de conservación</h2>
-        <p class="text-gray-700 dark:text-gray-300">
-          Los datos personales se conservarán el tiempo mínimo necesario para
-          los fines del tratamiento y, en todo caso,
-          <strong>hasta seis años</strong> o hasta que el usuario solicite su
-          supresión, según proceda, informándose en el momento de la recogida de
-          los criterios de conservación.
-        </p>
-      </section>
-
-      <!-- Destinatarios y transferencias -->
-      <section>
-        <h2 class="text-2xl font-bold mb-4">Destinatarios y transferencias</h2>
-        <p class="text-gray-700 dark:text-gray-300 mb-3">
-          Los datos personales no se comparten con otras empresas. Si en algún
-          momento existiese intención de transferir datos a un tercer país u
-          organización internacional, se informará al usuario de la entidad de
-          destino y de la existencia o no de decisión de adecuación de la
-          Comisión.
-        </p>
-      </section>
-
-      <!-- Menores -->
-      <section>
-        <h2 class="text-2xl font-bold mb-4">Datos personales de menores</h2>
-        <p class="text-gray-700 dark:text-gray-300">
-          El sitio no está dirigido a menores. Solo los mayores de 14 años
-          pueden consentir lícitamente el tratamiento de sus datos por PAYCAR
-          BIERZO S.L.; en caso de menores de 14, será necesario el
-          consentimiento de padres o tutores.
-        </p>
-      </section>
-
-      <!-- Seguridad -->
-      <section>
-        <h2 class="text-2xl font-bold mb-4">Seguridad y confidencialidad</h2>
-        <p class="text-gray-700 dark:text-gray-300 mb-3">
-          Se aplican medidas técnicas y organizativas apropiadas para prevenir
-          la destrucción, pérdida, alteración, comunicación o acceso no
-          autorizado a los datos personales. En caso de violación de seguridad
-          que entrañe alto riesgo para los derechos y libertades, se comunicará
-          al usuario sin dilación indebida.
-        </p>
-        <p class="text-gray-700 dark:text-gray-300">
-          El personal y colaboradores con acceso a datos están sujetos a
-          obligaciones de confidencialidad.
-        </p>
-      </section>
-
-      <!-- Derechos del usuario (RGPD) -->
-      <section>
-        <h2 class="text-2xl font-bold mb-4">
-          Derechos de las personas usuarias
-        </h2>
-        <ul class="list-disc pl-6 space-y-2 text-gray-700 dark:text-gray-300">
-          <li>
-            <strong>Acceso</strong> a sus datos personales y a información sobre
-            su tratamiento.
-          </li>
-          <li>
-            <strong>Rectificación</strong> de datos inexactos o incompletos.
-          </li>
-          <li>
-            <strong>Supresión</strong> cuando ya no sean necesarios o exista
-            oposición legítima.
-          </li>
-          <li>
-            <strong>Limitación</strong> del tratamiento en los supuestos
-            previstos.
-          </li>
-          <li>
-            <strong>Portabilidad</strong> de los datos en formato estructurado
-            cuando proceda.
-          </li>
-          <li>
-            <strong>Oposición</strong> al tratamiento, incluido el cese de
-            tratamientos con fines comerciales.
-          </li>
-          <li>
-            <strong>A no ser objeto</strong> de decisiones basadas únicamente en
-            tratamientos automatizados, incluida la elaboración de perfiles,
-            salvo previsión legal en contrario.
-          </li>
-        </ul>
-        <div class="mt-4 text-gray-700 dark:text-gray-300 space-y-2">
-          <p>
-            Para ejercer estos derechos, envíe comunicación escrita con la
-            referencia <strong>“RGPD PAYCAR BIERZO S.L.”</strong> adjuntando
-            documentación acreditativa de identidad (p. ej., DNI) y, en su caso,
-            representación:
+      <!-- Artículo -->
+      <article id="content" class="lg:col-span-8 space-y-8 leading-relaxed">
+        <!-- Info general -->
+        <section>
+          <h2 class="text-2xl font-bold mb-4">Información general</h2>
+          <p class="text-gray-700 dark:text-gray-300 mb-4">
+            En cumplimiento del RGPD (Reglamento UE 2016/679), LOPDGDD (Ley
+            Orgánica 3/2018) y LSSI-CE (Ley 34/2002), se facilitan los datos de
+            titularidad del sitio web.
           </p>
-          <div class="grid md:grid-cols-2 gap-4">
+          <div
+            class="grid md:grid-cols-2 gap-4 text-gray-700 dark:text-gray-300"
+          >
             <p><strong>Empresa:</strong> PAYCAR BIERZO S.L.</p>
+            <p><strong>NIF:</strong> B24550006</p>
+            <p><strong>Dirección:</strong> C/ POSADA, 5 – TRAVESÍA Nº 26</p>
+            <p><strong>Localidad:</strong> 24390 – DEHESAS</p>
+            <p><strong>Provincia:</strong> LEÓN</p>
             <p><strong>Teléfono:</strong> 679 491 360</p>
-            <p class="md:col-span-2">
-              <strong>Dirección:</strong> C/ POSADA, 5 – TRAVESÍA Nº 26 · 24390
-              DEHESAS · LEÓN
-            </p>
             <p class="md:col-span-2">
               <strong>Email:</strong>
               <span class="text-orange-600 dark:text-blue-400"
@@ -299,66 +79,270 @@
               >
             </p>
           </div>
-          <p class="mt-2">
-            La solicitud debe incluir: nombre y apellidos; petición concreta;
-            domicilio a efectos de notificaciones; fecha y firma; y
-            documentación acreditativa.
+        </section>
+
+        <!-- Términos de uso -->
+        <section>
+          <h2 class="text-2xl font-bold mb-4">
+            Términos y condiciones generales de uso
+          </h2>
+          <p class="text-gray-700 dark:text-gray-300 mb-3">
+            El acceso y uso del sitio se rigen por estas condiciones. PAYCAR
+            BIERZO S.L. puede modificar la presentación y configuración del
+            sitio, contenidos o servicios, e interrumpir o cancelar elementos
+            cuando lo considere oportuno.
           </p>
-        </div>
-      </section>
+          <p class="text-gray-700 dark:text-gray-300 mb-3">
+            El acceso es libre y gratuito (salvo costes de conexión). Algunos
+            contenidos o servicios podrían requerir registro o suscripción.
+          </p>
+          <h3 class="text-xl font-semibold mt-6 mb-2">Usuario</h3>
+          <p class="text-gray-700 dark:text-gray-300 mb-3">
+            La navegación confiere la condición de usuario e implica la
+            aceptación de estas condiciones y sus modificaciones. El usuario se
+            compromete a un uso diligente y lícito de la información y
+            servicios, y a aportar datos veraces cuando proceda.
+          </p>
+          <p class="text-gray-700 dark:text-gray-300">
+            Se podrán retirar comentarios u otras interacciones contrarias a la
+            ley, la dignidad de las personas o el orden público. El sitio está
+            dirigido principalmente a residentes en España.
+          </p>
+          <h3 class="text-xl font-semibold mt-6 mb-2">
+            Acceso y navegación: exclusión de garantías
+          </h3>
+          <p class="text-gray-700 dark:text-gray-300">
+            No se garantiza la continuidad, disponibilidad o utilidad del sitio;
+            ni la ausencia de errores o que el software esté libre de daños.
+            PAYCAR BIERZO S.L. no es responsable de pérdidas derivadas del
+            acceso o uso, ni de caídas o defectos de telecomunicaciones.
+          </p>
+        </section>
 
-      <!-- Enlaces de terceros -->
-      <section>
-        <h2 class="text-2xl font-bold mb-4">Enlaces a sitios de terceros</h2>
-        <p class="text-gray-700 dark:text-gray-300">
-          El sitio puede incluir enlaces a páginas de terceros ajenos a PAYCAR
-          BIERZO S.L., que dispondrán de sus propias políticas de protección de
-          datos y serán responsables de sus ficheros y prácticas de privacidad.
-        </p>
-      </section>
+        <!-- Política de privacidad -->
+        <section>
+          <h2 class="text-2xl font-bold mb-4">
+            Política de privacidad y protección de datos
+          </h2>
+          <p class="text-gray-700 dark:text-gray-300">
+            PAYCAR BIERZO S.L. adopta medidas técnicas y organizativas adecuadas
+            al riesgo para proteger los datos personales, conforme a RGPD,
+            LOPDGDD y LSSI-CE.
+          </p>
+        </section>
 
-      <!-- Reclamaciones AEPD -->
-      <section>
-        <h2 class="text-2xl font-bold mb-4">
-          Reclamaciones ante la autoridad de control
-        </h2>
-        <p class="text-gray-700 dark:text-gray-300">
-          Si considera que existe una infracción en el tratamiento de sus datos
-          personales, tiene derecho a la tutela judicial efectiva y a presentar
-          reclamación ante la autoridad de control de su residencia habitual. En
-          España, la autoridad es la
-          <a
-            href="https://www.aepd.es"
-            target="_blank"
-            rel="noopener"
-            class="text-orange-600 dark:text-blue-400 hover:underline"
-            >Agencia Española de Protección de Datos (AEPD)</a
-          >.
-        </p>
-      </section>
+        <!-- Registro y categorías -->
+        <section>
+          <h2 class="text-2xl font-bold mb-4">
+            Registro y categorías de datos personales
+          </h2>
+          <p class="text-gray-700 dark:text-gray-300 mb-3">
+            Los datos recabados mediante formularios se incorporan a
+            tratamientos responsabilidad del Responsable para gestionar
+            solicitudes, relaciones derivadas y compromisos con el usuario.
+          </p>
+          <p class="text-gray-700 dark:text-gray-300">
+            <strong>Categorías tratadas:</strong> exclusivamente datos
+            identificativos. No se tratan categorías especiales del art. 9 RGPD.
+          </p>
+        </section>
 
-      <!-- Aceptación y cambios -->
-      <section>
-        <h2 class="text-2xl font-bold mb-4">
-          Aceptación y cambios en esta política
-        </h2>
-        <p class="text-gray-700 dark:text-gray-300 mb-2">
-          El uso del sitio implica la aceptación de esta Política de Privacidad.
-          PAYCAR BIERZO S.L. podrá modificarla por criterios propios o por
-          cambios legislativos, jurisprudenciales o doctrinales de la AEPD. Se
-          notificará explícitamente al usuario cuando proceda.
-        </p>
-        <p class="text-gray-700 dark:text-gray-300">
-          Última modificación en este sitio web: 8 de mayo de 2025.
-        </p>
-      </section>
+        <!-- Principios RGPD -->
+        <section>
+          <h2 class="text-2xl font-bold mb-4">
+            Principios aplicables al tratamiento
+          </h2>
+          <ul class="list-disc pl-6 space-y-2 text-gray-700 dark:text-gray-300">
+            <li><strong>Licitud, lealtad y transparencia</strong></li>
+            <li><strong>Limitación de la finalidad</strong></li>
+            <li><strong>Minimización de datos</strong></li>
+            <li><strong>Exactitud</strong></li>
+            <li><strong>Limitación del plazo de conservación</strong></li>
+            <li><strong>Integridad y confidencialidad</strong></li>
+            <li><strong>Responsabilidad proactiva</strong></li>
+          </ul>
+        </section>
 
-      <!-- Domicilio corporativo al pie -->
-      <section>
-        <p class="text-sm text-gray-600 dark:text-gray-400">
-          C/ POSADA, 5 – TRAVESÍA Nº 26 · 24390 DEHESAS · LEÓN
-        </p>
-      </section>
+        <!-- Base legal y finalidades -->
+        <section>
+          <h2 class="text-2xl font-bold mb-4">
+            Base legal y finalidades del tratamiento
+          </h2>
+          <p class="text-gray-700 dark:text-gray-300 mb-3">
+            La base principal es el <strong>consentimiento</strong> del usuario
+            (revocable en cualquier momento), y, en su caso, la
+            <strong>ejecución de un contrato</strong> o el cumplimiento de
+            <strong>obligaciones legales</strong>.
+          </p>
+          <p class="text-gray-700 dark:text-gray-300">
+            <strong>Finalidades:</strong> gestionar consultas; prestación de
+            servicios; personalización, operativa y estadísticas; estudios de
+            marketing; mejora de la calidad y navegación. En cada formulario se
+            detallará su finalidad específica.
+          </p>
+        </section>
+
+        <!-- Conservación -->
+        <section>
+          <h2 class="text-2xl font-bold mb-4">Plazos de conservación</h2>
+          <p class="text-gray-700 dark:text-gray-300">
+            Los datos se conservarán el tiempo mínimo necesario para las
+            finalidades y, en su caso, hasta <strong>seis años</strong> o hasta
+            que el usuario solicite su supresión, informándose de los criterios
+            en el momento de la recogida.
+          </p>
+        </section>
+
+        <!-- Destinatarios y transferencias -->
+        <section>
+          <h2 class="text-2xl font-bold mb-4">
+            Destinatarios y transferencias
+          </h2>
+          <p class="text-gray-700 dark:text-gray-300">
+            No se comparten datos con otras empresas. Si se prevén
+            transferencias a terceros países u organizaciones internacionales,
+            se informará de la entidad de destino y de la existencia de decisión
+            de adecuación de la Comisión, si aplica.
+          </p>
+        </section>
+
+        <!-- Menores -->
+        <section>
+          <h2 class="text-2xl font-bold mb-4">Datos personales de menores</h2>
+          <p class="text-gray-700 dark:text-gray-300">
+            El sitio no está dirigido a menores. Solo mayores de 14 años pueden
+            consentir el tratamiento; para menores de 14, se requiere
+            consentimiento de padres o tutores.
+          </p>
+        </section>
+
+        <!-- Seguridad -->
+        <section>
+          <h2 class="text-2xl font-bold mb-4">Seguridad y confidencialidad</h2>
+          <p class="text-gray-700 dark:text-gray-300 mb-3">
+            Se aplican medidas técnicas y organizativas adecuadas para prevenir
+            destrucción, pérdida, alteración, comunicación o acceso no
+            autorizado. Si se produce una violación de seguridad con alto
+            riesgo, se comunicará al usuario sin dilación.
+          </p>
+          <p class="text-gray-700 dark:text-gray-300">
+            Personal y colaboradores con acceso a datos están sujetos a deberes
+            de confidencialidad.
+          </p>
+        </section>
+
+        <!-- Derechos -->
+        <section>
+          <h2 class="text-2xl font-bold mb-4">
+            Derechos de las personas usuarias
+          </h2>
+          <ul class="list-disc pl-6 space-y-2 text-gray-700 dark:text-gray-300">
+            <li>
+              <strong>Acceso</strong> a los datos y a información del
+              tratamiento.
+            </li>
+            <li>
+              <strong>Rectificación</strong> de datos inexactos o incompletos.
+            </li>
+            <li>
+              <strong>Supresión</strong> (derecho al olvido) cuando proceda.
+            </li>
+            <li>
+              <strong>Limitación</strong> del tratamiento en los supuestos
+              previstos.
+            </li>
+            <li>
+              <strong>Portabilidad</strong> en formato estructurado cuando
+              aplique.
+            </li>
+            <li>
+              <strong>Oposición</strong> al tratamiento, incluida la
+              mercadotecnia.
+            </li>
+            <li>
+              <strong>A no ser objeto de decisiones automatizadas</strong>,
+              incluida la elaboración de perfiles, salvo previsión legal.
+            </li>
+          </ul>
+          <div class="mt-4 text-gray-700 dark:text-gray-300 space-y-2">
+            <p>
+              Para ejercer estos derechos, remite comunicación con la referencia
+              <strong>“RGPD PAYCAR BIERZO S.L.”</strong>, acreditando identidad
+              (p. ej., DNI) y, en su caso, representación:
+            </p>
+            <div class="grid md:grid-cols-2 gap-4">
+              <p><strong>Empresa:</strong> PAYCAR BIERZO S.L.</p>
+              <p><strong>Teléfono:</strong> 679 491 360</p>
+              <p class="md:col-span-2">
+                <strong>Dirección:</strong> C/ POSADA, 5 – TRAVESÍA Nº 26 ·
+                24390 DEHESAS · LEÓN
+              </p>
+              <p class="md:col-span-2">
+                <strong>Email:</strong>
+                <span class="text-orange-600 dark:text-blue-400"
+                  >loli_moreda@hotmail.com</span
+                >
+              </p>
+            </div>
+            <p class="mt-2">
+              Incluye: nombre y apellidos; petición concreta; domicilio a
+              efectos de notificaciones; fecha y firma; y documentación
+              acreditativa.
+            </p>
+          </div>
+        </section>
+
+        <!-- Enlaces de terceros -->
+        <section>
+          <h2 class="text-2xl font-bold mb-4">Enlaces a sitios de terceros</h2>
+          <p class="text-gray-700 dark:text-gray-300">
+            El sitio puede enlazar a páginas de terceros con sus propias
+            políticas y responsabilidad sobre ficheros y prácticas de
+            privacidad.
+          </p>
+        </section>
+
+        <!-- Reclamaciones AEPD -->
+        <section>
+          <h2 class="text-2xl font-bold mb-4">
+            Reclamaciones ante la autoridad de control
+          </h2>
+          <p class="text-gray-700 dark:text-gray-300">
+            Si consideras que se ha infringido la normativa, puedes presentar
+            reclamación ante la autoridad de control de tu residencia habitual.
+            En España, la autoridad es la
+            <a
+              href="https://www.aepd.es"
+              target="_blank"
+              rel="noopener"
+              class="text-orange-600 dark:text-blue-400 hover:underline"
+              >Agencia Española de Protección de Datos (AEPD)</a
+            >.
+          </p>
+        </section>
+
+        <!-- Aceptación y cambios -->
+        <section>
+          <h2 class="text-2xl font-bold mb-4">
+            Aceptación y cambios en esta política
+          </h2>
+          <p class="text-gray-700 dark:text-gray-300 mb-2">
+            El uso del sitio implica la aceptación de esta Política. PAYCAR
+            BIERZO S.L. podrá modificarla por criterios propios o cambios
+            normativos; se notificará cuando proceda.
+          </p>
+          <p class="text-gray-700 dark:text-gray-300">
+            Última modificación del sitio: 8 de mayo de 2025.
+          </p>
+        </section>
+
+        <!-- Domicilio -->
+        <section>
+          <p class="text-sm text-gray-600 dark:text-gray-400">
+            C/ POSADA, 5 – TRAVESÍA Nº 26 · 24390 DEHESAS · LEÓN
+          </p>
+        </section>
+      </article>
     </main>
 
     <!-- Footer -->
@@ -382,12 +366,13 @@
       ></svg>
     </button>
 
-    <!-- Scripts comunes del sitio -->
+    <!-- Scripts -->
     <script src="js/cargar-header.js"></script>
     <script src="js/cargar-footer.js"></script>
     <script src="js/fecha-footer.js"></script>
     <script src="js/theme-toggle.js" defer></script>
     <script src="js/menu-responsive.js"></script>
     <script src="js/fecha-ultima-actualizacion.js"></script>
+    <script src="js/toc.js" defer></script>
   </body>
 </html>

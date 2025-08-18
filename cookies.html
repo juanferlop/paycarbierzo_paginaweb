@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="es">
+<html lang="es" class="scroll-smooth">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width,initial-scale=1" />
@@ -10,7 +10,7 @@
     />
     <link rel="icon" type="image/webp" href="assets/img/webp/logo.webp" />
     <script src="js/theme-init.js"></script>
-    <!-- Tailwind (igual que en el resto del sitio) -->
+    <!-- Tailwind (misma configuración que el resto del sitio) -->
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
       tailwind.config = { darkMode: 'class' };
@@ -22,7 +22,7 @@
     <!-- Header -->
     <div id="header"></div>
 
-    <!-- Hero / Encabezado -->
+    <!-- Hero -->
     <section
       class="bg-white/70 dark:bg-gray-900/90 mt-8 backdrop-blur border-b dark:border-gray-800"
     >
@@ -40,409 +40,368 @@
       </div>
     </section>
 
-    <!-- Contenido principal -->
-    <main class="max-w-4xl mx-auto px-6 py-12 space-y-12 leading-relaxed">
-      <!-- Aviso introductorio / Uso de cookies -->
-      <section>
-        <h2 class="text-2xl font-bold mb-4">Uso de cookies</h2>
-        <p class="text-gray-700 dark:text-gray-300">
-          La Agencia Española de Protección de Datos (AEPD) ha actualizado la
-          Guía sobre el uso de las cookies para adaptarla a las Directrices
-          sobre consentimiento modificadas en mayo de 2020 por el Comité Europeo
-          de Protección de Datos (CEPD). Por ello, la presente Política de
-          Cookies se adecúa a los criterios vigentes (30/10/2020) respecto a la
-          validez del consentimiento y la prohibición de los llamados “muros de
-          cookies”, entre otros aspectos. El acceso a este sitio web puede
-          implicar la utilización de cookies; el objetivo de esta política es
-          trasladar al usuario, de manera transparente, la existencia y uso de
-          dichas cookies.
-        </p>
-      </section>
-
-      <!-- Definición -->
-      <section>
-        <h2 class="text-2xl font-bold mb-4">Definición de cookies</h2>
-        <p class="text-gray-700 dark:text-gray-300">
-          Las cookies y tecnologías similares almacenan y recuperan información
-          cuando navegas. Pueden servir para finalidades muy diversas, como
-          reconocerte como usuario, obtener información sobre tus hábitos de
-          navegación o personalizar la forma en que se muestra el contenido. Los
-          usos concretos que hacemos de estas tecnologías se describen a
-          continuación.
-        </p>
-      </section>
-
-      <!-- Responsable -->
-      <section>
-        <h2 class="text-2xl font-bold mb-4">Responsable del tratamiento</h2>
-        <div class="grid md:grid-cols-2 gap-4 text-gray-700 dark:text-gray-300">
-          <p><strong>Empresa:</strong> PAYCAR BIERZO S.L.</p>
-          <p><strong>NIF:</strong> B24550006</p>
-          <p><strong>Dirección:</strong> C/ POSADA, 5- TRAVESÍA Nº 26</p>
-          <p><strong>Localidad:</strong> 24390 – DEHESAS</p>
-          <p><strong>Provincia:</strong> LEÓN</p>
-          <p><strong>Teléfono:</strong> 679 491 360</p>
-          <p class="md:col-span-2">
-            <strong>Email:</strong>
-            <span class="text-orange-600 dark:text-blue-400"
-              >loli_moreda@hotmail.com</span
-            >
-          </p>
-        </div>
-      </section>
-
-      <!-- Legitimación -->
-      <section>
-        <h2 class="text-2xl font-bold mb-4">
-          Legitimación del tratamiento de datos a través de cookies
-        </h2>
-        <p class="text-gray-700 dark:text-gray-300">
-          Las cookies necesarias para el funcionamiento de la página web se
-          instalarán en su dispositivo. Para el resto de las cookies necesitamos
-          su permiso; en cualquier momento puede cambiar o retirar su
-          consentimiento.
-        </p>
-      </section>
-
-      <!-- Tipos de cookies: origen -->
-      <section>
-        <h2 class="text-2xl font-bold mb-4">
-          Tipos de cookies según su gestión
-        </h2>
-        <h3 class="text-xl font-semibold mb-2">Cookies propias</h3>
-        <p class="text-gray-700 dark:text-gray-300 mb-4">
-          Son enviadas al dispositivo del usuario y gestionadas exclusivamente
-          por PAYCAR BIERZO S.L. para el mejor funcionamiento del sitio web.
-          Permiten reconocer al usuario como visitante recurrente y adaptar el
-          contenido a sus preferencias.
-        </p>
-        <h3 class="text-xl font-semibold mb-2">Cookies de terceros</h3>
-        <p class="text-gray-700 dark:text-gray-300">
-          Son enviadas desde un dominio no gestionado por PAYCAR BIERZO S.L.,
-          sino por otra entidad que trata los datos obtenidos a través de las
-          cookies. Si acepta cookies de terceros, deberá eliminarlas desde las
-          opciones del navegador o desde el sistema ofrecido por el propio
-          tercero.
-        </p>
-      </section>
-
-      <!-- Tipos de cookies: duración -->
-      <section>
-        <h2 class="text-2xl font-bold mb-4">
-          Tipos de cookies según su duración
-        </h2>
-        <h3 class="text-xl font-semibold mb-2">Cookies de sesión</h3>
-        <p class="text-gray-700 dark:text-gray-300 mb-4">
-          Se diseñan para recabar y almacenar datos mientras el usuario accede a
-          una página web. Desaparecen al terminar la sesión.
-        </p>
-        <h3 class="text-xl font-semibold mb-2">Cookies persistentes</h3>
-        <p class="text-gray-700 dark:text-gray-300">
-          Los datos permanecen almacenados y pueden ser accedidos y tratados
-          durante un periodo definido por el responsable, que puede ir de
-          minutos a varios años.
-        </p>
-      </section>
-
-      <!-- Tipos de cookies: finalidad -->
-      <section>
-        <h2 class="text-2xl font-bold mb-4">
-          Tipos de cookies según su finalidad
-        </h2>
-        <ul class="list-disc pl-6 space-y-3 text-gray-700 dark:text-gray-300">
-          <li>
-            <strong>Cookies técnicas:</strong> permiten la navegación y el uso
-            de diferentes opciones o servicios de la web.
-          </li>
-          <li>
-            <strong>Cookies de preferencia o personalización:</strong> recuerdan
-            información para que el usuario acceda con características
-            diferenciadas (idioma, número de resultados, aspecto, región, etc.).
-          </li>
-          <li>
-            <strong>Cookies de análisis o medición:</strong> permiten el
-            seguimiento y análisis del comportamiento de los usuarios y la
-            cuantificación de impactos de los anuncios, con el fin de introducir
-            mejoras basadas en datos de uso.
-          </li>
-          <li>
-            <strong>Cookies de publicidad comportamental:</strong> almacenan
-            información del comportamiento de los usuarios para desarrollar un
-            perfil específico y mostrar publicidad en función del mismo.
-          </li>
-        </ul>
-      </section>
-
-      <!-- Cookies de este sitio (Google Analytics) -->
-      <section>
-        <h2 class="text-2xl font-bold mb-4">Cookies de este sitio web</h2>
-        <p class="text-gray-700 dark:text-gray-300 mb-4">
-          Este sitio utiliza cookies persistentes de análisis de
-          <strong>Google Analytics</strong> para cuantificar usuarios y realizar
-          la medición y análisis estadístico del uso de nuestros servicios.
-        </p>
-        <div class="overflow-x-auto">
-          <table
-            class="min-w-full text-sm border border-gray-200 dark:border-gray-700 rounded-lg overflow-hidden"
-          >
-            <thead class="bg-gray-50 dark:bg-gray-800">
-              <tr>
-                <th class="px-4 py-3 text-left">Nombre</th>
-                <th class="px-4 py-3 text-left">Proveedor</th>
-                <th class="px-4 py-3 text-left">Duración</th>
-                <th class="px-4 py-3 text-left">Finalidad</th>
-                <th class="px-4 py-3 text-left">Tipo</th>
-              </tr>
-            </thead>
-            <tbody class="divide-y divide-gray-200 dark:divide-gray-700">
-              <tr>
-                <td class="px-4 py-3">_ga</td>
-                <td class="px-4 py-3">Google Inc</td>
-                <td class="px-4 py-3">2 años</td>
-                <td class="px-4 py-3">
-                  Registra la identificación del usuario acerca de cómo utiliza
-                  este sitio web
-                </td>
-                <td class="px-4 py-3">HTTP Cookie</td>
-              </tr>
-              <tr>
-                <td class="px-4 py-3">_gat</td>
-                <td class="px-4 py-3">Google Inc</td>
-                <td class="px-4 py-3">1 día</td>
-                <td class="px-4 py-3">Controla la tasa de peticiones</td>
-                <td class="px-4 py-3">HTTP Cookie</td>
-              </tr>
-              <tr>
-                <td class="px-4 py-3">_gld</td>
-                <td class="px-4 py-3">Google Inc</td>
-                <td class="px-4 py-3">1 día</td>
-                <td class="px-4 py-3">
-                  Genera datos estadísticos de cómo utiliza el usuario este
-                  sitio web
-                </td>
-                <td class="px-4 py-3">HTTP Cookie</td>
-              </tr>
-              <tr>
-                <td class="px-4 py-3">_collet</td>
-                <td class="px-4 py-3">Google Inc</td>
-                <td class="px-4 py-3">Sesión</td>
-                <td class="px-4 py-3">
-                  Envía datos a Google Analytics en relación con el terminal del
-                  usuario y su comportamiento
-                </td>
-                <td class="px-4 py-3">Pixel tracker</td>
-              </tr>
-              <tr>
-                <td class="px-4 py-3">_utm.gif</td>
-                <td class="px-4 py-3">Google Inc</td>
-                <td class="px-4 py-3">Sesión</td>
-                <td class="px-4 py-3">
-                  Determina el tipo de dispositivo o programas del navegador que
-                  utiliza el usuario
-                </td>
-                <td class="px-4 py-3">Pixel tracker</td>
-              </tr>
-              <tr>
-                <td class="px-4 py-3">_utma</td>
-                <td class="px-4 py-3">Google Inc</td>
-                <td class="px-4 py-3">2 años</td>
-                <td class="px-4 py-3">
-                  Se utiliza para distinguir usuarios y sesiones
-                </td>
-                <td class="px-4 py-3">HTTP Cookie</td>
-              </tr>
-              <tr>
-                <td class="px-4 py-3">_utmb</td>
-                <td class="px-4 py-3">Google Inc</td>
-                <td class="px-4 py-3">1 día</td>
-                <td class="px-4 py-3">
-                  Indica la hora exacta que el usuario accede a este sitio web
-                </td>
-                <td class="px-4 py-3">HTTP Cookie</td>
-              </tr>
-              <tr>
-                <td class="px-4 py-3">_utmc</td>
-                <td class="px-4 py-3">Google Inc</td>
-                <td class="px-4 py-3">Sesión</td>
-                <td class="px-4 py-3">
-                  Indica la hora exacta que el usuario deja este sitio web
-                </td>
-                <td class="px-4 py-3">HTTP Cookie</td>
-              </tr>
-              <tr>
-                <td class="px-4 py-3">_utmt</td>
-                <td class="px-4 py-3">Google Inc</td>
-                <td class="px-4 py-3">1 día</td>
-                <td class="px-4 py-3">
-                  Acelera la velocidad de las peticiones del servidor
-                </td>
-                <td class="px-4 py-3">HTTP Cookie</td>
-              </tr>
-              <tr>
-                <td class="px-4 py-3">_utmz</td>
-                <td class="px-4 py-3">Google Inc</td>
-                <td class="px-4 py-3">6 meses</td>
-                <td class="px-4 py-3">
-                  Indica el origen del usuario (motor de búsqueda, enlace,
-                  término de búsqueda)
-                </td>
-                <td class="px-4 py-3">HTTP Cookie</td>
-              </tr>
-              <tr>
-                <td class="px-4 py-3">_utmv</td>
-                <td class="px-4 py-3">Google Inc</td>
-                <td class="px-4 py-3">2 años</td>
-                <td class="px-4 py-3">
-                  Almacena datos variables personalizados del usuario
-                </td>
-                <td class="px-4 py-3">HTTP Cookie</td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
-        <p class="text-gray-700 dark:text-gray-300 mt-4">
-          La configuración de Google Analytics está predeterminada por Google
-          Inc.; para obtener más información y conocer cómo inhabilitar sus
-          cookies, consulte la página oficial de privacidad de Google Analytics.
-          Con el propósito de mantener actualizada esta tabla, pueden
-          verificarse las cookies en servicios externos como
-          <span class="italic">cookieserve.com</span>.
-        </p>
-      </section>
-
-      <!-- Selección de cookies (informativo) -->
-      <section>
-        <h2 class="text-2xl font-bold mb-4">
-          Selección de cookies (informativo)
-        </h2>
-        <p class="text-gray-700 dark:text-gray-300 mb-4">
-          A título orientativo, en algunos sitios se ofrece un panel donde el
-          usuario puede aceptar o rechazar finalidades como: almacenar o acceder
-          a información en un dispositivo; analizar características del
-          dispositivo para su identificación; compartir análisis de navegación
-          con terceros; crear perfiles para personalización de contenidos o
-          publicidad; medir rendimiento de anuncios y contenidos; seleccionar
-          anuncios o contenidos básicos o personalizados; utilizar datos de
-          localización geográfica precisa; y emplear estudios de mercado. Si
-          otorgas tu consentimiento para estas finalidades, también autorizas el
-          tratamiento de datos asociado (p. ej., cotejar y combinar fuentes de
-          datos offline, garantizar seguridad, evitar fraudes, depurar errores,
-          servir técnicamente anuncios o contenidos y vincular diferentes
-          dispositivos).
-        </p>
-        <p class="text-gray-700 dark:text-gray-300">
-          Todo lo anterior depende de la estructura concreta del sitio web y de
-          las herramientas utilizadas. En esta Política se describen finalidades
-          habituales; si se añadiesen cookies distintas o socios terceros, se
-          identificarán explícitamente.
-        </p>
-      </section>
-
-      <!-- Gestión / Deshabilitar -->
-      <section>
-        <h2 class="text-2xl font-bold mb-4">
-          Cómo deshabilitar o rechazar cookies
-        </h2>
-        <p class="text-gray-700 dark:text-gray-300">
-          Puedes deshabilitar, rechazar y eliminar las cookies (total o
-          parcialmente) desde la configuración de tu navegador. Los
-          procedimientos varían según el navegador; consulta las instrucciones
-          oficiales:
-        </p>
-        <ul
-          class="list-disc pl-6 mt-3 space-y-2 text-gray-700 dark:text-gray-300"
+    <!-- Contenido principal con índice lateral -->
+    <main class="max-w-6xl mx-auto px-4 py-10 grid lg:grid-cols-12 gap-8">
+      <!-- Índice sticky -->
+      <aside class="lg:col-span-4">
+        <div
+          class="bg-white dark:bg-gray-900 rounded-2xl shadow-md p-5 border border-gray-200 dark:border-gray-800 lg:sticky lg:top-24"
         >
-          <li>
-            <strong>Chrome:</strong>
-            <a
-              href="https://support.google.com/chrome/answer/95647?hl=es"
-              class="text-orange-600 dark:text-blue-400 hover:underline"
-              target="_blank"
-              rel="noopener"
-              >support.google.com/chrome/answer/95647</a
-            >
-          </li>
-          <li>
-            <strong>Internet Explorer:</strong>
-            <a
-              href="https://support.microsoft.com/es-es/help/17442/windows-internet-explorer-delete-manage-cookies"
-              class="text-orange-600 dark:text-blue-400 hover:underline"
-              target="_blank"
-              rel="noopener"
-              >support.microsoft.com/.../17442</a
-            >
-          </li>
-          <li>
-            <strong>Firefox:</strong>
-            <a
-              href="https://support.mozilla.org/es/kb/habilitar-y-deshabilitar-cookies-sitios-web-rastrear-preferencias"
-              class="text-orange-600 dark:text-blue-400 hover:underline"
-              target="_blank"
-              rel="noopener"
-              >support.mozilla.org/.../habilitar-y-deshabilitar-cookies...</a
-            >
-          </li>
-          <li>
-            <strong>Safari:</strong>
-            <a
-              href="https://support.apple.com/kb/PH19214?locale=es_ES&viewlocale=es_ES"
-              class="text-orange-600 dark:text-blue-400 hover:underline"
-              target="_blank"
-              rel="noopener"
-              >support.apple.com/kb/PH19214</a
-            >
-          </li>
-          <li>
-            <strong>Edge:</strong> Configuración → Cookies y permisos del sitio.
-          </li>
-        </ul>
-        <p class="text-gray-700 dark:text-gray-300 mt-3">
-          Si rechazas el uso de cookies, podrás seguir usando el sitio, aunque
-          algunas prestaciones podrían verse limitadas.
-        </p>
-      </section>
+          <h2 class="text-base font-semibold mb-3">Contenido</h2>
+          <nav id="toc" class="text-sm space-y-2"></nav>
+        </div>
+      </aside>
 
-      <!-- Cambios y aceptación -->
-      <section>
-        <h2 class="text-2xl font-bold mb-4">
-          Aceptación y cambios en esta política
-        </h2>
-        <p class="text-gray-700 dark:text-gray-300">
-          Esta Política de Cookies puede cambiar o actualizarse; se recomienda
-          revisarla periódicamente para estar adecuadamente informado sobre cómo
-          y para qué usamos las cookies. PAYCAR BIERZO S.L. se reserva el
-          derecho a modificarla conforme a su propio criterio o por cambios
-          legislativos, jurisprudenciales o doctrinales de la AEPD. Los cambios
-          o actualizaciones se notificarán de forma explícita al usuario cuando
-          proceda.
-        </p>
-        <p class="text-gray-700 dark:text-gray-300 mt-2">
-          Es necesario que el usuario haya leído y esté conforme con estas
-          condiciones, así como que acepte el tratamiento de sus datos
-          personales para que el Responsable del Tratamiento pueda proceder en
-          la forma, plazos y finalidades indicadas.
-        </p>
-      </section>
+      <!-- Artículo -->
+      <article id="content" class="lg:col-span-8 space-y-8 leading-relaxed">
+        <!-- Uso de cookies -->
+        <section>
+          <h2 class="text-2xl font-bold mb-4">Uso de cookies</h2>
+          <p class="text-gray-700 dark:text-gray-300">
+            La Agencia Española de Protección de Datos (AEPD) actualizó la Guía
+            sobre el uso de las cookies para adaptarla a las Directrices de
+            consentimiento del Comité Europeo de Protección de Datos (CEPD, mayo
+            2020). Esta Política se adecúa a dichos criterios (30/10/2020),
+            incluyendo la invalidez del “seguir navegando” como consentimiento y
+            las limitaciones a los “muros de cookies”. El acceso a este sitio
+            puede implicar uso de cookies; esta Política informa de forma
+            transparente sobre su existencia y uso.
+          </p>
+        </section>
 
-      <!-- Acciones legales / Jurisdicción -->
-      <section>
-        <h2 class="text-2xl font-bold mb-4">
-          Acciones legales, legislación aplicable y jurisdicción
-        </h2>
-        <p class="text-gray-700 dark:text-gray-300">
-          PAYCAR BIERZO S.L. se reserva la facultad de presentar las acciones
-          civiles y penales que considere necesarias por la utilización indebida
-          del sitio web y sus contenidos, o por el incumplimiento de las
-          presentes condiciones. La relación entre el usuario y PAYCAR BIERZO
-          S.L. se regirá por la normativa legal vigente y aplicable en el
-          territorio español. Cualquier controversia relativa a la
-          interpretación y/o aplicación de estas condiciones se someterá a la
-          jurisdicción ordinaria conforme a derecho.
-        </p>
-        <p class="text-gray-700 dark:text-gray-300 mt-2">
-          Última modificación en este sitio web: 8 de mayo de 2025.
-        </p>
-      </section>
+        <!-- Definición -->
+        <section>
+          <h2 class="text-2xl font-bold mb-4">Definición de cookies</h2>
+          <p class="text-gray-700 dark:text-gray-300">
+            Las cookies y tecnologías similares almacenan y recuperan
+            información durante tu navegación. Pueden servir para reconocerte
+            como usuario, conocer hábitos de navegación o personalizar la forma
+            en que se muestra el contenido. Los usos concretos se describen a
+            continuación.
+          </p>
+        </section>
+
+        <!-- Responsable -->
+        <section>
+          <h2 class="text-2xl font-bold mb-4">Responsable del tratamiento</h2>
+          <div
+            class="grid md:grid-cols-2 gap-4 text-gray-700 dark:text-gray-300"
+          >
+            <p><strong>Empresa:</strong> PAYCAR BIERZO S.L.</p>
+            <p><strong>NIF:</strong> B24550006</p>
+            <p><strong>Dirección:</strong> C/ POSADA, 5- TRAVESÍA Nº 26</p>
+            <p><strong>Localidad:</strong> 24390 – DEHESAS</p>
+            <p><strong>Provincia:</strong> LEÓN</p>
+            <p><strong>Teléfono:</strong> 679 491 360</p>
+            <p class="md:col-span-2">
+              <strong>Email:</strong>
+              <span class="text-orange-600 dark:text-blue-400"
+                >loli_moreda@hotmail.com</span
+              >
+            </p>
+          </div>
+        </section>
+
+        <!-- Legitimación -->
+        <section>
+          <h2 class="text-2xl font-bold mb-4">
+            Legitimación del tratamiento a través de cookies
+          </h2>
+          <p class="text-gray-700 dark:text-gray-300">
+            Las cookies necesarias para el funcionamiento del sitio se instalan
+            en tu dispositivo. Para el resto de cookies solicitamos tu
+            consentimiento, que puedes cambiar o retirar en cualquier momento.
+          </p>
+        </section>
+
+        <!-- Tipos por gestión -->
+        <section>
+          <h2 class="text-2xl font-bold mb-4">
+            Tipos de cookies según su gestión
+          </h2>
+          <h3 class="text-xl font-semibold mb-2">Cookies propias</h3>
+          <p class="text-gray-700 dark:text-gray-300 mb-4">
+            Enviadas al dispositivo del usuario y gestionadas exclusivamente por
+            PAYCAR BIERZO S.L. para mejorar el funcionamiento del sitio y
+            adaptar contenidos a preferencias.
+          </p>
+          <h3 class="text-xl font-semibold mb-2">Cookies de terceros</h3>
+          <p class="text-gray-700 dark:text-gray-300">
+            Enviadas desde un dominio no gestionado por PAYCAR BIERZO S.L. Si
+            aceptas cookies de terceros, su eliminación debe hacerse desde las
+            opciones del navegador o el sistema del tercero.
+          </p>
+        </section>
+
+        <!-- Tipos por duración -->
+        <section>
+          <h2 class="text-2xl font-bold mb-4">
+            Tipos de cookies según su duración
+          </h2>
+          <h3 class="text-xl font-semibold mb-2">Cookies de sesión</h3>
+          <p class="text-gray-700 dark:text-gray-300 mb-4">
+            Recaban y almacenan datos mientras navegas y desaparecen al cerrar
+            la sesión.
+          </p>
+          <h3 class="text-xl font-semibold mb-2">Cookies persistentes</h3>
+          <p class="text-gray-700 dark:text-gray-300">
+            Permanecen almacenadas y pueden ser tratadas durante un periodo
+            definido por el responsable (de minutos a años).
+          </p>
+        </section>
+
+        <!-- Tipos por finalidad -->
+        <section>
+          <h2 class="text-2xl font-bold mb-4">
+            Tipos de cookies según su finalidad
+          </h2>
+          <ul class="list-disc pl-6 space-y-3 text-gray-700 dark:text-gray-300">
+            <li>
+              <strong>Técnicas:</strong> permiten la navegación y el uso de
+              servicios.
+            </li>
+            <li>
+              <strong>Preferencia o personalización:</strong> recuerdan opciones
+              como idioma, región o aspecto.
+            </li>
+            <li>
+              <strong>Análisis o medición:</strong> miden y analizan el
+              comportamiento de uso para introducir mejoras.
+            </li>
+            <li>
+              <strong>Publicidad comportamental:</strong> elaboran perfiles a
+              partir de hábitos de navegación para mostrar publicidad
+              relacionada.
+            </li>
+          </ul>
+        </section>
+
+        <!-- Cookies de este sitio -->
+        <section>
+          <h2 class="text-2xl font-bold mb-4">Cookies de este sitio web</h2>
+          <p class="text-gray-700 dark:text-gray-300 mb-4">
+            Este sitio utiliza cookies persistentes de análisis de
+            <strong>Google Analytics</strong> para cuantificar usuarios y
+            analizar el uso de nuestros servicios.
+          </p>
+          <div class="overflow-x-auto">
+            <table
+              class="min-w-full text-sm border border-gray-200 dark:border-gray-700 rounded-lg overflow-hidden"
+            >
+              <thead class="bg-gray-50 dark:bg-gray-800">
+                <tr>
+                  <th class="px-4 py-3 text-left">Nombre</th>
+                  <th class="px-4 py-3 text-left">Proveedor</th>
+                  <th class="px-4 py-3 text-left">Duración</th>
+                  <th class="px-4 py-3 text-left">Finalidad</th>
+                  <th class="px-4 py-3 text-left">Tipo</th>
+                </tr>
+              </thead>
+              <tbody class="divide-y divide-gray-200 dark:divide-gray-700">
+                <tr>
+                  <td class="px-4 py-3">_ga</td>
+                  <td class="px-4 py-3">Google Inc</td>
+                  <td class="px-4 py-3">2 años</td>
+                  <td class="px-4 py-3">
+                    Identifica al usuario y cómo usa el sitio
+                  </td>
+                  <td class="px-4 py-3">HTTP Cookie</td>
+                </tr>
+                <tr>
+                  <td class="px-4 py-3">_gat</td>
+                  <td class="px-4 py-3">Google Inc</td>
+                  <td class="px-4 py-3">1 día</td>
+                  <td class="px-4 py-3">Controla la tasa de peticiones</td>
+                  <td class="px-4 py-3">HTTP Cookie</td>
+                </tr>
+                <tr>
+                  <td class="px-4 py-3">_gld</td>
+                  <td class="px-4 py-3">Google Inc</td>
+                  <td class="px-4 py-3">1 día</td>
+                  <td class="px-4 py-3">Estadísticas de uso</td>
+                  <td class="px-4 py-3">HTTP Cookie</td>
+                </tr>
+                <tr>
+                  <td class="px-4 py-3">_collet</td>
+                  <td class="px-4 py-3">Google Inc</td>
+                  <td class="px-4 py-3">Sesión</td>
+                  <td class="px-4 py-3">Datos del terminal y comportamiento</td>
+                  <td class="px-4 py-3">Pixel tracker</td>
+                </tr>
+                <tr>
+                  <td class="px-4 py-3">_utm.gif</td>
+                  <td class="px-4 py-3">Google Inc</td>
+                  <td class="px-4 py-3">Sesión</td>
+                  <td class="px-4 py-3">Tipo de dispositivo/navegador</td>
+                  <td class="px-4 py-3">Pixel tracker</td>
+                </tr>
+                <tr>
+                  <td class="px-4 py-3">_utma</td>
+                  <td class="px-4 py-3">Google Inc</td>
+                  <td class="px-4 py-3">2 años</td>
+                  <td class="px-4 py-3">Distingue usuarios y sesiones</td>
+                  <td class="px-4 py-3">HTTP Cookie</td>
+                </tr>
+                <tr>
+                  <td class="px-4 py-3">_utmb</td>
+                  <td class="px-4 py-3">Google Inc</td>
+                  <td class="px-4 py-3">1 día</td>
+                  <td class="px-4 py-3">Hora de acceso al sitio</td>
+                  <td class="px-4 py-3">HTTP Cookie</td>
+                </tr>
+                <tr>
+                  <td class="px-4 py-3">_utmc</td>
+                  <td class="px-4 py-3">Google Inc</td>
+                  <td class="px-4 py-3">Sesión</td>
+                  <td class="px-4 py-3">Hora de salida del sitio</td>
+                  <td class="px-4 py-3">HTTP Cookie</td>
+                </tr>
+                <tr>
+                  <td class="px-4 py-3">_utmt</td>
+                  <td class="px-4 py-3">Google Inc</td>
+                  <td class="px-4 py-3">1 día</td>
+                  <td class="px-4 py-3">Acelera peticiones al servidor</td>
+                  <td class="px-4 py-3">HTTP Cookie</td>
+                </tr>
+                <tr>
+                  <td class="px-4 py-3">_utmz</td>
+                  <td class="px-4 py-3">Google Inc</td>
+                  <td class="px-4 py-3">6 meses</td>
+                  <td class="px-4 py-3">
+                    Origen del usuario (buscador, enlace…)
+                  </td>
+                  <td class="px-4 py-3">HTTP Cookie</td>
+                </tr>
+                <tr>
+                  <td class="px-4 py-3">_utmv</td>
+                  <td class="px-4 py-3">Google Inc</td>
+                  <td class="px-4 py-3">2 años</td>
+                  <td class="px-4 py-3">Variables personalizadas</td>
+                  <td class="px-4 py-3">HTTP Cookie</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <p class="text-gray-700 dark:text-gray-300 mt-4">
+            La configuración de Google Analytics es predeterminada por Google
+            Inc.; para más información y opciones de inhabilitación, consulta su
+            página de privacidad. Para verificar cookies, pueden usarse
+            herramientas externas como
+            <span class="italic">cookieserve.com</span>.
+          </p>
+        </section>
+
+        <!-- Selección de cookies (informativo) -->
+        <section>
+          <h2 class="text-2xl font-bold mb-4">
+            Selección de cookies (informativo)
+          </h2>
+          <p class="text-gray-700 dark:text-gray-300 mb-4">
+            A modo orientativo, pueden ofrecerse paneles para aceptar/rechazar
+            finalidades: almacenar/acceder a información; identificar
+            dispositivo; compartir análisis con terceros; personalizar
+            contenidos y publicidad; medir rendimiento; seleccionar anuncios o
+            contenidos (básicos o personalizados); usar localización precisa;
+            estudios de mercado, etc. El consentimiento incluye tratamientos
+            asociados como cotejar datos offline, seguridad, depuración de
+            errores o vinculación de dispositivos.
+          </p>
+          <p class="text-gray-700 dark:text-gray-300">
+            Todo depende de la estructura del sitio y herramientas utilizadas.
+            Si se añaden cookies o socios adicionales, se identificarán
+            expresamente.
+          </p>
+        </section>
+
+        <!-- Deshabilitar -->
+        <section>
+          <h2 class="text-2xl font-bold mb-4">
+            Cómo deshabilitar o rechazar cookies
+          </h2>
+          <p class="text-gray-700 dark:text-gray-300">
+            Puedes deshabilitar, rechazar y eliminar cookies desde la
+            configuración de tu navegador. Guías oficiales:
+          </p>
+          <ul
+            class="list-disc pl-6 mt-3 space-y-2 text-gray-700 dark:text-gray-300"
+          >
+            <li>
+              <strong>Chrome:</strong>
+              <a
+                href="https://support.google.com/chrome/answer/95647?hl=es"
+                class="text-orange-600 dark:text-blue-400 hover:underline"
+                target="_blank"
+                rel="noopener"
+                >support.google.com/chrome/answer/95647</a
+              >
+            </li>
+            <li>
+              <strong>Internet Explorer:</strong>
+              <a
+                href="https://support.microsoft.com/es-es/help/17442/windows-internet-explorer-delete-manage-cookies"
+                class="text-orange-600 dark:text-blue-400 hover:underline"
+                target="_blank"
+                rel="noopener"
+                >support.microsoft.com/.../17442</a
+              >
+            </li>
+            <li>
+              <strong>Firefox:</strong>
+              <a
+                href="https://support.mozilla.org/es/kb/habilitar-y-deshabilitar-cookies-sitios-web-rastrear-preferencias"
+                class="text-orange-600 dark:text-blue-400 hover:underline"
+                target="_blank"
+                rel="noopener"
+                >support.mozilla.org/.../habilitar-y-deshabilitar-cookies...</a
+              >
+            </li>
+            <li>
+              <strong>Safari:</strong>
+              <a
+                href="https://support.apple.com/kb/PH19214?locale=es_ES&viewlocale=es_ES"
+                class="text-orange-600 dark:text-blue-400 hover:underline"
+                target="_blank"
+                rel="noopener"
+                >support.apple.com/kb/PH19214</a
+              >
+            </li>
+            <li>
+              <strong>Edge:</strong> Configuración → Cookies y permisos del
+              sitio.
+            </li>
+          </ul>
+          <p class="text-gray-700 dark:text-gray-300 mt-3">
+            Aunque rechaces cookies, podrás seguir usando el sitio; algunas
+            prestaciones podrían quedar limitadas.
+          </p>
+        </section>
+
+        <!-- Cambios y aceptación -->
+        <section>
+          <h2 class="text-2xl font-bold mb-4">
+            Aceptación y cambios en esta política
+          </h2>
+          <p class="text-gray-700 dark:text-gray-300">
+            Esta Política puede cambiar o actualizarse; recomendamos revisarla
+            periódicamente. PAYCAR BIERZO S.L. puede modificarla por criterios
+            propios o por cambios normativos y lo notificará cuando proceda.
+            Última modificación del sitio: 8 de mayo de 2025.
+          </p>
+        </section>
+
+        <!-- Jurisdicción -->
+        <section>
+          <h2 class="text-2xl font-bold mb-4">
+            Acciones legales, legislación aplicable y jurisdicción
+          </h2>
+          <p class="text-gray-700 dark:text-gray-300">
+            PAYCAR BIERZO S.L. podrá ejercitar acciones por uso indebido del
+            sitio o incumplimiento de condiciones. La relación se rige por la
+            normativa española; controversias ante la jurisdicción ordinaria
+            competente.
+          </p>
+        </section>
+      </article>
     </main>
 
     <!-- Footer -->
@@ -466,12 +425,13 @@
       ></svg>
     </button>
 
-    <!-- Scripts comunes del sitio -->
+    <!-- Scripts -->
     <script src="js/cargar-header.js"></script>
     <script src="js/cargar-footer.js"></script>
     <script src="js/fecha-footer.js"></script>
     <script src="js/theme-toggle.js" defer></script>
     <script src="js/menu-responsive.js"></script>
     <script src="js/fecha-ultima-actualizacion.js"></script>
+    <script src="js/toc.js" defer></script>
   </body>
 </html>
