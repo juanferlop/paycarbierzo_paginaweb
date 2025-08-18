@@ -139,5 +139,64 @@
     <script src="js/fecha-footer.js"></script>
     <script src="js/theme-toggle.js" defer></script>
     <script src="js/menu-responsive.js"></script>
+    <!-- Banner de Cookies -->
+    <div
+      id="cookie-banner"
+      class="fixed bottom-0 inset-x-0 z-50 bg-white dark:bg-gray-900 border-t border-gray-200 dark:border-gray-700 shadow-lg p-4 md:p-6 flex flex-col md:flex-row md:items-center md:justify-between gap-4 transition-transform duration-500 translate-y-full"
+    >
+      <div class="text-sm text-gray-700 dark:text-gray-300 max-w-3xl">
+        <p>
+          Usamos cookies propias y de terceros, incluyendo
+          <strong>Google Analytics</strong>, para analizar el tráfico y mejorar
+          tu experiencia. Puedes aceptar todas las cookies o rechazar su uso no
+          esencial.
+        </p>
+      </div>
+      <div class="flex gap-3 shrink-0">
+        <button
+          id="cookie-accept"
+          class="bg-orange-500 hover:bg-orange-600 text-white text-sm font-medium px-4 py-2 rounded-lg shadow transition"
+        >
+          Aceptar
+        </button>
+        <button
+          id="cookie-decline"
+          class="bg-gray-200 hover:bg-gray-300 text-gray-800 dark:bg-gray-700 dark:hover:bg-gray-600 dark:text-gray-100 text-sm font-medium px-4 py-2 rounded-lg transition"
+        >
+          Rechazar
+        </button>
+      </div>
+    </div>
+
+    <script>
+      (function () {
+        const banner = document.getElementById('cookie-banner');
+        const acceptBtn = document.getElementById('cookie-accept');
+        const declineBtn = document.getElementById('cookie-decline');
+        const storageKey = 'cookie-consent';
+
+        // Mostrar banner solo si no hay decisión previa
+        if (!localStorage.getItem(storageKey)) {
+          banner.classList.remove('translate-y-full');
+        }
+
+        // Aceptar cookies
+        acceptBtn.addEventListener('click', () => {
+          localStorage.setItem(storageKey, 'accepted');
+          banner.classList.add('translate-y-full');
+
+          // Aquí podrías inicializar Google Analytics si aceptan
+          console.log('Cookies aceptadas: activando GA');
+          // Ejemplo: gtag('config', 'TU-ID-DE-GA');
+        });
+
+        // Rechazar cookies
+        declineBtn.addEventListener('click', () => {
+          localStorage.setItem(storageKey, 'declined');
+          banner.classList.add('translate-y-full');
+          console.log('Cookies rechazadas: no se activa GA');
+        });
+      })();
+    </script>
   </body>
 </html>
