@@ -1,19 +1,60 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <!-- Home -->
   <url>
     <loc>https://paycarbierzo.es/</loc>
     <priority>1.0</priority>
+    <changefreq>weekly</changefreq>
   </url>
+
+  <!-- Páginas principales -->
   <url>
     <loc>https://paycarbierzo.es/sobre-nosotros.html</loc>
     <priority>0.8</priority>
+    <changefreq>monthly</changefreq>
   </url>
   <url>
     <loc>https://paycarbierzo.es/contacto.html</loc>
     <priority>0.8</priority>
+    <changefreq>monthly</changefreq>
   </url>
   <url>
     <loc>https://paycarbierzo.es/trabajos.html</loc>
     <priority>0.8</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+
+  <!-- Legales -->
+  <url>
+    <loc>https://paycarbierzo.es/aviso-legal.html</loc>
+    <priority>0.6</priority>
+    <changefreq>yearly</changefreq>
+  </url>
+  <url>
+    <loc>https://paycarbierzo.es/privacidad.html</loc>
+    <priority>0.6</priority>
+    <changefreq>yearly</changefreq>
+  </url>
+  <url>
+    <loc>https://paycarbierzo.es/cookies.html</loc>
+    <priority>0.6</priority>
+    <changefreq>yearly</changefreq>
+  </url>
+
+  <!-- Landings locales / intención -->
+  <url>
+    <loc>https://paycarbierzo.es/estructuras-ponferrada/</loc>
+    <priority>0.9</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+  <url>
+    <loc>https://paycarbierzo.es/estructuras-bierzo/</loc>
+    <priority>0.9</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+  <url>
+    <loc>https://paycarbierzo.es/empresa-construccion-leon/</loc>
+    <priority>0.9</priority>
+    <changefreq>monthly</changefreq>
   </url>
 </urlset>

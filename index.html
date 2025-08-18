@@ -43,6 +43,58 @@
       name="google-site-verification"
       content="ACggjehFjhjZ_H8ulDhwIPd_3cYFKteh7Zn7mIh2D60"
     />
+
+    <!-- SEO, redes sociales y rendimiento web. -->
+
+    <!-- Permitir miniaturas grandes en Google -->
+    <meta name="robots" content="index,follow,max-image-preview:large" />
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website" />
+    <meta property="og:locale" content="es_ES" />
+    <meta property="og:site_name" content="Paycar Bierzo" />
+    <meta
+      property="og:title"
+      content="Paycar Bierzo — Estructuras y construcción en El Bierzo y León"
+    />
+    <meta
+      property="og:description"
+      content="Empresa de construcción y estructuras en Ponferrada, El Bierzo y provincia de León. Obras, reformas y proyectos llave en mano."
+    />
+    <meta property="og:url" content="https://paycarbierzo.es/" />
+    <meta
+      property="og:image"
+      content="https://paycarbierzo.es/assets/img/hero-obra-1200x630.webp"
+    />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta
+      property="og:image:alt"
+      content="Equipo de Paycar Bierzo montando estructura en obra"
+    />
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta
+      name="twitter:title"
+      content="Paycar Bierzo — Estructuras y construcción en El Bierzo y León"
+    />
+    <meta
+      name="twitter:description"
+      content="Construcción y estructuras en Ponferrada, El Bierzo y León."
+    />
+    <meta
+      name="twitter:image"
+      content="https://paycarbierzo.es/assets/img/hero-obra-1200x630.webp"
+    />
+
+    <!-- (Opcional) Preload del LCP si usas un hero grande -->
+    <link
+      rel="preload"
+      as="image"
+      href="/assets/img/hero-obra-1200x630.webp"
+      imagesrcset="/assets/img/hero-obra-1200x630.webp 1x"
+    />
   </head>
   <body
     class="bg-gray-100 dark:bg-black text-gray-800 dark:text-gray-100 transition-colors duration-300"
@@ -197,6 +249,54 @@
           console.log('Cookies rechazadas: no se activa GA');
         });
       })();
+    </script>
+
+    <!-- Datos estructurados (ayuda a miniatura, logo, marca y SEO local)-->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Organization",
+        "@id": "https://paycarbierzo.es/#org",
+        "name": "Paycar Bierzo S.L.",
+        "url": "https://paycarbierzo.es/",
+        "logo": "https://paycarbierzo.es/assets/img/webp/logo.webp",
+        "image": "https://paycarbierzo.es/assets/img/hero-obra-1200x630.webp",
+        "telephone": "+34 679491360",
+        "sameAs": [
+          "https://www.facebook.com/tu-perfil",
+          "https://www.instagram.com/tu-perfil",
+          "https://www.linkedin.com/company/tu-perfil"
+        ]
+      }
+    </script>
+
+    <!-- Negocio local (para ranking local y panel de empresa) -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "ConstructionCompany",
+        "@id": "https://paycarbierzo.es/#local",
+        "name": "Paycar Bierzo S.L.",
+        "url": "https://paycarbierzo.es/",
+        "telephone": "+34 679491360",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "C/ Posada, 5 - Travesía Nº 26",
+          "addressLocality": "Dehesas",
+          "postalCode": "24390",
+          "addressRegion": "León",
+          "addressCountry": "ES"
+        },
+        "areaServed": ["Ponferrada", "El Bierzo", "León"],
+        "geo": {
+          "@type": "GeoCoordinates",
+          "latitude": 42.51979,
+          "longitude": -6.69189
+        },
+
+        "image": ["https://paycarbierzo.es/assets/img/hero-obra-1200x630.webp"],
+        "sameAs": ["https://www.google.com/maps?cid=TU_CID_SI_TIENES_GBP"]
+      }
     </script>
   </body>
 </html>

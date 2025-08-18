@@ -14,6 +14,28 @@
     <script>
       tailwind.config = { darkMode: 'class' };
     </script>
+
+    <!-- BreadcrumbList (migas de pan) en JSON-LD ayuda a Google a entender la jerarquía de tu sitio. -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Inicio",
+            "item": "https://paycarbierzo.es/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "Política de privacidad",
+            "item": "https://paycarbierzo.es/privacidad.html"
+          }
+        ]
+      }
+    </script>
   </head>
   <body
     class="bg-gray-100 dark:bg-black text-gray-800 dark:text-gray-100 transition-colors duration-300"
