@@ -41,14 +41,14 @@
     <changefreq>yearly</changefreq>
   </url>
 
-  <!-- Landings locales / intención -->
+  <!-- Landings locales -->
   <url>
-    <loc>https://paycarbierzo.es/estructuras-ponferrada/</loc>
+    <loc>https://paycarbierzo.es/empresa-construccion-ponferrada/</loc>
     <priority>0.9</priority>
     <changefreq>monthly</changefreq>
   </url>
   <url>
-    <loc>https://paycarbierzo.es/estructuras-bierzo/</loc>
+    <loc>https://paycarbierzo.es/empresa-construccion-el-bierzo/</loc>
     <priority>0.9</priority>
     <changefreq>monthly</changefreq>
   </url>

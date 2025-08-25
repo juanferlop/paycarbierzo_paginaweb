@@ -18,6 +18,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Inicio | Paycar Bierzo</title>
+
     <link rel="icon" type="image/webp" href="assets/img/webp/logo.webp" />
     <!-- Fuentes tipográficas -->
     <link
@@ -55,12 +56,14 @@
     <meta property="og:site_name" content="Paycar Bierzo" />
     <meta
       property="og:title"
-      content="Paycar Bierzo — Estructuras y construcción en El Bierzo y León"
+      content="Estructuras de hormigón en Ponferrada y El Bierzo | Paycar Bierzo"
     />
+
     <meta
       property="og:description"
-      content="Empresa de construcción y estructuras en Ponferrada, El Bierzo y provincia de León. Obras, reformas y proyectos llave en mano."
+      content="Estructuras de hormigón y obra civil en Ponferrada y El Bierzo. Construcción de casas y reformas. Presupuesto claro y plazos comprometidos."
     />
+
     <meta property="og:url" content="https://paycarbierzo.es/" />
     <meta
       property="og:image"
@@ -77,11 +80,11 @@
     <meta name="twitter:card" content="summary_large_image" />
     <meta
       name="twitter:title"
-      content="Paycar Bierzo — Estructuras y construcción en El Bierzo y León"
+      content="Estructuras de hormigón en Ponferrada y El Bierzo | Paycar Bierzo"
     />
     <meta
       name="twitter:description"
-      content="Construcción y estructuras en Ponferrada, El Bierzo y León."
+      content="Estructuras de hormigón, construcción de casas y reformas en Ponferrada y El Bierzo."
     />
     <meta
       name="twitter:image"
@@ -95,6 +98,48 @@
       href="/assets/img/hero-obra-1200x630.webp"
       imagesrcset="/assets/img/hero-obra-1200x630.webp 1x"
     />
+    <!-- -->
+    <meta
+      name="description"
+      content="Especialistas en estructuras de hormigón en Ponferrada y El Bierzo. Cimentaciones, forjados, naves y obra civil. También construimos casas llave en mano. Llámanos: 679 491 360."
+    />
+    <!-- INICIO ETIQUETAS FAVICON -->
+    <!-- Favicon básico -->
+    <link rel="icon" href="/favicon.ico" sizes="any" />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="/assets/icons/favicon-32x32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="/assets/icons/favicon-16x16.png"
+    />
+
+    <!-- iOS (anclado a pantalla de inicio) -->
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="/assets/icons/apple-touch-icon.png"
+    />
+
+    <!-- Android / PWA -->
+    <link rel="manifest" href="/site.webmanifest" />
+
+    <!-- Safari pinned tab (opcional si tienes SVG monocromo) -->
+    <link
+      rel="mask-icon"
+      href="/assets/icons/safari-pinned-tab.svg"
+      color="#f97316"
+    />
+
+    <!-- Colores del navegador (opcional) -->
+    <meta name="theme-color" content="#ffffff" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+    <!-- FIN ETIQUETAS FAVICON -->
   </head>
   <body
     class="bg-gray-100 dark:bg-black text-gray-800 dark:text-gray-100 transition-colors duration-300"
@@ -102,8 +147,9 @@
     <!-- Header -->
     <div id="header"></div>
 
-    <!-- Contenido -->
+    <!-- Contenido principal de la página. -->
     <main>
+      <!-- 1 (Carrusel) -->
       <section
         class="carrusel min-h-[400px] h-[600px] flex items-center justify-center mb-8"
       >
@@ -115,7 +161,8 @@
         />
       </section>
 
-      <section class="w-full flex justify-center items-center px-4 mb-8">
+      <!-- 2 (Logo en grande) -->
+      <section class="w-full flex justify-center items-center px-8 mb-8">
         <div
           class="w-full bg-white dark:bg-gray-900 rounded-2xl shadow-lg px-4 py-2 flex justify-center"
         >
@@ -127,6 +174,51 @@
         </div>
       </section>
 
+      <!-- 3 -->
+      <section class="mt-8 mb-8 px-8">
+        <div
+          class="bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-800 rounded-2xl shadow-md px-8 md:px-16 py-8 md:py-12 text-center"
+        >
+          <!-- Eyebrow -->
+          <span
+            class="inline-flex items-center gap-2 text-xs md:text-sm uppercase tracking-wide text-gray-600 dark:text-gray-300"
+          >
+            <span class="h-2 w-2 rounded-full bg-orange-500"></span>
+            Desde Dehesas, Construcción y estructuras
+          </span>
+
+          <!-- H1 -->
+          <h1
+            class="mt-2 font-serif text-3xl md:text-5xl font-extrabold tracking-tight text-gray-900 dark:text-gray-100 [text-wrap:balance]"
+          >
+            Empresa de construcción en El Bierzo
+          </h1>
+
+          <!-- Texto marketing -->
+          <p
+            class="mt-4 text-base md:text-lg text-gray-700 dark:text-gray-300 max-w-4xl mx-auto"
+          >
+            Proporcionamos soluciones con
+            <strong>seguridad, calidad y plazos firmes </strong> a particulares
+            y empresas. Especializados en
+            <strong>estructuras de hormigón</strong> ofrecemos un servicio
+            cercano, transparente y adaptado a las necesidades de cada cliente
+            en <strong>El Bierzo</strong> y alrededores.
+          </p>
+
+          <!-- CTA opcional -->
+          <div class="mt-6">
+            <a
+              href="contacto.html"
+              class="inline-block bg-orange-500 hover:bg-orange-600 px-6 py-3 rounded-full font-semibold text-white shadow transition"
+            >
+              Pide tu presupuesto
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <!-- 4 (Video echando hormigón) -->
       <section
         class="relative w-full h-[500px] overflow-hidden group rounded-xl shadow-lg"
       >
@@ -157,11 +249,165 @@
           >
         </div>
       </section>
+
+      <!-- 5 -->
+      <section class="w-full flex justify-center items-center pt-8 px-8">
+        <div
+          class="w-full bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-800 rounded-2xl shadow-md px-4 md:px-8 py-8 md:py-10"
+        >
+          <!-- Encabezado -->
+          <div class="text-center mb-12">
+            <span
+              class="inline-block px-3 py-1 text-xs md:text-sm font-medium tracking-wide uppercase rounded-full bg-orange-50 text-orange-600 dark:bg-orange-900/30 dark:text-orange-300 mb-3"
+            >
+              Nuestros servicios
+            </span>
+            <h2
+              class="font-serif text-3xl md:text-4xl font-extrabold text-gray-900 dark:text-gray-100"
+            >
+              Servicios de construcción en Ponferrada y todo El Bierzo
+            </h2>
+            <p
+              class="mt-4 text-base md:text-lg text-gray-600 dark:text-gray-300 max-w-3xl mx-auto"
+            >
+              Especialistas en <strong>estructuras de hormigón</strong>,
+              reformas, obra civil y proyectos integrales. Construimos con
+              calidad, compromiso y cercanía en la capital del Bierzo y toda la
+              comarca.
+            </p>
+          </div>
+
+          <!-- Grid de cards -->
+          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+            <!-- Card 1 -->
+            <a
+              href="estructuras-hormigon-el-bierzo/"
+              class="group rounded-2xl border border-gray-200 dark:border-gray-800 bg-white dark:bg-gray-900 p-6 flex flex-col h-full hover:shadow-xl hover:-translate-y-1 transition"
+            >
+              <div>
+                <h3 class="text-lg md:text-xl font-semibold mb-2 font-serif">
+                  Estructuras de hormigón
+                </h3>
+                <p class="text-sm text-gray-600 dark:text-gray-300">
+                  Cimentaciones, muros, forjados y naves industriales.
+                </p>
+              </div>
+              <span
+                class="mt-4 inline-flex items-center text-sm font-medium text-orange-600 group-hover:underline"
+              >
+                Ver servicio
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 24 24"
+                  class="ml-1 h-4 w-4 transform group-hover:translate-x-1 transition"
+                >
+                  <path
+                    fill="currentColor"
+                    d="M8.59 16.59L13.17 12 8.59 7.41 10 6l6 6-6 6z"
+                  />
+                </svg>
+              </span>
+            </a>
+
+            <!-- Card 2 -->
+            <a
+              href="empresa-construccion-el-bierzo/"
+              class="group rounded-2xl border border-gray-200 dark:border-gray-800 bg-white dark:bg-gray-900 p-6 flex flex-col h-full hover:shadow-xl hover:-translate-y-1 transition"
+            >
+              <div>
+                <h3 class="text-lg md:text-xl font-semibold mb-2 font-serif">
+                  Empresa de construcción
+                </h3>
+                <p class="text-sm text-gray-600 dark:text-gray-300">
+                  Obra nueva, reformas y mantenimiento en Ponferrada y toda la
+                  comarca.
+                </p>
+              </div>
+              <span
+                class="mt-4 inline-flex items-center text-sm font-medium text-orange-600 group-hover:underline"
+              >
+                Ver servicio
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 24 24"
+                  class="ml-1 h-4 w-4 transform group-hover:translate-x-1 transition"
+                >
+                  <path
+                    fill="currentColor"
+                    d="M8.59 16.59L13.17 12 8.59 7.41 10 6l6 6-6 6z"
+                  />
+                </svg>
+              </span>
+            </a>
+
+            <!-- Card 3 -->
+            <a
+              href="reformas-el-bierzo/"
+              class="group rounded-2xl border border-gray-200 dark:border-gray-800 bg-white dark:bg-gray-900 p-6 flex flex-col h-full hover:shadow-xl hover:-translate-y-1 transition"
+            >
+              <div>
+                <h3 class="text-lg md:text-xl font-semibold mb-2 font-serif">
+                  Reformas y rehabilitación
+                </h3>
+                <p class="text-sm text-gray-600 dark:text-gray-300">
+                  Viviendas, locales y edificios con acabados profesionales.
+                </p>
+              </div>
+              <span
+                class="mt-4 inline-flex items-center text-sm font-medium text-orange-600 group-hover:underline"
+              >
+                Ver servicio
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 24 24"
+                  class="ml-1 h-4 w-4 transform group-hover:translate-x-1 transition"
+                >
+                  <path
+                    fill="currentColor"
+                    d="M8.59 16.59L13.17 12 8.59 7.41 10 6l6 6-6 6z"
+                  />
+                </svg>
+              </span>
+            </a>
+
+            <!-- Card 4 -->
+            <a
+              href="obra-civil-el-bierzo/"
+              class="group rounded-2xl border border-gray-200 dark:border-gray-800 bg-white dark:bg-gray-900 p-6 flex flex-col h-full hover:shadow-xl hover:-translate-y-1 transition"
+            >
+              <div>
+                <h3 class="text-lg md:text-xl font-semibold mb-2 font-serif">
+                  Obra civil y urbanización
+                </h3>
+                <p class="text-sm text-gray-600 dark:text-gray-300">
+                  Viales, infraestructuras y proyectos industriales.
+                </p>
+              </div>
+              <span
+                class="mt-4 inline-flex items-center text-sm font-medium text-orange-600 group-hover:underline"
+              >
+                Ver servicio
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 24 24"
+                  class="ml-1 h-4 w-4 transform group-hover:translate-x-1 transition"
+                >
+                  <path
+                    fill="currentColor"
+                    d="M8.59 16.59L13.17 12 8.59 7.41 10 6l6 6-6 6z"
+                  />
+                </svg>
+              </span>
+            </a>
+          </div>
+        </div>
+      </section>
     </main>
 
     <!-- Footer -->
     <div id="footer"></div>
 
+    <!-- Botón de cambio de aspecto (claro /) -->
     <button
       id="theme-toggle"
       type="button"
