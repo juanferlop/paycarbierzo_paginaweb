@@ -5,59 +5,101 @@
     <meta name="viewport" content="width=device-width,initial-scale=1" />
 
     <title>Empresa de construcción en El Bierzo | Paycar Bierzo S.L.</title>
-    <meta name="description" content="Paycar Bierzo S.L., empresa de construcción en El Bierzo con enfoque en Ponferrada capital y capacidad de actuación en toda la comarca y alrededores. Reformas, obra civil y estructuras de hormigón." />
-    <link rel="canonical" href="https://paycarbierzo.es/empresa-construccion-el-bierzo/" />
+    <meta
+      name="description"
+      content="Paycar Bierzo S.L., empresa de construcción en El Bierzo con enfoque en Ponferrada capital y capacidad de actuación en toda la comarca y alrededores. Reformas, obra civil y estructuras de hormigón."
+    />
+    <link
+      rel="canonical"
+      href="https://paycarbierzo.es/empresa-construccion-el-bierzo/"
+    />
     <meta name="robots" content="index,follow,max-image-preview:large" />
 
     <!-- Open Graph -->
     <meta property="og:type" content="website" />
-    <meta property="og:title" content="Empresa de construcción en El Bierzo | Paycar Bierzo S.L." />
-    <meta property="og:description" content="Constructora en El Bierzo con base en Ponferrada: reformas, obra civil y estructuras de hormigón. Presupuestos claros y plazos comprometidos." />
-    <meta property="og:url" content="https://paycarbierzo.es/empresa-construccion-el-bierzo/" />
+    <meta
+      property="og:title"
+      content="Empresa de construcción en El Bierzo | Paycar Bierzo S.L."
+    />
+    <meta
+      property="og:description"
+      content="Constructora en El Bierzo con base en Ponferrada: reformas, obra civil y estructuras de hormigón. Presupuestos claros y plazos comprometidos."
+    />
+    <meta
+      property="og:url"
+      content="https://paycarbierzo.es/empresa-construccion-el-bierzo/"
+    />
 
+    <!-- 1) Fijar tema antes de pintar nada 
+    antes de que cargue Tailwind CSS para evitar el “flash” de color al iniciar-->
+    <script src="/js/theme-init.js"></script>
     <!-- Tailwind -->
     <script src="https://cdn.tailwindcss.com"></script>
-    <script>tailwind.config = { darkMode: 'class' };</script>
+    <!-- 2) Config de Tailwind para CDN -->
+    <script>
+      // Coloca este bloque en <head>, ANTES del CDN
+      window.tailwind = window.tailwind || {};
+      window.tailwind.config = {
+        darkMode: 'class',
+      };
+    </script>
 
     <!-- BreadcrumbList JSON-LD -->
     <script type="application/ld+json">
-    {
-      "@context":"https://schema.org",
-      "@type":"BreadcrumbList",
-      "itemListElement":[
-        {"@type":"ListItem","position":1,"name":"Inicio","item":"https://paycarbierzo.es/"},
-        {"@type":"ListItem","position":2,"name":"Empresa de construcción en El Bierzo","item":"https://paycarbierzo.es/empresa-construccion-el-bierzo/"}
-      ]
-    }
+      {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Inicio",
+            "item": "https://paycarbierzo.es/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "Empresa de construcción en El Bierzo",
+            "item": "https://paycarbierzo.es/empresa-construccion-el-bierzo/"
+          }
+        ]
+      }
     </script>
 
     <!-- ConstructionCompany / Local SEO JSON-LD -->
     <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "ConstructionCompany",
-      "name": "Paycar Bierzo S.L.",
-      "url": "https://paycarbierzo.es/",
-      "telephone": "+34 679491360",
-      "areaServed": [
-        {"@type":"City","name":"Ponferrada"},
-        {"@type":"AdministrativeArea","name":"El Bierzo"},
-        {"@type":"AdministrativeArea","name":"León"}
-      ],
-      "sameAs": []
-    }
+      {
+        "@context": "https://schema.org",
+        "@type": "ConstructionCompany",
+        "name": "Paycar Bierzo S.L.",
+        "url": "https://paycarbierzo.es/",
+        "telephone": "+34 679491360",
+        "areaServed": [
+          { "@type": "City", "name": "Ponferrada" },
+          { "@type": "AdministrativeArea", "name": "El Bierzo" },
+          { "@type": "AdministrativeArea", "name": "León" }
+        ],
+        "sameAs": []
+      }
     </script>
   </head>
 
-  <body class="bg-white text-gray-900 dark:bg-black dark:text-gray-100 antialiased">
+  <body
+    class="bg-gray-100 dark:bg-black text-gray-800 dark:text-gray-100 transition-colors duration-300"
+  >
     <!-- Header -->
     <div id="header"></div>
 
     <main id="main" class="min-h-[60vh]">
       <!-- Hero -->
-      <section class="bg-orange-50 dark:bg-orange-900/10 border-b border-orange-200/70 dark:border-orange-800/50">
+      <section
+        class="bg-orange-50 dark:bg-orange-900/10 border-b border-orange-200/70 dark:border-orange-800/50"
+      >
         <div class="max-w-7xl mx-auto px-6 py-14 md:py-20">
-          <nav aria-label="Migas de pan" class="text-sm text-orange-700/90 dark:text-orange-300/80 mb-6">
+          <nav
+            aria-label="Migas de pan"
+            class="text-sm text-orange-700/90 dark:text-orange-300/80 mb-6"
+          >
             <ol class="flex items-center gap-2">
               <li><a href="/" class="hover:underline">Inicio</a></li>
               <li aria-hidden="true">/</li>
@@ -65,144 +107,230 @@
             </ol>
           </nav>
 
-          <h1 class="text-3xl md:text-4xl font-bold leading-tight text-orange-900 dark:text-orange-200">
+          <h1
+            class="text-3xl md:text-4xl font-bold leading-tight text-orange-900 dark:text-orange-200"
+          >
             Empresa de construcción en El Bierzo
           </h1>
           <p class="mt-4 max-w-3xl text-lg text-gray-700 dark:text-gray-300">
-            En <strong>Paycar Bierzo S.L.</strong> operamos desde <strong>Dehesas</strong>,
-            con <strong>capacidad de desplazamiento</strong> para ejecutar obras en toda la comarca y alrededores.
-            Naves, obra civil y estructuras de hormigón con plazos y presupuesto claros.
+            En <strong>Paycar Bierzo S.L.</strong> operamos desde
+            <strong>Dehesas</strong>, con
+            <strong>capacidad de desplazamiento</strong> para ejecutar obras en
+            toda la comarca y alrededores. Naves, obra civil y estructuras de
+            hormigón con plazos y presupuesto claros.
           </p>
 
           <div class="mt-8 flex flex-wrap gap-3">
-            <a href="/contacto.html"
-               class="inline-flex items-center justify-center rounded-2xl px-5 py-3 border border-transparent shadow-sm bg-orange-600 text-white hover:bg-orange-700 transition">
+            <a
+              href="/contacto.html"
+              class="inline-flex items-center justify-center rounded-2xl px-5 py-3 border border-transparent shadow-sm bg-orange-600 text-white hover:bg-orange-700 transition"
+            >
               Pedir presupuesto
             </a>
-            <a href="tel:+34619761685"
-               class="inline-flex items-center justify-center rounded-2xl px-5 py-3 border border-orange-300 text-orange-700 hover:bg-orange-100 dark:border-orange-700 dark:text-orange-300 dark:hover:bg-orange-900/30 transition">
+            <a
+              href="tel:+34619761685"
+              class="inline-flex items-center justify-center rounded-2xl px-5 py-3 border border-orange-300 text-orange-700 hover:bg-orange-100 dark:border-orange-700 dark:text-orange-300 dark:hover:bg-orange-900/30 transition"
+            >
               Llamar 619 761 685
             </a>
           </div>
 
           <p class="mt-3 text-sm text-orange-800/90 dark:text-orange-300/80">
             ¿Buscas servicios en la capital? Visita también
-            <a href="/empresa-construccion-ponferrada/" class="underline underline-offset-2 hover:no-underline">
-              empresa de construcción en Ponferrada
-            </a>.
+            <a
+              href="/empresa-construccion-ponferrada/"
+              class="underline underline-offset-2 hover:no-underline"
+            >
+              empresa de construcción en Ponferrada </a
+            >.
           </p>
         </div>
       </section>
 
       <!-- Servicios -->
       <section class="max-w-7xl mx-auto px-6 py-12 md:py-16">
-        <h2 class="text-2xl md:text-3xl font-semibold text-orange-900 dark:text-orange-200">Servicios en El Bierzo</h2>
+        <h2
+          class="text-2xl md:text-3xl font-semibold text-orange-900 dark:text-orange-200"
+        >
+          Servicios en El Bierzo
+        </h2>
         <p class="mt-3 text-gray-700 dark:text-gray-300 max-w-3xl">
-          Actuamos en todos los municipios de la comarca (Bembibre, Cacabelos, Villafranca…),
-          y también en poblaciones limítrofes cuando el proyecto lo requiere.
+          Actuamos en todos los municipios de la comarca (Bembibre, Cacabelos,
+          Villafranca…), y también en poblaciones limítrofes cuando el proyecto
+          lo requiere.
         </p>
 
         <div class="mt-8 grid gap-6 md:grid-cols-3">
-          <article class="rounded-2xl border border-orange-200 dark:border-orange-800 p-6 bg-white dark:bg-orange-900/10">
-            <h3 class="text-lg font-semibold text-orange-900 dark:text-orange-200">Reformas y rehabilitación</h3>
+          <article
+            class="rounded-2xl border border-orange-200 dark:border-orange-800 p-6 bg-white dark:bg-orange-900/10"
+          >
+            <h3
+              class="text-lg font-semibold text-orange-900 dark:text-orange-200"
+            >
+              Reformas y rehabilitación
+            </h3>
             <p class="mt-2 text-sm text-gray-700 dark:text-gray-300">
-              Viviendas, locales y comunidades con acabados profesionales y planificación realista.
+              Viviendas, locales y comunidades con acabados profesionales y
+              planificación realista.
             </p>
           </article>
-          <article class="rounded-2xl border border-orange-200 dark:border-orange-800 p-6 bg-white dark:bg-orange-900/10">
-            <h3 class="text-lg font-semibold text-orange-900 dark:text-orange-200">Obra civil</h3>
+          <article
+            class="rounded-2xl border border-orange-200 dark:border-orange-800 p-6 bg-white dark:bg-orange-900/10"
+          >
+            <h3
+              class="text-lg font-semibold text-orange-900 dark:text-orange-200"
+            >
+              Obra civil
+            </h3>
             <p class="mt-2 text-sm text-gray-700 dark:text-gray-300">
-              Urbanizaciones, viales y actuaciones municipales. Gestión integral de proyecto y obra.
+              Urbanizaciones, viales y actuaciones municipales. Gestión integral
+              de proyecto y obra.
             </p>
           </article>
-          <article class="rounded-2xl border border-orange-200 dark:border-orange-800 p-6 bg-white dark:bg-orange-900/10">
-            <h3 class="text-lg font-semibold text-orange-900 dark:text-orange-200">Estructuras de hormigón</h3>
+          <article
+            class="rounded-2xl border border-orange-200 dark:border-orange-800 p-6 bg-white dark:bg-orange-900/10"
+          >
+            <h3
+              class="text-lg font-semibold text-orange-900 dark:text-orange-200"
+            >
+              Estructuras de hormigón
+            </h3>
             <p class="mt-2 text-sm text-gray-700 dark:text-gray-300">
-              Cimentaciones, forjados y muros con medios propios en Ponferrada y toda la comarca.
+              Cimentaciones, forjados y muros con medios propios en Ponferrada y
+              toda la comarca.
             </p>
-            <a href="/estructuras-hormigon-el-bierzo/"
-               class="mt-3 inline-block text-sm text-orange-700 hover:underline dark:text-orange-300">Ver detalles</a>
+            <a
+              href="/estructuras-hormigon-el-bierzo/"
+              class="mt-3 inline-block text-sm text-orange-700 hover:underline dark:text-orange-300"
+              >Ver detalles</a
+            >
           </article>
         </div>
       </section>
 
       <!-- Zonas -->
-      <section class="bg-orange-50 dark:bg-orange-900/10 border-y border-orange-200/70 dark:border-orange-800/50">
+      <section
+        class="bg-orange-50 dark:bg-orange-900/10 border-y border-orange-200/70 dark:border-orange-800/50"
+      >
         <div class="max-w-7xl mx-auto px-6 py-12 md:py-16">
-          <h2 class="text-2xl md:text-3xl font-semibold text-orange-900 dark:text-orange-200">Cobertura</h2>
+          <h2
+            class="text-2xl md:text-3xl font-semibold text-orange-900 dark:text-orange-200"
+          >
+            Cobertura
+          </h2>
           <p class="mt-3 text-gray-700 dark:text-gray-300 max-w-3xl">
-            Base en Ponferrada (capital del Bierzo) con desplazamiento a toda la comarca y entorno:
-            Bembibre, Cacabelos, Villafranca del Bierzo, Camponaraya, Toral de los Vados y más.
+            Base en Ponferrada (capital del Bierzo) con desplazamiento a toda la
+            comarca y entorno: Bembibre, Cacabelos, Villafranca del Bierzo,
+            Camponaraya, Toral de los Vados y más.
           </p>
         </div>
       </section>
-<!-- Proceso (fondo claro con divisor) -->
-<section class="bg-white dark:bg-black/20 border-t border-orange-200/70 dark:border-orange-800/50">
-  <div class="max-w-7xl mx-auto px-6 py-14 md:py-16">
-    <div class="flex items-center gap-3">
-      <h2 class="text-2xl md:text-3xl font-semibold text-orange-900 dark:text-orange-200">
-        Proceso de trabajo
-      </h2>
-      <span class="h-px flex-1 bg-gradient-to-r from-orange-300 to-transparent dark:from-orange-700"></span>
-    </div>
+      <!-- Proceso (fondo claro con divisor) -->
+      <section
+        class="bg-white dark:bg-black/20 border-t border-orange-200/70 dark:border-orange-800/50"
+      >
+        <div class="max-w-7xl mx-auto px-6 py-14 md:py-16">
+          <div class="flex items-center gap-3">
+            <h2
+              class="text-2xl md:text-3xl font-semibold text-orange-900 dark:text-orange-200"
+            >
+              Proceso de trabajo
+            </h2>
+            <span
+              class="h-px flex-1 bg-gradient-to-r from-orange-300 to-transparent dark:from-orange-700"
+            ></span>
+          </div>
 
-    <ol class="mt-8 grid gap-5 md:grid-cols-4">
-      <li class="rounded-2xl border border-orange-200 dark:border-orange-800 p-6 bg-white dark:bg-orange-900/10 shadow-sm">
-        <p class="font-medium text-orange-900 dark:text-orange-200">1. Visita y valoración</p>
-        <p class="text-sm text-gray-700 dark:text-gray-300 mt-1">Levantamiento y definición del alcance.</p>
-      </li>
-      <li class="rounded-2xl border border-orange-200 dark:border-orange-800 p-6 bg-white dark:bg-orange-900/10 shadow-sm">
-        <p class="font-medium text-orange-900 dark:text-orange-200">2. Presupuesto detallado</p>
-        <p class="text-sm text-gray-700 dark:text-gray-300 mt-1">Partidas, plazos y materiales acordados.</p>
-      </li>
-      <li class="rounded-2xl border border-orange-200 dark:border-orange-800 p-6 bg-white dark:bg-orange-900/10 shadow-sm">
-        <p class="font-medium text-orange-900 dark:text-orange-200">3. Ejecución y control</p>
-        <p class="text-sm text-gray-700 dark:text-gray-300 mt-1">Seguimiento de obra y comunicación continua.</p>
-      </li>
-      <li class="rounded-2xl border border-orange-200 dark:border-orange-800 p-6 bg-white dark:bg-orange-900/10 shadow-sm">
-        <p class="font-medium text-orange-900 dark:text-orange-200">4. Entrega y garantía</p>
-        <p class="text-sm text-gray-700 dark:text-gray-300 mt-1">Cierre de obra y documentación de calidad.</p>
-      </li>
-    </ol>
+          <ol class="mt-8 grid gap-5 md:grid-cols-4">
+            <li
+              class="rounded-2xl border border-orange-200 dark:border-orange-800 p-6 bg-white dark:bg-orange-900/10 shadow-sm"
+            >
+              <p class="font-medium text-orange-900 dark:text-orange-200">
+                1. Visita y valoración
+              </p>
+              <p class="text-sm text-gray-700 dark:text-gray-300 mt-1">
+                Levantamiento y definición del alcance.
+              </p>
+            </li>
+            <li
+              class="rounded-2xl border border-orange-200 dark:border-orange-800 p-6 bg-white dark:bg-orange-900/10 shadow-sm"
+            >
+              <p class="font-medium text-orange-900 dark:text-orange-200">
+                2. Presupuesto detallado
+              </p>
+              <p class="text-sm text-gray-700 dark:text-gray-300 mt-1">
+                Partidas, plazos y materiales acordados.
+              </p>
+            </li>
+            <li
+              class="rounded-2xl border border-orange-200 dark:border-orange-800 p-6 bg-white dark:bg-orange-900/10 shadow-sm"
+            >
+              <p class="font-medium text-orange-900 dark:text-orange-200">
+                3. Ejecución y control
+              </p>
+              <p class="text-sm text-gray-700 dark:text-gray-300 mt-1">
+                Seguimiento de obra y comunicación continua.
+              </p>
+            </li>
+            <li
+              class="rounded-2xl border border-orange-200 dark:border-orange-800 p-6 bg-white dark:bg-orange-900/10 shadow-sm"
+            >
+              <p class="font-medium text-orange-900 dark:text-orange-200">
+                4. Entrega y garantía
+              </p>
+              <p class="text-sm text-gray-700 dark:text-gray-300 mt-1">
+                Cierre de obra y documentación de calidad.
+              </p>
+            </li>
+          </ol>
 
-    <div class="mt-8">
-      <a href="/contacto.html"
-         class="inline-flex items-center justify-center rounded-2xl px-5 py-3 border border-transparent shadow-sm bg-orange-600 text-white hover:bg-orange-700 transition">
-        Solicitar visita técnica
-      </a>
-    </div>
-  </div>
-</section>
+          <div class="mt-8">
+            <a
+              href="/contacto.html"
+              class="inline-flex items-center justify-center rounded-2xl px-5 py-3 border border-transparent shadow-sm bg-orange-600 text-white hover:bg-orange-700 transition"
+            >
+              Solicitar visita técnica
+            </a>
+          </div>
+        </div>
+      </section>
 
-<!-- CTA final (mismo tono que la sección Cobertura) -->
-<section class="bg-orange-50 dark:bg-orange-900/10 border-t border-orange-200/70 dark:border-orange-800/50">
-  <div class="max-w-7xl mx-auto px-6 pt-12 pb-12 md:pt-14 md:pb-14">
-    <div class="rounded-2xl border border-orange-200 dark:border-orange-800 p-8 md:p-10 bg-white dark:bg-orange-900/10 shadow-sm">
-      <h2 class="text-2xl md:text-3xl font-semibold text-orange-900 dark:text-orange-200">
-        ¿Hablamos de tu obra en El Bierzo?
-      </h2>
-      <p class="mt-3 text-gray-700 dark:text-gray-300">
-        Cuéntanos tu proyecto y te preparamos un presupuesto claro.
-      </p>
-      <div class="mt-6 flex flex-wrap gap-3">
-        <a href="/contacto.html"
-           class="inline-flex items-center justify-center rounded-2xl px-5 py-3 border border-transparent bg-orange-600 text-white hover:bg-orange-700 transition">
-          Contactar
-        </a>
-        <a href="tel:+34619761685"
-           class="inline-flex items-center justify-center rounded-2xl px-5 py-3 border border-orange-300 text-orange-700 hover:bg-orange-100 dark:border-orange-700 dark:text-orange-300 dark:hover:bg-orange-900/30 transition">
-          Llamar 619 76 16 85
-        </a>
-      </div>
-    </div>
-  </div>
-</section>
+      <!-- CTA final (mismo tono que la sección Cobertura) -->
+      <section
+        class="bg-orange-50 dark:bg-orange-900/10 border-t border-orange-200/70 dark:border-orange-800/50"
+      >
+        <div class="max-w-7xl mx-auto px-6 pt-12 pb-12 md:pt-14 md:pb-14">
+          <div
+            class="rounded-2xl border border-orange-200 dark:border-orange-800 p-8 md:p-10 bg-white dark:bg-orange-900/10 shadow-sm"
+          >
+            <h2
+              class="text-2xl md:text-3xl font-semibold text-orange-900 dark:text-orange-200"
+            >
+              ¿Hablamos de tu obra en El Bierzo?
+            </h2>
+            <p class="mt-3 text-gray-700 dark:text-gray-300">
+              Cuéntanos tu proyecto y te preparamos un presupuesto claro.
+            </p>
+            <div class="mt-6 flex flex-wrap gap-3">
+              <a
+                href="/contacto.html"
+                class="inline-flex items-center justify-center rounded-2xl px-5 py-3 border border-transparent bg-orange-600 text-white hover:bg-orange-700 transition"
+              >
+                Contactar
+              </a>
+              <a
+                href="tel:+34619761685"
+                class="inline-flex items-center justify-center rounded-2xl px-5 py-3 border border-orange-300 text-orange-700 hover:bg-orange-100 dark:border-orange-700 dark:text-orange-300 dark:hover:bg-orange-900/30 transition"
+              >
+                Llamar 619 76 16 85
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
 
-
-
-<!-- Separación extra antes del footer -->
-<div class="mb-16"></div>
-
+      <!-- Separación extra antes del footer -->
+      <div class="mb-16"></div>
     </main>
 
     <!-- Footer -->
@@ -230,8 +358,8 @@
     </button>
 
     <!-- Carga del header/footer desde subcarpeta -->
-    <script src="../js/cargar-header.js"></script>
-    <script src="../js/cargar-footer.js"></script>
+    <script src="/js/cargar-header.js"></script>
+    <script src="/js/cargar-footer.js"></script>
     <script src="/js/fecha-footer.js"></script>
     <script src="/js/theme-toggle.js" defer></script>
     <script src="/js/menu-responsive.js"></script>
