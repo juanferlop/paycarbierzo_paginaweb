@@ -1,56 +1,155 @@
-<header class="bg-white dark:bg-gray-900 shadow-md">
-  <div class="w-full px-4 md:px-8 py-4 flex justify-between items-center">
-    <!-- Marca (logo + título) -->
-    <div class="flex items-center space-x-3">
-      <img
-        src="/assets/img/webp/logo.webp"
-        alt="Logo Paycar Bierzo"
-        class="h-10 w-auto"
-      />
-      <h1 class="text-2xl font-bold">Paycar Bierzo S.L.</h1>
-    </div>
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Paycar Bierzo - Header</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+      .services-dropdown {
+        opacity: 0;
+        visibility: hidden;
+        transform: translateY(10px);
+        transition: all 0.3s ease;
+      }
+      .services-menu:hover .services-dropdown {
+        opacity: 1;
+        visibility: visible;
+        transform: translateY(0);
+      }
+      /* Asegurar que el dropdown no se corte */
+      .header-container {
+        position: relative;
+        z-index: 100;
+      }
+      /* Mejorar la visualización en móviles */
+      @media (max-width: 767px) {
+        #menu {
+          max-height: 0;
+          overflow: hidden;
+          transition: max-height 0.5s ease;
+        }
+        #menu.mobile-open {
+          max-height: 500px;
+        }
+        .services-dropdown {
+          position: static;
+          opacity: 1;
+          visibility: visible;
+          transform: none;
+          margin-left: 1rem;
+          margin-top: 0.5rem;
+          display: none;
+        }
+        .services-dropdown.mobile-open {
+          display: block;
+        }
+      }
+    </style>
+  </head>
+  <body class="bg-gray-100 min-h-screen">
+    <!-- Header -->
+    <header class="bg-white dark:bg-gray-900 shadow-md header-container">
+      <div class="w-full px-4 md:px-8 py-4 flex justify-between items-center">
+        <!-- Marca (logo + título) -->
+        <div class="flex items-center space-x-3">
+          <img
+            src="/assets/img/webp/logo.webp"
+            alt="Logo Paycar Bierzo"
+            class="h-10 w-auto"
+          />
+          <h1 class="text-2xl font-bold">Paycar Bierzo S.L.</h1>
+        </div>
 
-    <!-- Botón hamburguesa (móvil) -->
-    <button
-      id="menu-btn"
-      class="md:hidden text-2xl focus:outline-none"
-      aria-label="Abrir menú"
-    >
-      <svg
-        xmlns="http://www.w3.org/2000/svg"
-        class="h-8 w-8"
-        fill="none"
-        viewBox="0 0 24 24"
-        stroke="currentColor"
-      >
-        <path
-          stroke-linecap="round"
-          stroke-linejoin="round"
-          stroke-width="2"
-          d="M4 6h16M4 12h16M4 18h16"
-        />
-      </svg>
-    </button>
+        <!-- Botón hamburguesa (móvil) -->
+        <button
+          id="menu-btn"
+          class="md:hidden text-2xl focus:outline-none"
+          aria-label="Abrir menú"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            class="h-8 w-8"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M4 6h16M4 12h16M4 18h16"
+            />
+          </svg>
+        </button>
 
-    <!-- Navegación desktop -->
-    <nav
-      id="menu"
-      class="hidden md:flex flex-col md:flex-row md:space-x-4 absolute md:static top-16 left-0 w-full md:w-auto bg-white dark:bg-gray-900 md:bg-transparent shadow-md md:shadow-none z-50 header-links"
-    >
-      <a href="/index.html" class="block px-4 py-2 hover:text-orange-500"
-        >Inicio</a
-      >
-      <a
-        href="/sobre-nosotros.html"
-        class="block px-4 py-2 hover:text-orange-500"
-        >Sobre Nosotros</a
-      >
-      <a href="/trabajos.html" class="block px-4 py-2 hover:text-orange-500"
-        >Trabajos Realizados</a
-      >
-      <a href="/contacto.html" class="block px-4 py-2 hover:text-orange-500"
-        >Contacto</a
-      >
-    </nav>
-  </div>
-</header>
+        <!-- Navegación desktop -->
+        <nav
+          id="menu"
+          class="hidden md:flex flex-col md:flex-row md:space-x-4 absolute md:static top-full left-0 w-full md:w-auto bg-white dark:bg-gray-900 md:bg-transparent shadow-md md:shadow-none z-50"
+        >
+          <a
+            href="/index.html"
+            class="block px-4 py-2 hover:text-orange-500 transition-colors"
+            >Inicio</a
+          >
+
+          <a
+            href="/sobre-nosotros.html"
+            class="block px-4 py-2 hover:text-orange-500 transition-colors"
+            >Sobre Nosotros</a
+          >
+
+          <!-- Sección Servicios con submenú -->
+          <div class="services-menu relative">
+            <a
+              href="#"
+              class="block px-4 py-2 hover:text-orange-500 transition-colors flex items-center"
+            >
+              Servicios
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                class="h-4 w-4 ml-1"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M19 9l-7 7-7-7"
+                />
+              </svg>
+            </a>
+            <div
+              class="services-dropdown absolute left-0 top-full mt-1 w-48 bg-white dark:bg-gray-800 rounded-md shadow-lg z-50 border border-gray-200 dark:border-gray-700"
+            >
+              <a
+                href="/empresa-construccion-el-bierzo/index.html"
+                class="block px-4 py-2 text-gray-800 dark:text-white hover:bg-orange-500 hover:text-white transition-colors rounded-t-md"
+                >El Bierzo</a
+              >
+              <a
+                href="/empresa-construccion-ponferrada/index.html"
+                class="block px-4 py-2 text-gray-800 dark:text-white hover:bg-orange-500 hover:text-white transition-colors rounded-b-md"
+                >Ponferrada</a
+              >
+            </div>
+          </div>
+          <a
+            href="/trabajos.html"
+            class="block px-4 py-2 hover:text-orange-500 transition-colors"
+            >Trabajos Realizados</a
+          >
+          <a
+            href="/contacto.html"
+            class="block px-4 py-2 hover:text-orange-500 transition-colors"
+            >Contacto</a
+          >
+        </nav>
+      </div>
+    </header>
+    <script src="/js/menu-responsive.js"></script>
+  </body>
+</html>
