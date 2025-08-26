@@ -132,7 +132,31 @@
     </main>
 
     <div id="footer"></div>
+    <!-- Botón de cambio de aspecto (claro /) -->
+    <button
+      id="theme-toggle"
+      type="button"
+      aria-label="Cambiar tema"
+      aria-pressed="false"
+      class="fixed bottom-6 right-6 z-50 inline-flex items-center justify-center rounded-full border shadow-lg p-3 bg-white/90 border-gray-200 text-gray-800 hover:scale-105 active:scale-95 transition dark:bg-gray-900/90 dark:border-gray-700 dark:text-gray-100"
+    >
+      <!-- El JS actualizará este SVG (sol/luna) vía innerHTML -->
+      <svg
+        id="theme-icon"
+        xmlns="http://www.w3.org/2000/svg"
+        viewBox="0 0 24 24"
+        width="20"
+        height="20"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="2"
+        aria-hidden="true"
+      ></svg>
+    </button>
     <script src="../js/cargar-header.js"></script>
     <script src="../js/cargar-footer.js"></script>
+    <script src="/js/fecha-footer.js"></script>
+    <script src="/js/theme-toggle.js" defer></script>
+    <script src="/js/menu-responsive.js"></script>
   </body>
 </html>

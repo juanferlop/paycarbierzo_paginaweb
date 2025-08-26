@@ -120,7 +120,7 @@
             <figcaption class="p-4"><h3 class="text-base font-semibold">Edificios residenciales</h3><p class="text-sm text-gray-600 dark:text-gray-300">Cimentación, muros y forjados.</p></figcaption>
           </figure>
           <figure class="group overflow-hidden rounded-2xl border border-orange-200/60 dark:border-orange-800/60 bg-white dark:bg-orange-900/10 shadow-sm hover:shadow-lg transition">
-            <img src="/assets/img/webp/valtuille-1.webp" alt="Bodega en El Bierzo" class="w-full aspect-[4/3] object-cover transition-transform duration-300 group-hover:scale-[1.03]" loading="lazy" />
+            <img src="/assets/img/webp/rodanillo-2.webp" alt="Bodega en El Bierzo" class="w-full aspect-[4/3] object-cover transition-transform duration-300 group-hover:scale-[1.03]" loading="lazy" />
             <figcaption class="p-4"><h3 class="text-base font-semibold">Chalets</h3><p class="text-sm text-gray-600 dark:text-gray-300">Estructura completa con opción a división interior.</p></figcaption>
           </figure>
           <figure class="group overflow-hidden rounded-2xl border border-orange-200/60 dark:border-orange-800/60 bg-white dark:bg-orange-900/10 shadow-sm hover:shadow-lg transition">
@@ -131,36 +131,61 @@
       </section>
 
      <!-- CTA -->
-<section class="bg-orange-50 dark:bg-orange-900/10 border-y border-orange-200/70 dark:border-orange-800/50">
-  <div class="max-w-7xl mx-auto px-6 py-12 md:py-16">
-    <div class="rounded-2xl border border-orange-200 dark:border-orange-800 p-8 md:p-12 bg-white dark:bg-orange-900/20 shadow-md">
-      <h2 class="text-2xl md:text-3xl font-semibold text-orange-900 dark:text-orange-200">
-        ¿Empezamos tu obra en Ponferrada?
-      </h2>
-      <p class="mt-3 text-gray-700 dark:text-gray-300 max-w-2xl">
-        Te preparamos un presupuesto claro y sin sorpresas.
-      </p>
-      <div class="mt-6 flex flex-wrap gap-4">
-        <a href="/contacto.html"
-           class="inline-flex items-center justify-center rounded-2xl px-6 py-3 border border-transparent shadow-sm bg-orange-600 text-white hover:bg-orange-700 transition font-medium">
-          Contactar
-        </a>
-        <a href="tel:+34619761685"
-           class="inline-flex items-center justify-center rounded-2xl px-6 py-3 border border-orange-300 text-orange-700 hover:bg-orange-100 dark:border-orange-700 dark:text-orange-300 dark:hover:bg-orange-900/30 transition font-medium">
-          Llamar 619 76 16 85
-        </a>
+    <section class="bg-orange-50 dark:bg-orange-900/10 border-y border-orange-200/70 dark:border-orange-800/50">
+      <div class="max-w-7xl mx-auto px-6 py-12 md:py-16">
+        <div class="rounded-2xl border border-orange-200 dark:border-orange-800 p-8 md:p-12 bg-white dark:bg-orange-900/20 shadow-md">
+          <h2 class="text-2xl md:text-3xl font-semibold text-orange-900 dark:text-orange-200">
+            ¿Empezamos tu obra en Ponferrada?
+          </h2>
+          <p class="mt-3 text-gray-700 dark:text-gray-300 max-w-2xl">
+            Te preparamos un presupuesto claro y sin sorpresas.
+          </p>
+          <div class="mt-6 flex flex-wrap gap-4">
+            <a href="/contacto.html"
+              class="inline-flex items-center justify-center rounded-2xl px-6 py-3 border border-transparent shadow-sm bg-orange-600 text-white hover:bg-orange-700 transition font-medium">
+              Contactar
+            </a>
+            <a href="tel:+34619761685"
+              class="inline-flex items-center justify-center rounded-2xl px-6 py-3 border border-orange-300 text-orange-700 hover:bg-orange-100 dark:border-orange-700 dark:text-orange-300 dark:hover:bg-orange-900/30 transition font-medium">
+              Llamar 619 76 16 85
+            </a>
+          </div>
+        </div>
       </div>
-    </div>
-  </div>
-</section>
+    </section>
 
     </main>
 
     <!-- Footer -->
     <div id="footer"></div>
 
+     <!-- Botón de cambio de aspecto (claro /) -->
+    <button
+      id="theme-toggle"
+      type="button"
+      aria-label="Cambiar tema"
+      aria-pressed="false"
+      class="fixed bottom-6 right-6 z-50 inline-flex items-center justify-center rounded-full border shadow-lg p-3 bg-white/90 border-gray-200 text-gray-800 hover:scale-105 active:scale-95 transition dark:bg-gray-900/90 dark:border-gray-700 dark:text-gray-100"
+    >
+      <!-- El JS actualizará este SVG (sol/luna) vía innerHTML -->
+      <svg
+        id="theme-icon"
+        xmlns="http://www.w3.org/2000/svg"
+        viewBox="0 0 24 24"
+        width="20"
+        height="20"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="2"
+        aria-hidden="true"
+      ></svg>
+    </button>
+
     <!-- Loaders -->
     <script src="../js/cargar-header.js"></script>
     <script src="../js/cargar-footer.js"></script>
+     <script src="/js/fecha-footer.js"></script>
+    <script src="/js/theme-toggle.js" defer></script>
+    <script src="/js/menu-responsive.js"></script>
   </body>
 </html>
