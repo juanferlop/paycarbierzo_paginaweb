@@ -1,3 +1,4 @@
+// carrusel-contacto.js — cambio inmediato
 const imagenes = [
   'assets/img/webp/cubicos-4.webp',
   'assets/img/webp/rodanillo-5.webp',
@@ -6,14 +7,16 @@ const imagenes = [
   'assets/img/webp/inca-2.webp',
 ];
 
-let indiceAmigos = 0;
 const img = document.getElementById('carrusel-amigos');
 
+// Pre-carga para evitar destellos por red
+imagenes.forEach((src) => {
+  const i = new Image();
+  i.src = src;
+});
+
+let i = 0;
 setInterval(() => {
-  img.style.opacity = 0;
-  setTimeout(() => {
-    indiceAmigos = (indiceAmigos + 1) % imagenes.length;
-    img.src = imagenes[indiceAmigos];
-    img.style.opacity = 1;
-  }, 300);
+  i = (i + 1) % imagenes.length;
+  img.src = imagenes[i]; // cambio instantáneo, sin apagar/opacidad
 }, 5000);
