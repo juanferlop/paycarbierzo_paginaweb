@@ -132,7 +132,7 @@
       </section>
 
       <!-- Título -->
-      <section class="text-center px-4 pt-12 pb-20 max-w-4xl mx-auto">
+      <!-- <section class="text-center px-4 pt-12 pb-20 max-w-4xl mx-auto">
         <h2 class="text-4xl font-extrabold text-gray-800 dark:text-white mb-4">
           Trabajos Realizados
         </h2>
@@ -141,11 +141,62 @@
           distintos puntos del Bierzo y más allá. Aquí puedes ver una selección
           de nuestras obras clasificadas por tipo y ubicación.
         </p>
+      </section> -->
+
+      <!-- Sección: Trabajos Realizados (card redondeada) -->
+      <section class="px-6 py-12 sm:py-16">
+        <div class="mx-auto max-w-5xl">
+          <!-- Card redondeada -->
+          <div
+            class="relative overflow-hidden rounded-3xl bg-white/90 dark:bg-gray-900/80 ring-1 ring-orange-100/70 dark:ring-orange-500/15 shadow-lg"
+          >
+            <!-- Luces suaves (decoración muy sutil) -->
+            <div
+              class="pointer-events-none absolute -top-16 -right-20 h-44 w-44 rounded-full bg-orange-200/30 blur-2xl"
+            ></div>
+            <div
+              class="pointer-events-none absolute -bottom-14 -left-16 h-36 w-36 rounded-full bg-orange-100/40 dark:bg-orange-500/10 blur-xl"
+            ></div>
+
+            <!-- Contenido -->
+            <div class="relative px-6 py-14 sm:px-12 sm:py-16 text-center">
+              <!-- Eyebrow / píldora -->
+              <p
+                class="inline-flex items-center gap-2 rounded-full bg-orange-50 px-3 py-1 text-sm font-medium text-orange-700 ring-1 ring-orange-200 dark:bg-orange-500/10 dark:text-orange-300 dark:ring-orange-500/30"
+              >
+                Nuestros proyectos
+              </p>
+
+              <!-- Título -->
+              <h2
+                class="mt-4 text-3xl sm:text-4xl font-extrabold tracking-tight text-gray-800 dark:text-white"
+              >
+                Trabajos Realizados
+              </h2>
+
+              <!-- subrayado decorativo centrado -->
+              <div class="mt-3 flex justify-center">
+                <span
+                  class="h-1 w-24 rounded-full bg-gradient-to-r from-orange-400 via-orange-300 to-orange-400 shadow-sm"
+                ></span>
+              </div>
+
+              <!-- Descripción -->
+              <p
+                class="mx-auto mt-6 max-w-3xl text-lg leading-relaxed text-gray-600 dark:text-gray-300"
+              >
+                A lo largo del tiempo, hemos ejecutado numerosos proyectos en
+                distintos puntos del Bierzo y más allá. Aquí puedes ver una
+                selección de nuestras obras clasificadas por tipo y ubicación.
+              </p>
+            </div>
+          </div>
+        </div>
       </section>
 
       <section class="max-w-7xl mx-auto px-4">
         <!-- Filtros con tarjeta -->
-        <div class="bg-white dark:bg-gray-800 rounded-xl shadow-md p-6 mb-10">
+        <!-- <div class="bg-white dark:bg-gray-800 rounded-xl shadow-md p-6 mb-10">
           <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
             <select
               id="filtro-fecha"
@@ -160,6 +211,40 @@
             >
               <option value="">Todos los pueblos</option>
             </select>
+            <select
+              id="filtro-tipo"
+              class="w-full border rounded p-2 dark:bg-gray-800 dark:text-gray-200"
+            >
+              <option value="">Todos los tipos</option>
+            </select>
+          </div>
+        </div> -->
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-4 p-6 mb-10">
+          <div>
+            <label for="filtro-fecha" class="sr-only">Ordenar por fecha</label>
+            <select
+              id="filtro-fecha"
+              class="w-full border rounded p-2 dark:bg-gray-800 dark:text-gray-200"
+            >
+              <option value="reciente">Más recientes</option>
+              <option value="antigua">Más antiguas</option>
+            </select>
+          </div>
+
+          <div>
+            <label for="filtro-pueblo" class="sr-only"
+              >Filtrar por pueblo</label
+            >
+            <select
+              id="filtro-pueblo"
+              class="w-full border rounded p-2 dark:bg-gray-800 dark:text-gray-200"
+            >
+              <option value="">Todos los pueblos</option>
+            </select>
+          </div>
+
+          <div>
+            <label for="filtro-tipo" class="sr-only">Filtrar por tipo</label>
             <select
               id="filtro-tipo"
               class="w-full border rounded p-2 dark:bg-gray-800 dark:text-gray-200"
