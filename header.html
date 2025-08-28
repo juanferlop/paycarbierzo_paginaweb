@@ -48,13 +48,14 @@
     </style>
   </head>
   <body class="bg-gray-100 min-h-screen">
-    <!-- Top bar (desktop only) -->
+    <!-- Top bar -->
     <div
-      class="hidden md:block border-b border-gray-200 dark:border-gray-800 bg-white/90 dark:bg-gray-900/90 backdrop-blur"
+      class="border-b border-gray-200 dark:border-gray-800 bg-white/90 dark:bg-gray-900/90 backdrop-blur"
     >
       <div class="max-w-7xl mx-auto px-4 sm:px-6">
+        <!-- Desktop (md y arriba) -->
         <div
-          class="h-10 flex items-center justify-between text-sm text-gray-600 dark:text-gray-300"
+          class="hidden md:flex h-10 items-center justify-between text-sm text-gray-600 dark:text-gray-300"
         >
           <!-- Izquierda: Teléfono + Email -->
           <div class="flex items-center gap-6">
@@ -63,7 +64,6 @@
               class="inline-flex items-center gap-2 font-medium hover:text-orange-600 transition-colors"
               aria-label="Llamar al 619 761 685"
             >
-              <!-- icono teléfono -->
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 class="h-4 w-4"
@@ -86,7 +86,6 @@
               class="inline-flex items-center gap-2 hover:text-orange-600 transition-colors"
               aria-label="Enviar correo a carlosfernandez_pyc@hotmail.com"
             >
-              <!-- icono email -->
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 class="h-4 w-4"
@@ -114,7 +113,6 @@
               class="inline-flex items-center gap-1 hover:text-orange-600 transition-colors"
               aria-label="Abrir ubicación en Google Maps"
             >
-              <!-- icono ubicación -->
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 class="h-4 w-4"
@@ -139,7 +137,6 @@
             </a>
 
             <span class="flex items-center gap-1">
-              <!-- icono reloj -->
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 class="h-4 w-4"
@@ -157,6 +154,63 @@
               Lun–Vie 9:00–19:00
             </span>
           </div>
+        </div>
+
+        <!-- Mobile (solo teléfono + ubicación) -->
+        <div
+          class="flex md:hidden h-10 items-center justify-between text-sm text-gray-600 dark:text-gray-300"
+        >
+          <a
+            href="tel:+34619761685"
+            class="inline-flex items-center gap-1 font-medium hover:text-orange-600 transition-colors"
+            aria-label="Llamar al 619 761 685"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              class="h-5 w-5"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M3 5a2 2 0 012-2h1.28a2 2 0 011.94 1.515l.6 2.399a2 2 0 01-.55 1.944l-1.02 1.02a16 16 0 006.364 6.364l1.02-1.02a2 2 0 011.944-.55l2.399.6A2 2 0 0121 19.72V21a2 2 0 01-2 2h-1C8.82 23 1 15.18 1 6V5a2 2 0 012-2z"
+              />
+            </svg>
+            <span>619 761 685</span>
+          </a>
+
+          <a
+            href="https://maps.google.com/?q=Dehesas+León"
+            target="_blank"
+            rel="noopener"
+            class="inline-flex items-center gap-1 hover:text-orange-600 transition-colors"
+            aria-label="Abrir ubicación en Google Maps"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              class="h-5 w-5"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M12 11c1.657 0 3-1.343 3-3S13.657 5 12 5 9 6.343 9 8s1.343 3 3 3z"
+              />
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M12 22s8-4.5 8-12a8 8 0 10-16 0c0 7.5 8 12 8 12z"
+              />
+            </svg>
+            <span>Dehesas</span>
+          </a>
         </div>
       </div>
     </div>
