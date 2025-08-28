@@ -25,7 +25,7 @@
      quita la condición del ratio.
   */
 
-  const THRESHOLD = 0.3; //
+  const THRESHOLD = 0.2; //
   const ROOT_MARGIN = '-10% 0px -10% 0px';
 
   // Preferimos IntersectionObserver; si no existe, usamos un fallback por scroll
