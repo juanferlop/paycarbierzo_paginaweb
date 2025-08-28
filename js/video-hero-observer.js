@@ -1,34 +1,34 @@
 // /js/video-hero-observer.js
 // Móvil/tablet: muestra el overlay cuando la sección entra en viewport y lo oculta al salir.
-// Desktop: no hace nada (sigue funcionando por :hover gracias a Tailwind).
-
+// Desktop: mantiene el :hover de Tailwind activo.
 (function () {
-  // Detecta dispositivos táctiles (sin hover, puntero “grueso”)
-  const isTouch = () =>
-    window.matchMedia('(hover: none) and (pointer: coarse)').matches;
-
-  if (!isTouch()) return; // en desktop salimos: se gestiona con :hover
+  // Detección de entorno táctil menos estricta y más fiable
+  const isLikelyTouch = () =>
+    'ontouchstart' in window ||
+    (navigator.maxTouchPoints && navigator.maxTouchPoints > 0) ||
+    window.matchMedia('(any-hover: none)').matches ||
+    window.matchMedia('(any-pointer: coarse)').matches;
 
   const SECTIONS = document.querySelectorAll('[data-video-hero]');
   if (!SECTIONS.length) return;
 
-  // Clases que activan/ocultan el overlay (deben existir en el HTML inicial)
-  const SHOW = (el) => el?.classList.add('opacity-100', 'pointer-events-auto');
-  const HIDE = (el) =>
+  // Mostrar/Ocultar corrigiendo utilidades opuestas de Tailwind
+  const SHOW = (el) => {
+    el?.classList.remove('opacity-0', 'pointer-events-none');
+    el?.classList.add('opacity-100', 'pointer-events-auto');
+  };
+  const HIDE = (el) => {
     el?.classList.remove('opacity-100', 'pointer-events-auto');
+    el?.classList.add('opacity-0', 'pointer-events-none');
+  };
 
-  // Sensibilidad (ajústalo si quieres):
-  /* Ajusta la sensibilidad cambiando threshold y rootMargin.
-     Más pronto: sube rootMargin a -30% 0px -30% 0px o baja el threshold a 0.1.
-     Más tarde: baja rootMargin (por ejemplo -10% …) o sube el threshold a 0.3.
-     Si quieres que siempre quede visible en móvil mientras cualquier parte esté a la vista, usa threshold: 0 
-     quita la condición del ratio.
-  */
-
-  const THRESHOLD = 0.2; //
+  // Sensibilidad
+  const THRESHOLD = 0.3;
   const ROOT_MARGIN = '-10% 0px -10% 0px';
 
-  // Preferimos IntersectionObserver; si no existe, usamos un fallback por scroll
+  // Solo activamos el observador automático en dispositivos táctiles.
+  if (!isLikelyTouch()) return; // en desktop seguimos solo con :hover
+
   if ('IntersectionObserver' in window) {
     const io = new IntersectionObserver(
       (entries) => {
@@ -51,7 +51,7 @@
 
     SECTIONS.forEach((sec) => io.observe(sec));
   } else {
-    // Fallback simple para navegadores sin IO
+    // Fallback por scroll si no hay IntersectionObserver
     const check = () => {
       const vh = window.innerHeight || document.documentElement.clientHeight;
       SECTIONS.forEach((sec) => {
