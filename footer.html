@@ -1,64 +1,91 @@
-<footer class="mt-12 pb-8">
-  <div class="mx-auto max-w-7xl px-6">
-    <div
-      class="relative overflow-hidden rounded-xl border border-gray-200 dark:border-gray-700 bg-white/70 dark:bg-gray-900 shadow-md backdrop-blur"
-    >
-      <div
-        class="h-1 w-full bg-gradient-to-r from-orange-400 via-amber-300 to-pink-400"
-      ></div>
+<footer
+  role="contentinfo"
+  class="mt-12 bg-white dark:bg-gray-950 border-t border-gray-200/70 dark:border-gray-800/70 text-gray-800 dark:text-gray-100"
+>
+  <!-- franja naranja -->
+  <div class="h-1 w-full bg-orange-500"></div>
 
-      <!-- Bloque superior: legales + copyright -->
-      <div
-        class="flex flex-col md:flex-row md:items-center md:justify-between py-6 px-4 gap-6"
+  <div class="mx-auto max-w-7xl px-4 sm:px-6 py-8">
+    <div class="flex flex-col items-center gap-5 sm:gap-6">
+      <!-- ====== NAV LEGAL: MÓVIL (pill buttons) ====== -->
+      <nav
+        aria-label="Enlaces legales (móvil)"
+        class="md:hidden flex flex-wrap items-center justify-center gap-2 text-sm font-medium"
       >
-        <nav
-          aria-label="Enlaces legales"
-          class="flex items-center justify-center gap-4 footer-links"
+        <a
+          href="/aviso-legal.html"
+          class="px-3 py-1.5 rounded-full border border-gray-200 dark:border-gray-700 hover:border-orange-500 hover:text-orange-600 focus:outline-none focus:ring-2 focus:ring-orange-500 transition"
         >
-          <a href="/aviso-legal.html" class="hover:text-orange-600"
-            >Aviso Legal</a
-          >
-          <span class="footer-sep"></span>
-          <a href="/privacidad.html" class="hover:text-orange-600"
-            >Privacidad</a
-          >
-          <span class="footer-sep"></span>
-          <a href="/cookies.html" class="hover:text-orange-600">Cookies</a>
-        </nav>
+          Aviso Legal
+        </a>
+        <a
+          href="/privacidad.html"
+          class="px-3 py-1.5 rounded-full border border-gray-200 dark:border-gray-700 hover:border-orange-500 hover:text-orange-600 focus:outline-none focus:ring-2 focus:ring-orange-500 transition"
+        >
+          Privacidad
+        </a>
+        <a
+          href="/cookies.html"
+          class="px-3 py-1.5 rounded-full border border-gray-200 dark:border-gray-700 hover:border-orange-500 hover:text-orange-600 focus:outline-none focus:ring-2 focus:ring-orange-500 transition"
+        >
+          Cookies
+        </a>
+      </nav>
 
-        <div
-          class="text-center md:text-right md:border-l md:border-gray-300 dark:md:border-gray-600 md:pl-6"
+      <!-- ====== NAV LEGAL: ESCRITORIO (estilo B) ====== -->
+      <nav
+        aria-label="Enlaces legales (escritorio)"
+        class="hidden md:flex items-center text-sm font-medium md:divide-x md:divide-gray-300 dark:md:divide-gray-700"
+      >
+        <a
+          href="/aviso-legal.html"
+          class="px-2 md:px-3 py-1 rounded hover:text-orange-600 focus:outline-none focus:ring-2 focus:ring-orange-500"
         >
-          <p
-            class="text-xs md:text-sm text-gray-600 dark:text-gray-300 font-light"
-          >
-            &copy; <span id="anio-actual"></span>
-            <span class="font-medium">Paycar Bierzo S.L.</span> · Todos los
-            derechos reservados
-          </p>
-        </div>
-      </div>
+          Aviso Legal
+        </a>
+        <a
+          href="/privacidad.html"
+          class="px-2 md:px-3 py-1 rounded hover:text-orange-600 focus:outline-none focus:ring-2 focus:ring-orange-500"
+        >
+          Privacidad
+        </a>
+        <a
+          href="/cookies.html"
+          class="px-2 md:px-3 py-1 rounded hover:text-orange-600 focus:outline-none focus:ring-2 focus:ring-orange-500"
+        >
+          Cookies
+        </a>
+      </nav>
 
-      <!-- Línea adicional: Servicios por zona -->
-      <div class="px-4 pb-6">
-        <nav
-          aria-label="Servicios por zona"
-          class="flex flex-wrap items-center justify-center gap-x-4 gap-y-2 text-sm text-gray-700 dark:text-gray-300"
+      <!-- Servicios por zona (igual en móvil y escritorio) -->
+      <nav
+        aria-label="Servicios por zona"
+        class="flex flex-wrap items-center justify-center gap-x-4 gap-y-2 text-sm text-gray-700 dark:text-gray-300"
+      >
+        <span class="opacity-70">Servicios por zona:</span>
+        <a
+          href="/empresa-construccion-ponferrada/index.html"
+          class="px-1.5 py-1 rounded hover:text-orange-600 focus:outline-none focus:ring-2 focus:ring-orange-500"
         >
-          <span class="opacity-70">Servicios por zona:</span>
-          <a
-            href="/empresa-construccion-ponferrada/index.html"
-            class="hover:text-orange-600"
-            >Construcción en Ponferrada</a
-          >
-          <span class="hidden sm:inline opacity-40">·</span>
-          <a
-            href="/empresa-construccion-el-bierzo/index.html"
-            class="hover:text-orange-600"
-            >Construcción en El Bierzo</a
-          >
-        </nav>
-      </div>
+          Construcción en Ponferrada
+        </a>
+        <span class="hidden sm:inline opacity-40">·</span>
+        <a
+          href="/empresa-construccion-el-bierzo/index.html"
+          class="px-1.5 py-1 rounded hover:text-orange-600 focus:outline-none focus:ring-2 focus:ring-orange-500"
+        >
+          Construcción en El Bierzo
+        </a>
+      </nav>
+
+      <!-- Copyright -->
+      <p
+        class="text-xs sm:text-sm text-center text-gray-600 dark:text-gray-300"
+      >
+        &copy; <span id="anio-actual"></span>
+        <span class="font-semibold">Paycar Bierzo S.L.</span> · Todos los
+        derechos reservados
+      </p>
     </div>
   </div>
 </footer>
