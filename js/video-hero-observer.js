@@ -1,4 +1,3 @@
-// /js/video-hero-observer.js
 // Móvil/tablet: muestra el overlay cuando la sección entra en viewport y lo oculta al salir.
 // Desktop: mantiene el :hover de Tailwind activo.
 (function () {
@@ -23,8 +22,8 @@
   };
 
   // Sensibilidad
-  const THRESHOLD = 0.3;
-  const ROOT_MARGIN = '-10% 0px -10% 0px';
+  const THRESHOLD = 0.7; // exige ~70% visible
+  const ROOT_MARGIN = '-30% 0px -30% 0px'; // encoge arriba/abajo → pide más centralidad
 
   // Solo activamos el observador automático en dispositivos táctiles.
   if (!isLikelyTouch()) return; // en desktop seguimos solo con :hover
