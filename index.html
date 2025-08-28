@@ -218,59 +218,27 @@
         </div>
       </section>
 
-      <!-- 4 (Video echando hormigón) -->
-      <!-- <section
-        class="relative w-full h-[500px] overflow-hidden group rounded-xl shadow-lg"
-      >
-        <video
-          autoplay
-          muted
-          loop
-          playsinline
-          tabindex="-1"
-          class="absolute inset-0 w-full h-full object-cover"
-        >
-          <source src="assets/video/video-hormigon.mp4" type="video/mp4" />
-        </video>
-        <div
-          class="absolute inset-0 flex flex-col justify-center items-center text-center px-6 opacity-0 group-hover:opacity-100 transition-opacity duration-500 text-white"
-        >
-          <h2 class="text-4xl font-extrabold mb-4">
-            Bienvenidos a Nuestra Web
-          </h2>
-          <p class="text-lg max-w-2xl">
-            Nos complace darte la bienvenida. Conoce más sobre nuestra empresa,
-            nuestros valores, servicios y proyectos.
-          </p>
-          <a
-            href="sobre-nosotros.html"
-            class="mt-4 inline-block bg-orange-500 hover:bg-orange-600 transition px-6 py-3 rounded-full font-semibold shadow"
-            >Conócenos más</a
-          >
-        </div>
-      </section> -->
-
-      <!-- 4 (Video echando hormigón) -->
+      <!-- 4 (Imagen echando hormigón) -->
       <section
         class="group relative w-full h-[500px] overflow-hidden rounded-xl shadow-lg"
-        aria-label="Video: echando hormigón"
-        data-video-hero
+        aria-label="Imagen: estructura de hormigón"
+        data-image-hero
       >
-        <video
-          autoplay
-          muted
-          loop
-          playsinline
-          tabindex="-1"
+        <!-- Imagen de fondo -->
+        <img
+          src="assets/img/webp/cubicos-5.webp"
+          alt="Estructura de hormigón"
           class="absolute inset-0 w-full h-full object-cover"
-        >
-          <source src="assets/video/video-hormigon.mp4" type="video/mp4" />
-        </video>
+          width="1920"
+          height="1080"
+          loading="lazy"
+          decoding="async"
+        />
 
         <!-- Overlay: en desktop aparece por hover (group-hover),
        en móvil lo activaremos por IntersectionObserver -->
         <div
-          data-video-overlay
+          data-image-overlay
           class="absolute inset-0 flex flex-col justify-center items-center text-center px-6 text-white opacity-0 pointer-events-none transition-opacity duration-500 group-hover:opacity-100 group-hover:pointer-events-auto"
         >
           <h2 class="text-4xl font-extrabold mb-4">
@@ -283,8 +251,9 @@
           <a
             href="sobre-nosotros.html"
             class="mt-4 inline-block bg-orange-500 hover:bg-orange-600 transition px-6 py-3 rounded-full font-semibold shadow focus:outline-none focus:ring-2 focus:ring-orange-400"
-            >Conócenos más</a
           >
+            Conócenos más
+          </a>
         </div>
       </section>
 
