@@ -179,6 +179,12 @@
         box-shadow: 0 0 0 2px rgba(245, 158, 11, 0.35);
       }
     </style>
+
+    <!-- Google Fonts -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Montserrat:wght@700&display=swap"
+      rel="stylesheet"
+    />
   </head>
 
   <body
@@ -187,20 +193,47 @@
     <!-- Header -->
     <div id="header"></div>
 
-    <main>
-      <section class="relative w-full h-[500px] overflow-hidden">
-        <video
-          autoplay
-          loop
-          muted
-          playsinline
-          class="absolute inset-0 w-full h-full object-cover z-0"
-        >
-          <source src="assets/video/video-construccion.mp4" type="video/mp4" />
-        </video>
-        <div class="absolute inset-0 bg-black bg-opacity-30 z-10"></div>
-      </section>
+    <!-- Hero: Trabajos realizados -->
+    <section class="relative w-full h-[500px] overflow-hidden">
+      <img
+        src="assets/img/webp/cubicos-15.webp"
+        alt="Estructuras de hormigón - Paycar Bierzo"
+        class="absolute inset-0 w-full h-full object-cover z-0"
+        width="1920"
+        height="1080"
+        loading="eager"
+        fetchpriority="high"
+      />
 
+      <!-- Overlay oscuro -->
+      <div class="absolute inset-0 bg-black/40 z-10"></div>
+
+      <!-- Texto centrado -->
+      <div class="absolute inset-0 flex items-center justify-center z-20">
+        <div class="text-center px-6">
+          <h1
+            class="text-4xl md:text-4xl font-extrabold text-white drop-shadow-lg"
+            style="font-family: 'Montserrat', sans-serif"
+          >
+            Trabajos Realizados
+          </h1>
+          <p
+            class="mt-4 text-lg md:text-xl text-gray-100"
+            style="font-family: 'Inter', sans-serif"
+          >
+            Seriedad, sencillez y profesionalidad en cada obra
+          </p>
+          <span
+            class="mt-6 inline-block text-orange-500 font-bold text-xl"
+            style="font-family: 'Montserrat', sans-serif"
+          >
+            Paycar Bierzo
+          </span>
+        </div>
+      </div>
+    </section>
+
+    <main>
       <!-- Sección: Trabajos Realizados (card redondeada) -->
       <section class="px-6 py-12 sm:py-16">
         <div class="mx-auto max-w-5xl">
