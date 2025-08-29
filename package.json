@@ -7,7 +7,8 @@
     "lint": "eslint js/**/*.js",
     "format": "prettier --write .",
     "build:css": "@tailwindcss/cli -i assets/css/input.css -o assets/css/output.css --minify",
-    "watch:css": "@tailwindcss/cli -i assets/css/input.css -o assets/css/output.css --watch"
+    "watch:css": "@tailwindcss/cli -i assets/css/input.css -o assets/css/output.css --watch",
+    "images": "node scripts/generar-variantes.js"
   },
   "repository": {
     "type": "git",
@@ -31,12 +32,15 @@
     "postcss": "^8.5.6",
     "prettier": "^3.6.2",
     "purgecss": "^7.0.2",
+    "sharp": "^0.34.3",
     "stylelint": "^16.23.0",
     "stylelint-config-standard": "^39.0.0",
     "stylelint-config-standard-scss": "^15.0.1",
-    "tailwindcss": "^4.1.11"
+    "tailwindcss": "^4.1.11",
+    "sharp": "^0.33.0"
   },
   "dependencies": {
     "ffmpeg": "^0.0.4"
-  }
+  },
+  "type": "module"
 }

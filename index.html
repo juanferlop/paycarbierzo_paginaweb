@@ -65,10 +65,6 @@
     />
 
     <meta property="og:url" content="https://paycarbierzo.es/" />
-    <!-- <meta
-      property="og:image"
-      content="https://paycarbierzo.es/assets/img/hero-obra-1200x630.webp"
-    /> -->
     <meta property="og:image:width" content="1200" />
     <meta property="og:image:height" content="630" />
     <meta
@@ -86,19 +82,7 @@
       name="twitter:description"
       content="Estructuras de hormigón, construcción de casas y reformas en Ponferrada y El Bierzo."
     />
-    <!-- <meta
-      name="twitter:image"
-      content="https://paycarbierzo.es/assets/img/hero-obra-1200x630.webp"
-    /> -->
 
-    <!-- (Opcional) Preload del LCP si usas un hero grande -->
-    <!-- <link
-      rel="preload"
-      as="image"
-      href="/assets/img/hero-obra-1200x630.webp"
-      imagesrcset="/assets/img/hero-obra-1200x630.webp 1x"
-    /> -->
-    <!-- -->
     <meta
       name="description"
       content="Especialistas en estructuras de hormigón en Ponferrada y El Bierzo. Cimentaciones, forjados, naves y obra civil. También construimos casas llave en mano. Llámanos: 679 491 360."
@@ -140,6 +124,22 @@
     <meta name="theme-color" content="#ffffff" />
     <meta name="apple-mobile-web-app-status-bar-style" content="default" />
     <!-- FIN ETIQUETAS FAVICON -->
+    <!-- Preload del hero para bajar LCP -->
+    <link
+      rel="preload"
+      as="image"
+      href="/assets/img/webp/cubicos-5-1280.webp"
+      imagesrcset="/assets/img/webp/cubicos-5-1024.webp 1024w, /assets/img/webp/cubicos-5-1280.webp 1280w, /assets/img/webp/cubicos-5-1920.webp 1920w"
+      imagesizes="100vw"
+    />
+    <!-- Preload (mejora LCP y refuerza SEO de imagen)-->
+    <link
+      rel="preload"
+      as="image"
+      href="/assets/img/webp/magazDeAbajo_2-2-1280.webp"
+      imagesrcset="/assets/img/webp/magazDeAbajo_2-2-1024.webp 1024w, /assets/img/webp/magazDeAbajo_2-2-1280.webp 1280w, /assets/img/webp/magazDeAbajo_2-2-1920.webp 1920w"
+      imagesizes="100vw"
+    />
   </head>
   <body
     class="bg-gray-100 dark:bg-black text-gray-800 dark:text-gray-100 transition-colors duration-300"
@@ -149,16 +149,44 @@
 
     <!-- Contenido principal de la página. -->
     <main>
-      <!-- 1 (Carrusel) -->
+      <!-- 1 (Carrusel responsive + SEO) -->
       <section
         class="carrusel min-h-[400px] h-[600px] flex items-center justify-center mb-8"
+        role="region"
+        aria-label="Trabajos destacados en estructuras de hormigón — Paycar Bierzo"
       >
-        <img
-          id="carrusel-img"
-          src="assets/img/webp/magazDeAbajo_2-2.webp"
-          alt="Carrusel"
-          class="w-full h-full object-cover"
-        />
+        <figure class="w-full h-full m-0">
+          <picture id="carrusel">
+            <source id="carrusel-avif" type="image/avif" sizes="100vw" />
+            <source id="carrusel-webp" type="image/webp" sizes="100vw" />
+            <img
+              id="carrusel-img"
+              src="assets/img/webp/magazDeAbajo_2-2-1280.webp"
+              alt="Estructura de hormigón en obra — Paycar Bierzo"
+              class="w-full h-full object-cover"
+              width="1920"
+              height="1080"
+              fetchpriority="high"
+            />
+          </picture>
+
+          <!-- Texto visible para usuarios y rastreable para buscadores -->
+          <figcaption class="sr-only">
+            Galería con fotografías reales de proyectos de estructuras de
+            hormigón de Paycar Bierzo en la provincia de León.
+          </figcaption>
+        </figure>
+
+        <!-- Fallback si el usuario desactiva JavaScript -->
+        <noscript>
+          <img
+            src="assets/img/webp/magazDeAbajo_2-2-1280.webp"
+            alt="Estructura de hormigón en obra — Paycar Bierzo"
+            width="1920"
+            height="1080"
+            class="w-full h-full object-cover"
+          />
+        </noscript>
       </section>
 
       <!-- 2 (Logo en grande) -->
@@ -166,11 +194,42 @@
         <div
           class="w-full bg-white dark:bg-gray-900 rounded-2xl shadow-lg px-4 py-2 flex justify-center"
         >
-          <img
-            src="assets/img/webp/logo-paycar-bierzo.webp"
-            alt="Logo"
-            class="w-full h-auto md:max-h-[400px] object-contain transition-transform duration-300 hover:scale-105 rounded-xl"
-          />
+          <picture>
+            <!-- AVIF -->
+            <source
+              type="image/avif"
+              srcset="
+                assets/img/webp/logo-paycar-bierzo-640.avif   640w,
+                assets/img/webp/logo-paycar-bierzo-1024.avif 1024w,
+                assets/img/webp/logo-paycar-bierzo-1280.avif 1280w,
+                assets/img/webp/logo-paycar-bierzo-1536.avif 1536w,
+                assets/img/webp/logo-paycar-bierzo-1920.avif 1920w
+              "
+              sizes="(max-width: 640px) 90vw, (max-width: 1024px) 80vw, 60vw"
+            />
+            <!-- WebP -->
+            <source
+              type="image/webp"
+              srcset="
+                assets/img/webp/logo-paycar-bierzo-640.webp   640w,
+                assets/img/webp/logo-paycar-bierzo-1024.webp 1024w,
+                assets/img/webp/logo-paycar-bierzo-1280.webp 1280w,
+                assets/img/webp/logo-paycar-bierzo-1536.webp 1536w,
+                assets/img/webp/logo-paycar-bierzo-1920.webp 1920w
+              "
+              sizes="(max-width: 640px) 90vw, (max-width: 1024px) 80vw, 60vw"
+            />
+            <!-- Fallback -->
+            <img
+              src="assets/img/webp/logo-paycar-bierzo-1280.webp"
+              alt="Logotipo de Paycar Bierzo S.L."
+              class="w-full h-auto md:max-h-[400px] object-contain transition-transform duration-300 hover:scale-105 rounded-xl"
+              loading="lazy"
+              decoding="async"
+              width="1280"
+              height="400"
+            />
+          </picture>
         </div>
       </section>
 
@@ -224,19 +283,45 @@
         aria-label="Imagen: estructura de hormigón"
         data-image-hero
       >
-        <!-- Imagen de fondo -->
-        <img
-          src="assets/img/webp/cubicos-5.webp"
-          alt="Estructura de hormigón"
-          class="absolute inset-0 w-full h-full object-cover"
-          width="1920"
-          height="1080"
-          loading="lazy"
-          decoding="async"
-        />
+        <picture>
+          <!-- AVIF -->
+          <source
+            type="image/avif"
+            srcset="
+              assets/img/webp/cubicos-5-640.avif   640w,
+              assets/img/webp/cubicos-5-1024.avif 1024w,
+              assets/img/webp/cubicos-5-1280.avif 1280w,
+              assets/img/webp/cubicos-5-1536.avif 1536w,
+              assets/img/webp/cubicos-5-1920.avif 1920w,
+              assets/img/webp/cubicos-5-2560.avif 2560w
+            "
+            sizes="100vw"
+          />
+          <!-- WebP -->
+          <source
+            type="image/webp"
+            srcset="
+              assets/img/webp/cubicos-5-640.webp   640w,
+              assets/img/webp/cubicos-5-1024.webp 1024w,
+              assets/img/webp/cubicos-5-1280.webp 1280w,
+              assets/img/webp/cubicos-5-1536.webp 1536w,
+              assets/img/webp/cubicos-5-1920.webp 1920w,
+              assets/img/webp/cubicos-5-2560.webp 2560w
+            "
+            sizes="100vw"
+          />
+          <img
+            src="assets/img/webp/cubicos-5-1280.webp"
+            alt="Estructura de hormigón en obra"
+            class="absolute inset-0 w-full h-full object-cover"
+            width="1920"
+            height="1080"
+            fetchpriority="high"
+            decoding="async"
+          />
+        </picture>
 
-        <!-- Overlay: en desktop aparece por hover (group-hover),
-       en móvil lo activaremos por IntersectionObserver -->
+        <!-- Overlay intacto (hover desktop + IO en móvil) -->
         <div
           data-image-overlay
           class="absolute inset-0 flex flex-col justify-center items-center text-center px-6 text-white opacity-0 pointer-events-none transition-opacity duration-500 group-hover:opacity-100 group-hover:pointer-events-auto"
@@ -411,9 +496,8 @@
       ></svg>
     </button>
 
-    <!-- Para el carrusel de imágenes. -->
-    <script src="/js/carrusel-index.js"></script>
     <!-- Scripts de carga -->
+    <script src="/js/carrusel-index.js"></script>
     <script src="/js/cargar-header.js"></script>
     <script src="/js/cargar-footer.js"></script>
     <script src="/js/fecha-footer.js"></script>

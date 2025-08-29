@@ -193,44 +193,81 @@
     <!-- Header -->
     <div id="header"></div>
 
-    <!-- Hero: Trabajos realizados -->
-    <section class="relative w-full h-[500px] overflow-hidden">
-      <img
-        src="assets/img/webp/cubicos-15.webp"
-        alt="Estructuras de hormigón - Paycar Bierzo"
-        class="absolute inset-0 w-full h-full object-cover z-0"
-        width="1920"
-        height="1080"
-        loading="eager"
-        fetchpriority="high"
-      />
+    <!-- Hero: Trabajos realizados (SEO + rendimiento) -->
+    <section
+      class="relative w-full h-[500px] overflow-hidden"
+      role="region"
+      aria-labelledby="hero-trabajos-title"
+    >
+      <picture>
+        <!-- AVIF primero (más ligero) -->
+        <source
+          type="image/avif"
+          srcset="
+            assets/img/webp/cubicos-15-640.avif   640w,
+            assets/img/webp/cubicos-15-1024.avif 1024w,
+            assets/img/webp/cubicos-15-1280.avif 1280w,
+            assets/img/webp/cubicos-15-1536.avif 1536w,
+            assets/img/webp/cubicos-15-1920.avif 1920w
+          "
+          sizes="100vw"
+        />
+        <!-- WebP fallback moderno -->
+        <source
+          type="image/webp"
+          srcset="
+            assets/img/webp/cubicos-15-640.webp   640w,
+            assets/img/webp/cubicos-15-1024.webp 1024w,
+            assets/img/webp/cubicos-15-1280.webp 1280w,
+            assets/img/webp/cubicos-15-1536.webp 1536w,
+            assets/img/webp/cubicos-15-1920.webp 1920w
+          "
+          sizes="100vw"
+        />
+        <!-- Fallback -->
+        <img
+          src="assets/img/webp/cubicos-15-1280.webp"
+          alt="Estructuras de hormigón — Paycar Bierzo"
+          class="absolute inset-0 w-full h-full object-cover z-0"
+          width="1920"
+          height="1080"
+          loading="eager"
+          fetchpriority="high"
+          decoding="async"
+        />
+      </picture>
 
-      <!-- Overlay oscuro -->
-      <div class="absolute inset-0 bg-black/40 z-10"></div>
+      <!-- Overlay accesible -->
+      <div class="absolute inset-0 bg-black/40 z-10" aria-hidden="true"></div>
 
       <!-- Texto centrado -->
       <div class="absolute inset-0 flex items-center justify-center z-20">
-        <div class="text-center px-6">
+        <div class="text-center px-6 max-w-3xl">
           <h1
-            class="text-4xl md:text-4xl font-extrabold text-white drop-shadow-lg"
-            style="font-family: 'Montserrat', sans-serif"
+            id="hero-trabajos-title"
+            class="text-4xl md:text-5xl font-extrabold text-white drop-shadow-lg"
           >
             Trabajos Realizados
           </h1>
-          <p
-            class="mt-4 text-lg md:text-xl text-gray-100"
-            style="font-family: 'Inter', sans-serif"
-          >
+          <p class="mt-4 text-lg md:text-xl text-gray-100">
             Seriedad, sencillez y profesionalidad en cada obra
           </p>
-          <span
-            class="mt-6 inline-block text-orange-500 font-bold text-xl"
-            style="font-family: 'Montserrat', sans-serif"
-          >
+          <span class="mt-6 inline-block text-orange-500 font-bold text-xl">
             Paycar Bierzo
           </span>
         </div>
       </div>
+
+      <!-- Fallback si el usuario desactiva JS -->
+      <noscript>
+        <img
+          src="assets/img/webp/cubicos-15-1280.webp"
+          alt="Estructuras de hormigón — Paycar Bierzo"
+          class="w-full h-full object-cover"
+          width="1920"
+          height="1080"
+        />
+      </noscript>
     </section>
 
     <main>
@@ -334,7 +371,6 @@
     <div id="footer"></div>
 
     <!-- Datos + galería -->
-    <script src="js/proyectos.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/glightbox/dist/js/glightbox.min.js"></script>
 
     <!-- Botón flotante modo claro/oscuro -->
@@ -358,12 +394,12 @@
     </button>
 
     <!-- Scripts de carga -->
-    <script src="js/cargar-header.js"></script>
-    <script src="js/cargar-footer.js"></script>
-    <script src="js/fecha-footer.js"></script>
+    <script src="js/cargar-header.js" defer></script>
+    <script src="js/cargar-footer.js" defer></script>
+    <script src="js/fecha-footer.js" defer></script>
     <script src="js/theme-toggle.js" defer></script>
-    <script src="js/menu-responsive.js"></script>
-    <script src="js/proyectos.js"></script>
+    <script src="js/menu-responsive.js" defer></script>
+    <script src="js/proyectos.js" defer></script>
     <script src="js/comprobacion-email.js" defer></script>
   </body>
 </html>

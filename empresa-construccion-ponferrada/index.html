@@ -173,16 +173,69 @@
         </div>
       </section>
 
-      <!-- Imagen panorámica de Ponferrada -->
-      <section class="relative w-full my-8">
-        <figure class="overflow-hidden">
+      <!-- Imagen panorámica de Ponferrada (SEO + rendimiento) -->
+      <section
+        class="relative w-full my-8"
+        role="region"
+        aria-label="Vista panorámica de Ponferrada, capital del Bierzo"
+      >
+        <figure class="overflow-hidden m-0">
+          <picture>
+            <!-- AVIF primero (menor peso) -->
+            <source
+              type="image/avif"
+              srcset="
+                /assets/img/webp/panoramica-ponferrada-640.avif   640w,
+                /assets/img/webp/panoramica-ponferrada-1024.avif 1024w,
+                /assets/img/webp/panoramica-ponferrada-1280.avif 1280w,
+                /assets/img/webp/panoramica-ponferrada-1536.avif 1536w,
+                /assets/img/webp/panoramica-ponferrada-1920.avif 1920w,
+                /assets/img/webp/panoramica-ponferrada-2560.avif 2560w
+              "
+              sizes="100vw"
+            />
+            <!-- WebP fallback moderno -->
+            <source
+              type="image/webp"
+              srcset="
+                /assets/img/webp/panoramica-ponferrada-640.webp   640w,
+                /assets/img/webp/panoramica-ponferrada-1024.webp 1024w,
+                /assets/img/webp/panoramica-ponferrada-1280.webp 1280w,
+                /assets/img/webp/panoramica-ponferrada-1536.webp 1536w,
+                /assets/img/webp/panoramica-ponferrada-1920.webp 1920w,
+                /assets/img/webp/panoramica-ponferrada-2560.webp 2560w
+              "
+              sizes="100vw"
+            />
+            <!-- Fallback -->
+            <img
+              src="/assets/img/webp/panoramica-ponferrada-1280.webp"
+              alt="Vista panorámica de Ponferrada, capital del Bierzo"
+              class="w-full h-auto object-contain mx-auto max-h-[600px]"
+              loading="lazy"
+              decoding="async"
+              width="2560"
+              height="1440"
+            />
+          </picture>
+
+          <!-- Caption accesible (no visible) -->
+          <figcaption class="sr-only">
+            Fotografía panorámica de Ponferrada, referencia visual de la comarca
+            del Bierzo.
+          </figcaption>
+        </figure>
+
+        <!-- Fallback sin JS -->
+        <noscript>
           <img
-            src="/assets/img/webp/panoramica-ponferrada.webp"
+            src="/assets/img/webp/panoramica-ponferrada-1280.webp"
             alt="Vista panorámica de Ponferrada, capital del Bierzo"
             class="w-full h-auto object-contain mx-auto max-h-[600px]"
-            loading="lazy"
+            width="2560"
+            height="1440"
           />
-        </figure>
+        </noscript>
       </section>
 
       <!-- Servicios (marketing) -->
@@ -238,56 +291,168 @@
         </div>
       </section>
 
-      <!-- Galería breve -->
-      <section class="max-w-7xl mx-auto px-6 py-12 md:py-16">
+      <!-- Galería breve (SEO + rendimiento, sin cambiar contenido) -->
+      <section
+        class="max-w-7xl mx-auto px-6 py-12 md:py-16"
+        role="region"
+        aria-labelledby="destacados-title"
+        itemscope
+        itemtype="https://schema.org/ImageGallery"
+      >
         <h2
+          id="destacados-title"
           class="text-2xl md:text-3xl font-semibold text-orange-900 dark:text-orange-200"
         >
           Proyectos destacados
         </h2>
+
         <div class="mt-8 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+          <!-- Card 1 -->
           <figure
             class="group overflow-hidden rounded-2xl border border-orange-200/60 dark:border-orange-800/60 bg-white dark:bg-orange-900/10 shadow-sm hover:shadow-lg transition"
+            itemprop="associatedMedia"
+            itemscope
+            itemtype="https://schema.org/ImageObject"
           >
-            <img
-              src="/assets/img/webp/cubicos-12.webp"
-              alt="Vivienda unifamiliar en Ponferrada"
-              class="w-full aspect-[4/3] object-cover transition-transform duration-300 group-hover:scale-[1.03]"
-              loading="lazy"
-            />
-            <figcaption class="p-4">
+            <picture>
+              <!-- AVIF -->
+              <source
+                type="image/avif"
+                srcset="
+                  /assets/img/webp/cubicos-12-640.avif   640w,
+                  /assets/img/webp/cubicos-12-1024.avif 1024w,
+                  /assets/img/webp/cubicos-12-1280.avif 1280w,
+                  /assets/img/webp/cubicos-12-1536.avif 1536w,
+                  /assets/img/webp/cubicos-12-1920.avif 1920w
+                "
+                sizes="(max-width: 640px) 100vw, (max-width: 768px) 50vw, 33vw"
+              />
+              <!-- WebP -->
+              <source
+                type="image/webp"
+                srcset="
+                  /assets/img/webp/cubicos-12-640.webp   640w,
+                  /assets/img/webp/cubicos-12-1024.webp 1024w,
+                  /assets/img/webp/cubicos-12-1280.webp 1280w,
+                  /assets/img/webp/cubicos-12-1536.webp 1536w,
+                  /assets/img/webp/cubicos-12-1920.webp 1920w
+                "
+                sizes="(max-width: 640px) 100vw, (max-width: 768px) 50vw, 33vw"
+              />
+              <!-- Fallback -->
+              <img
+                itemprop="contentUrl"
+                src="/assets/img/webp/cubicos-12-1280.webp"
+                alt="Vivienda unifamiliar en Ponferrada"
+                class="w-full aspect-[4/3] object-cover transition-transform duration-300 group-hover:scale-[1.03]"
+                loading="lazy"
+                decoding="async"
+                width="1600"
+                height="1200"
+              />
+            </picture>
+
+            <figcaption class="p-4" itemprop="caption">
               <h3 class="text-base font-semibold">Edificios residenciales</h3>
               <p class="text-sm text-gray-600 dark:text-gray-300">
                 Cimentación, muros y forjados.
               </p>
             </figcaption>
           </figure>
+
+          <!-- Card 2 -->
           <figure
             class="group overflow-hidden rounded-2xl border border-orange-200/60 dark:border-orange-800/60 bg-white dark:bg-orange-900/10 shadow-sm hover:shadow-lg transition"
+            itemprop="associatedMedia"
+            itemscope
+            itemtype="https://schema.org/ImageObject"
           >
-            <img
-              src="/assets/img/webp/rodanillo-2.webp"
-              alt="Bodega en El Bierzo"
-              class="w-full aspect-[4/3] object-cover transition-transform duration-300 group-hover:scale-[1.03]"
-              loading="lazy"
-            />
-            <figcaption class="p-4">
+            <picture>
+              <source
+                type="image/avif"
+                srcset="
+                  /assets/img/webp/rodanillo-2-640.avif   640w,
+                  /assets/img/webp/rodanillo-2-1024.avif 1024w,
+                  /assets/img/webp/rodanillo-2-1280.avif 1280w,
+                  /assets/img/webp/rodanillo-2-1536.avif 1536w,
+                  /assets/img/webp/rodanillo-2-1920.avif 1920w
+                "
+                sizes="(max-width: 640px) 100vw, (max-width: 768px) 50vw, 33vw"
+              />
+              <source
+                type="image/webp"
+                srcset="
+                  /assets/img/webp/rodanillo-2-640.webp   640w,
+                  /assets/img/webp/rodanillo-2-1024.webp 1024w,
+                  /assets/img/webp/rodanillo-2-1280.webp 1280w,
+                  /assets/img/webp/rodanillo-2-1536.webp 1536w,
+                  /assets/img/webp/rodanillo-2-1920.webp 1920w
+                "
+                sizes="(max-width: 640px) 100vw, (max-width: 768px) 50vw, 33vw"
+              />
+              <img
+                itemprop="contentUrl"
+                src="/assets/img/webp/rodanillo-2-1280.webp"
+                alt="Bodega en El Bierzo"
+                class="w-full aspect-[4/3] object-cover transition-transform duration-300 group-hover:scale-[1.03]"
+                loading="lazy"
+                decoding="async"
+                width="1600"
+                height="1200"
+              />
+            </picture>
+
+            <figcaption class="p-4" itemprop="caption">
               <h3 class="text-base font-semibold">Chalets</h3>
               <p class="text-sm text-gray-600 dark:text-gray-300">
                 Estructura completa con opción a división interior.
               </p>
             </figcaption>
           </figure>
+
+          <!-- Card 3 -->
           <figure
             class="group overflow-hidden rounded-2xl border border-orange-200/60 dark:border-orange-800/60 bg-white dark:bg-orange-900/10 shadow-sm hover:shadow-lg transition"
+            itemprop="associatedMedia"
+            itemscope
+            itemtype="https://schema.org/ImageObject"
           >
-            <img
-              src="/assets/img/webp/hospital-6.webp"
-              alt="Obra civil en El Bierzo"
-              class="w-full aspect-[4/3] object-cover transition-transform duration-300 group-hover:scale-[1.03]"
-              loading="lazy"
-            />
-            <figcaption class="p-4">
+            <picture>
+              <source
+                type="image/avif"
+                srcset="
+                  /assets/img/webp/hospital-6-640.avif   640w,
+                  /assets/img/webp/hospital-6-1024.avif 1024w,
+                  /assets/img/webp/hospital-6-1280.avif 1280w,
+                  /assets/img/webp/hospital-6-1536.avif 1536w,
+                  /assets/img/webp/hospital-6-1920.avif 1920w
+                "
+                sizes="(max-width: 640px) 100vw, (max-width: 768px) 50vw, 33vw"
+              />
+              <source
+                type="image/webp"
+                srcset="
+                  /assets/img/webp/hospital-6-640.webp   640w,
+                  /assets/img/webp/hospital-6-1024.webp 1024w,
+                  /assets/img/webp/hospital-6-1280.webp 1280w,
+                  /assets/img/webp/hospital-6-1536.webp 1536w,
+                  /assets/img/webp/hospital-6-1920.webp 1920w
+                "
+                sizes="(max-width: 640px) 100vw, (max-width: 768px) 50vw, 33vw"
+              />
+              <img
+                itemprop="contentUrl"
+                src="/assets/img/webp/hospital-6-1280.webp"
+                alt="Obra civil en El Bierzo"
+                class="w-full aspect-[4/3] object-cover transition-transform duration-300 group-hover:scale-[1.03]"
+                loading="lazy"
+                decoding="async"
+                width="1600"
+                height="1200"
+              />
+            </picture>
+
+            <figcaption class="p-4" itemprop="caption">
               <h3 class="text-base font-semibold">Obra civil</h3>
               <p class="text-sm text-gray-600 dark:text-gray-300">
                 Viales y contenciones.
@@ -358,11 +523,11 @@
     </button>
 
     <!-- Loaders -->
-    <script src="../js/cargar-header.js"></script>
-    <script src="../js/cargar-footer.js"></script>
-    <script src="/js/fecha-footer.js"></script>
+    <script src="/js/cargar-header.js" defer></script>
+    <script src="/js/cargar-footer.js" defer></script>
+    <script src="/js/fecha-footer.js" defer></script>
     <script src="/js/theme-toggle.js" defer></script>
-    <script src="/js/menu-responsive.js"></script>
+    <script src="/js/menu-responsive.js" defer></script>
     <script src="js/comprobacion-email.js" defer></script>
   </body>
 </html>

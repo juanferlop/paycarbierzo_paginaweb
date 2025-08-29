@@ -104,6 +104,15 @@
     <meta name="theme-color" content="#ffffff" />
     <meta name="apple-mobile-web-app-status-bar-style" content="default" />
     <!-- FIN ETIQUETAS FAVICON -->
+
+    <!-- Preload de la 1º imágen del carrusel (hero) -->
+    <link
+      rel="preload"
+      as="image"
+      href="/assets/img/webp/cubicos-4-1280.webp"
+      imagesrcset="/assets/img/webp/cubicos-4-1024.webp 1024w, /assets/img/webp/cubicos-4-1280.webp 1280w, /assets/img/webp/cubicos-4-1920.webp 1920w"
+      imagesizes="100vw"
+    />
   </head>
 
   <body
@@ -112,17 +121,52 @@
     <!-- Header -->
     <div id="header"></div>
 
-    <!-- Carrusel -->
+    <!-- Carrusel (SEO + rendimiento) -->
+    <section
+      class="w-full mt-8"
+      role="region"
+      aria-labelledby="carrusel-contacto-title"
+    >
+      <h2 id="carrusel-contacto-title" class="sr-only">
+        Galería de obras — Paycar Bierzo
+      </h2>
 
-    <div class="w-full h-96 mt-8" style="height: 400px">
-      <img
-        id="carrusel-amigos"
-        src="assets/img/webp/cubicos-4.webp"
-        class="w-full h-full object-cover transition-opacity duration-500"
-        alt="Carrusel de obras"
-        loading="lazy"
-      />
-    </div>
+      <figure
+        class="relative w-full h-[400px] overflow-hidden rounded-xl shadow"
+      >
+        <picture id="cc-picture" class="absolute inset-0">
+          <source id="cc-avif" type="image/avif" sizes="100vw" />
+          <source id="cc-webp" type="image/webp" sizes="100vw" />
+          <img
+            id="cc-img"
+            src="assets/img/webp/cubicos-4-1280.webp"
+            alt="Obra de encofrado y estructura de hormigón"
+            class="w-full h-full object-cover transition-opacity duration-500 opacity-100"
+            width="1920"
+            height="1080"
+            loading="lazy"
+            decoding="async"
+            fetchpriority="low"
+          />
+        </picture>
+
+        <figcaption id="cc-caption" class="sr-only">
+          Obras recientes de estructuras de hormigón realizadas por Paycar
+          Bierzo.
+        </figcaption>
+      </figure>
+
+      <!-- Fallback sin JS -->
+      <noscript>
+        <img
+          src="assets/img/webp/cubicos-4-1280.webp"
+          alt="Obra de encofrado y estructura de hormigón"
+          class="w-full h-[400px] object-cover rounded-xl shadow"
+          width="1920"
+          height="1080"
+        />
+      </noscript>
+    </section>
 
     <!-- Sección de Contacto -->
     <section id="contacto" class="bg-white dark:bg-gray-800 py-16 mt-8">

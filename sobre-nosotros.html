@@ -104,84 +104,255 @@
     <!-- Header -->
     <div id="header"></div>
 
-    <!-- Banner con logo -->
+    <!-- Banner con logo (responsive raster + SEO) -->
     <section
       class="w-full py-12 flex justify-center bg-gradient-to-r from-orange-400 via-amber-300 to-orange-500"
+      role="region"
+      aria-labelledby="brand-title"
     >
-      <img
-        src="assets/img/webp/logo-paycar-bierzo.webp"
-        alt="Logo Paycar Bierzo"
-        class="w-full max-w-xs md:max-w-md object-contain drop-shadow-lg"
-      />
+      <h2 id="brand-title" class="sr-only">Marca corporativa Paycar Bierzo</h2>
+
+      <picture>
+        <!-- AVIF -->
+        <source
+          type="image/avif"
+          srcset="
+            /assets/img/webp/logo-paycar-bierzo-320.avif 320w,
+            /assets/img/webp/logo-paycar-bierzo-448.avif 448w,
+            /assets/img/webp/logo-paycar-bierzo-640.avif 640w
+          "
+          sizes="(min-width: 768px) 28rem, 20rem"
+        />
+        <!-- WebP -->
+        <source
+          type="image/webp"
+          srcset="
+            /assets/img/webp/logo-paycar-bierzo-320.webp 320w,
+            /assets/img/webp/logo-paycar-bierzo-448.webp 448w,
+            /assets/img/webp/logo-paycar-bierzo-640.webp 640w
+          "
+          sizes="(min-width: 768px) 28rem, 20rem"
+        />
+        <!-- Fallback -->
+        <img
+          src="/assets/img/webp/logo-paycar-bierzo-448.webp"
+          alt="Paycar Bierzo S.L."
+          class="w-full max-w-xs md:max-w-md object-contain drop-shadow-lg"
+          width="1280"
+          height="400"
+          loading="lazy"
+          decoding="async"
+        />
+      </picture>
     </section>
 
     <!-- Main -->
     <main class="max-w-6xl mx-auto px-4 pt-8 space-y-16">
-      <!-- Pasado -->
-      <div class="grid md:grid-cols-2 gap-16 items-center">
-        <img
-          src="assets/img/webp/pasado.webp"
-          alt="Nuestros inicios"
-          class="rounded-2xl shadow-lg w-full h-64 object-cover"
-          loading="lazy"
-        />
-        <div
-          class="rounded-xl shadow px-6 py-6 border-l-4 border-orange-300 bg-white dark:bg-gray-900"
-        >
-          <h2 class="text-3xl md:text-4xl font-bold mb-3">Nuestros Inicios</h2>
-          <p class="text-gray-700 dark:text-gray-300 leading-relaxed">
-            Paycar Bierzo nació en 2007 como una empresa familiar, impulsada por
-            la idea de poder realizar nuestros propios proyectos de manera
-            autónoma. Desde el principio, la experiencia y dedicación de nuestro
-            personal nos permitió afrontar cada obra con profesionalidad y
-            cercanía, ganando la confianza de quienes nos eligieron.
-          </p>
-        </div>
-      </div>
+      <!-- Pasado (SEO + rendimiento) -->
+      <section class="w-full" role="region" aria-labelledby="inicios-title">
+        <div class="grid md:grid-cols-2 gap-16 items-center">
+          <!-- Imagen responsive y accesible -->
+          <figure class="m-0">
+            <picture>
+              <!-- AVIF primero -->
+              <source
+                type="image/avif"
+                srcset="
+                  assets/img/webp/pasado-640.avif   640w,
+                  assets/img/webp/pasado-1024.avif 1024w,
+                  assets/img/webp/pasado-1280.avif 1280w,
+                  assets/img/webp/pasado-1536.avif 1536w,
+                  assets/img/webp/pasado-1920.avif 1920w
+                "
+                sizes="(max-width: 768px) 100vw, 50vw"
+              />
+              <!-- WebP fallback moderno -->
+              <source
+                type="image/webp"
+                srcset="
+                  assets/img/webp/pasado-640.webp   640w,
+                  assets/img/webp/pasado-1024.webp 1024w,
+                  assets/img/webp/pasado-1280.webp 1280w,
+                  assets/img/webp/pasado-1536.webp 1536w,
+                  assets/img/webp/pasado-1920.webp 1920w
+                "
+                sizes="(max-width: 768px) 100vw, 50vw"
+              />
+              <!-- Fallback -->
+              <img
+                src="assets/img/webp/pasado-1280.webp"
+                alt="Nuestros inicios en 2007: primeras obras de estructuras de hormigón de Paycar Bierzo en El Bierzo (León)"
+                class="rounded-2xl shadow-lg w-full h-64 object-cover"
+                width="1920"
+                height="1080"
+                loading="lazy"
+                decoding="async"
+              />
+            </picture>
+            <!-- Caption accesible (no visible) -->
+            <figcaption class="sr-only">
+              Fotografía histórica de los comienzos de Paycar Bierzo en obras de
+              hormigón.
+            </figcaption>
+          </figure>
 
-      <!-- Presente -->
-      <div class="grid md:grid-cols-2 gap-16 items-center md:flex-row-reverse">
-        <img
-          src="assets/img/webp/presente.webp"
-          alt="Estado actual"
-          class="rounded-2xl shadow-lg w-full h-64 object-cover"
-          loading="lazy"
-        />
-        <div
-          class="rounded-xl shadow px-6 py-6 border-l-4 border-orange-300 bg-white dark:bg-gray-900"
-        >
-          <h2 class="text-3xl md:text-4xl font-bold mb-3">Nuestro Presente</h2>
-          <p class="text-gray-700 dark:text-gray-300 leading-relaxed">
-            Hoy, tras años de trabajo constante y aprendizaje, somos una empresa
-            consolidada en la comarca. Nuestro equipo, formado por profesionales
-            con una vida dedicada al sector, afronta cada reto con seriedad,
-            compromiso y esfuerzo. Nos especializamos en el encofrado de
-            hormigón, realizando estructuras de todo tipo con la máxima calidad.
-          </p>
+          <!-- Texto -->
+          <div
+            class="rounded-xl shadow px-6 py-6 border-l-4 border-orange-300 bg-white dark:bg-gray-900"
+          >
+            <h2 id="inicios-title" class="text-3xl md:text-4xl font-bold mb-3">
+              Nuestros Inicios
+            </h2>
+            <p class="text-gray-700 dark:text-gray-300 leading-relaxed">
+              Paycar Bierzo nació en 2007 como una empresa familiar, impulsada
+              por la idea de poder realizar nuestros propios proyectos con
+              autonomía. Desde el principio, la experiencia y dedicación de
+              nuestro personal nos permitió afrontar cada obra de
+              <strong>estructuras de hormigón</strong> con profesionalidad y
+              cercanía en la provincia de León.
+            </p>
+          </div>
         </div>
-      </div>
+      </section>
 
-      <!-- Futuro -->
-      <div class="grid md:grid-cols-2 gap-16 items-center">
-        <img
-          src="assets/img/webp/futuro.webp"
-          alt="Futuro de la empresa"
-          class="rounded-2xl shadow-lg w-full h-64 object-cover"
-          loading="lazy"
-        />
-        <div
-          class="rounded-xl shadow px-6 py-6 border-l-4 border-orange-300 bg-white dark:bg-gray-900"
-        >
-          <h2 class="text-3xl md:text-4xl font-bold mb-3">Nuestra Visión</h2>
-          <p class="text-gray-700 dark:text-gray-300 leading-relaxed">
-            Miramos al futuro con la convicción de que nuestros valores
-            —calidad, compromiso y esfuerzo— son la base para seguir creciendo y
-            superando expectativas. Creemos que, gracias a nuestro trabajo y
-            experiencia, podemos construir cualquier proyecto que se nos plantee
-            y que requiera un encofrado de hormigón.
-          </p>
+      <!-- Presente (SEO + rendimiento) -->
+      <section class="w-full" role="region" aria-labelledby="presente-title">
+        <div class="grid md:grid-cols-2 gap-16 items-center">
+          <!-- Imagen responsive y accesible (orden invertido en desktop) -->
+          <figure class="m-0 md:order-last">
+            <picture>
+              <!-- AVIF -->
+              <source
+                type="image/avif"
+                srcset="
+                  assets/img/webp/presente-640.avif   640w,
+                  assets/img/webp/presente-1024.avif 1024w,
+                  assets/img/webp/presente-1280.avif 1280w,
+                  assets/img/webp/presente-1536.avif 1536w,
+                  assets/img/webp/presente-1920.avif 1920w
+                "
+                sizes="(max-width: 768px) 100vw, 50vw"
+              />
+              <!-- WebP -->
+              <source
+                type="image/webp"
+                srcset="
+                  assets/img/webp/presente-640.webp   640w,
+                  assets/img/webp/presente-1024.webp 1024w,
+                  assets/img/webp/presente-1280.webp 1280w,
+                  assets/img/webp/presente-1536.webp 1536w,
+                  assets/img/webp/presente-1920.webp 1920w
+                "
+                sizes="(max-width: 768px) 100vw, 50vw"
+              />
+              <!-- Fallback -->
+              <img
+                src="assets/img/webp/presente-1280.webp"
+                alt="Equipo de Paycar Bierzo ejecutando encofrado de hormigón en obra actual"
+                class="rounded-2xl shadow-lg w-full h-64 object-cover"
+                width="1920"
+                height="1080"
+                loading="lazy"
+                decoding="async"
+              />
+            </picture>
+            <figcaption class="sr-only">
+              Imagen reciente de nuestro trabajo de encofrado y estructuras de
+              hormigón en la comarca de El Bierzo.
+            </figcaption>
+          </figure>
+
+          <!-- Texto -->
+          <div
+            class="rounded-xl shadow px-6 py-6 border-l-4 border-orange-300 bg-white dark:bg-gray-900"
+          >
+            <h2 id="presente-title" class="text-3xl md:text-4xl font-bold mb-3">
+              Nuestro Presente
+            </h2>
+            <p class="text-gray-700 dark:text-gray-300 leading-relaxed">
+              Hoy, tras años de trabajo constante y aprendizaje, somos una
+              empresa consolidada en la comarca. Nuestro equipo, con una vida
+              dedicada al sector, afronta cada reto con seriedad, compromiso y
+              esfuerzo. Nos especializamos en el
+              <strong>encofrado de hormigón</strong> y la ejecución de
+              <strong>estructuras de hormigón</strong> de todo tipo con la
+              máxima calidad.
+              <a href="/trabajos.html" class="underline hover:no-underline"
+                >Ver trabajos realizados</a
+              >.
+            </p>
+          </div>
         </div>
-      </div>
+      </section>
+
+      <!-- Futuro (SEO + rendimiento) -->
+      <section class="w-full" role="region" aria-labelledby="vision-title">
+        <div class="grid md:grid-cols-2 gap-16 items-center">
+          <!-- Imagen responsive y accesible -->
+          <figure class="m-0">
+            <picture>
+              <!-- AVIF -->
+              <source
+                type="image/avif"
+                srcset="
+                  assets/img/webp/futuro-640.avif   640w,
+                  assets/img/webp/futuro-1024.avif 1024w,
+                  assets/img/webp/futuro-1280.avif 1280w,
+                  assets/img/webp/futuro-1536.avif 1536w,
+                  assets/img/webp/futuro-1920.avif 1920w
+                "
+                sizes="(max-width: 768px) 100vw, 50vw"
+              />
+              <!-- WebP -->
+              <source
+                type="image/webp"
+                srcset="
+                  assets/img/webp/futuro-640.webp   640w,
+                  assets/img/webp/futuro-1024.webp 1024w,
+                  assets/img/webp/futuro-1280.webp 1280w,
+                  assets/img/webp/futuro-1536.webp 1536w,
+                  assets/img/webp/futuro-1920.webp 1920w
+                "
+                sizes="(max-width: 768px) 100vw, 50vw"
+              />
+              <!-- Fallback -->
+              <img
+                src="assets/img/webp/futuro-1280.webp"
+                alt="Visión de futuro en estructuras y encofrado de hormigón de Paycar Bierzo"
+                class="rounded-2xl shadow-lg w-full h-64 object-cover"
+                width="1920"
+                height="1080"
+                loading="lazy"
+                decoding="async"
+              />
+            </picture>
+            <figcaption class="sr-only">
+              Proyección de Paycar Bierzo hacia nuevas obras y mejoras continuas
+              en estructuras de hormigón.
+            </figcaption>
+          </figure>
+
+          <!-- Texto -->
+          <div
+            class="rounded-xl shadow px-6 py-6 border-l-4 border-orange-300 bg-white dark:bg-gray-900"
+          >
+            <h2 id="vision-title" class="text-3xl md:text-4xl font-bold mb-3">
+              Nuestra Visión
+            </h2>
+            <p class="text-gray-700 dark:text-gray-300 leading-relaxed">
+              Miramos al futuro con la convicción de que nuestros valores
+              —calidad, compromiso y esfuerzo— son la base para seguir
+              creciendo. Con un equipo especializado en
+              <strong>encofrado y estructuras de hormigón</strong>, afrontamos
+              proyectos cada vez más exigentes en El Bierzo y la provincia de
+              León.
+              <a href="/contacto.html" class="underline hover:no-underline"
+                >Pídenos presupuesto</a
+              >.
+            </p>
+          </div>
+        </div>
+      </section>
     </main>
 
     <!-- Footer -->
@@ -208,11 +379,11 @@
     </button>
 
     <!-- Scripts de carga -->
-    <script src="js/cargar-header.js"></script>
-    <script src="js/cargar-footer.js"></script>
-    <script src="js/fecha-footer.js"></script>
+    <script src="js/cargar-header.js" defr></script>
+    <script src="js/cargar-footer.js" defer></script>
+    <script src="js/fecha-footer.js" defer></script>
     <script src="js/theme-toggle.js" defer></script>
-    <script src="js/menu-responsive.js"></script>
+    <script src="js/menu-responsive.js" defer></script>
     <script src="js/comprobacion-email.js" defer></script>
   </body>
 </html>

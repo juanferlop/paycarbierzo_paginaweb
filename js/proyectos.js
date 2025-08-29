@@ -27,20 +27,19 @@ async function fetchJsonWithFallback(candidates) {
   const errors = [];
   for (const url of candidates) {
     try {
-      const res = await fetch(url, { cache: 'no-store' });
+      const VERSION = '2025-08-29'; // cambia en cada deploy
+      const res = await fetch(url + '?v=' + VERSION, { cache: 'default' });
       if (!res.ok) {
         errors.push(`${url} -> ${res.status} ${res.statusText}`);
         continue;
       }
-      // Intento directo:
       try {
         const data = await res.json();
         console.info(`[proyectos] JSON cargado desde: ${url}`);
         return data;
       } catch (_) {
-        // Si el JSON tiene BOM u otros, reintento manual:
         const txt = await res.text();
-        const cleaned = txt.replace(/^\uFEFF/, ''); // quita BOM si hay
+        const cleaned = txt.replace(/^\uFEFF/, '');
         const data = JSON.parse(cleaned);
         console.info(`[proyectos] JSON (parse manual) desde: ${url}`);
         return data;
@@ -54,10 +53,49 @@ async function fetchJsonWithFallback(candidates) {
   );
 }
 
+// ---------------- Utilidades de imágenes responsive ----------------
+const WIDTHS = [640, 1024, 1280, 1536, 1920]; // añade 2560 si usas pantallas 4K
+const THUMB_W = 640; // el tamaño más pequeño que generaste
+const DIR_SEP = '/';
+const EXT_RE = /\.(avif|webp|png|jpe?g)$/i;
+
+// tamaños reales de la tarjeta en tu grid: 1col/2col/3col/4col
+// (coincide con: grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 en trabajos.html) :contentReference[oaicite:1]{index=1}
+const SIZES_MAIN =
+  '(max-width:640px) 100vw, (max-width:1024px) 50vw, (max-width:1280px) 33vw, 25vw';
+
+// devuelve base sin extensión (y sin sufijo de tamaño si lo tuviera)
+function toBase(path) {
+  return path.replace(EXT_RE, '');
+}
+
+function srcset(base, ext) {
+  return WIDTHS.map((w) => `${base}-${w}.${ext} ${w}w`).join(', ');
+}
+
+function thumbSrc(base) {
+  return `${base}-${THUMB_W}.webp`;
+}
+
+function largeHref(base) {
+  // lo que se abre en GLightbox (buena calidad)
+  return `${base}-1920.webp`;
+}
+
+// ALT por defecto si no lo pasas en el JSON
+function buildAlt(p) {
+  // ejemplo: "Vivienda Unifamiliar en Ponferrada (08-2024)"
+  const parts = [];
+  if (p.tipo) parts.push(p.tipo);
+  if (p.pueblo) parts.push(`en ${p.pueblo}`);
+  const head = parts.join(' ');
+  return head ? `${head}${p.fecha ? ` (${p.fecha})` : ''}` : 'Proyecto';
+}
+
 // ---------------- Arranque ----------------
 (async function init() {
   try {
-    proyectos = await fetchJsonWithFallback(JSON_CANDIDATES);
+    proyectos = await fetchJsonWithFallback(JSON_CANDIDATES); // :contentReference[oaicite:2]{index=2}
 
     // Rellenar opciones de filtros
     cargarOpcionesFiltro(proyectos);
@@ -149,18 +187,32 @@ function render() {
   }
 
   filtrados.forEach((proyecto, idx) => {
+    // Imagen principal y thumbs desde el JSON (ej: "assets/img/webp/cubicos-12.webp") :contentReference[oaicite:3]{index=3}
     const principal =
       proyecto.imagenes?.[0] || 'multimedia/imagenes/no-image.png';
-    const thumbs = proyecto.imagenes?.length ? proyecto.imagenes : [principal];
+    const thumbsArr = proyecto.imagenes?.length
+      ? proyecto.imagenes
+      : [principal];
 
-    const thumbsHtml = thumbs
-      .map(
-        (img) => `
-  <a href="${img}" class="glightbox-${idx}" data-gallery="galeria-${idx}">
-    <img src="${img}" class="min-w-[4rem] w-16 h-16 object-cover rounded-lg border-2 border-gray-200 dark:border-gray-700 hover:border-orange-500 transition" alt="">
-  </a>
-`
-      )
+    const principalBase = toBase(principal);
+    const alt = buildAlt(proyecto);
+
+    // Miniaturas ligeras: usamos 320w para el <img> y enlazamos a 1920w en GLightbox
+    const thumbsHtml = thumbsArr
+      .map((imgPath) => {
+        const base = toBase(imgPath); // p.ej. /assets/img/webp/cubicos-12
+        return `
+      <a href="${largeHref(base)}" class="glightbox-${idx}" data-gallery="galeria-${idx}">
+        <img
+          src="${thumbSrc(base)}"
+          data-fallback-base="${base}"
+          data-role="thumb"
+          class="min-w-[4rem] w-16 h-16 object-cover rounded-lg border-2 border-gray-200 dark:border-gray-700 hover:border-orange-500 transition"
+          alt="${alt}"
+          loading="lazy" decoding="async" width="64" height="64"
+        >
+      </a>`;
+      })
       .join('');
 
     const template = `
@@ -170,25 +222,34 @@ function render() {
       <span class="block text-base text-orange-500 dark:text-orange-400">${proyecto.tipo}</span>
       <span class="block text-sm text-gray-500 dark:text-gray-400">${proyecto.fecha}</span>
     </div>
-    <div class="relative w-full min-w-[16rem] h-64 flex items-center justify-center bg-gray-100 dark:bg-gray-700 rounded-xl overflow-hidden">
-      <img id="main-img-${idx}" src="${principal}" class="object-cover w-full h-full max-w-full max-h-full transition duration-300" alt="">
+
+    <div class="relative w-full min-w-[16rem] aspect-square bg-gray-100 dark:bg-gray-700 rounded-xl overflow-hidden">
+      <picture>
+        <source type="image/avif" srcset="${srcset(principalBase, 'avif')}" sizes="${SIZES_MAIN}">
+        <source type="image/webp" srcset="${srcset(principalBase, 'webp')}" sizes="${SIZES_MAIN}">
+        <img id="main-img-${idx}"
+             src="${principal}"                             
+             onerror="this.onerror=null; this.src='${principalBase}-1024.webp';"
+             class="w-full h-full object-cover transition duration-300"
+             alt="${alt}"
+             loading="lazy" decoding="async" fetchpriority="low"
+             width="1200" height="1200">                  
+      </picture>
     </div>
+
     ${
-      thumbs.length > 0
-        ? `
-    <div class="flex gap-2 px-2 pb-2 pt-2 overflow-x-auto scrollbar-thin scrollbar-thumb-gray-400 dark:scrollbar-thumb-gray-600 scrollbar-track-gray-200 dark:scrollbar-track-gray-700">
-      ${thumbsHtml}
-    </div>
-    `
+      thumbsArr.length > 0
+        ? `<div class="flex gap-2 px-2 pb-2 pt-2 overflow-x-auto">
+             ${thumbsHtml}
+           </div>`
         : ''
     }
-  </div>
-`;
+  </div>`;
 
     contenedor.insertAdjacentHTML('beforeend', template);
   });
 
-  /* Inicializo GLightBox para cada galería */
+  // Inicializa GLightbox si está presente (tu HTML ya lo carga por CDN) :contentReference[oaicite:4]{index=4}
   setTimeout(() => {
     try {
       if (typeof GLightbox === 'function') {
@@ -217,11 +278,8 @@ function inicializarChoices() {
     itemSelectText: '',
   });
 
-  // Aplica clases a un contenedor .choices concreto
   const styleChoicesBox = (box) => {
     if (!box) return;
-
-    // Caja visible del select
     const inner = box.querySelector('.choices__inner');
     if (inner) {
       inner.classList.add(
@@ -236,8 +294,6 @@ function inicializarChoices() {
         'dark:!border-gray-600'
       );
     }
-
-    // Dropdown de opciones
     const dropdown = box.querySelector('.choices__list--dropdown');
     if (dropdown) {
       dropdown.classList.add(
@@ -251,32 +307,24 @@ function inicializarChoices() {
         'dark:!border-gray-600'
       );
     }
-
-    // Input clonado (buscador) — solo existe en el de pueblos
     const input = box.querySelector('.choices__input--cloned');
-    if (input) {
+    if (input)
       input.classList.add(
         '!bg-white',
         '!text-gray-900',
         'dark:!bg-gray-800',
         'dark:!text-gray-200'
       );
-    }
-
-    // Ítems ya renderizados (seleccionado/placeholder y opciones abiertas)
-    box.querySelectorAll('.choices__item').forEach((el) => {
-      el.classList.add('dark:!text-gray-200');
-    });
+    box
+      .querySelectorAll('.choices__item')
+      .forEach((el) => el.classList.add('dark:!text-gray-200'));
   };
 
-  // Estiliza los tres selects
   [filtroFecha, filtroPueblo, filtroTipo].forEach((select) => {
     const box = select?.nextElementSibling?.classList?.contains('choices')
       ? select.nextElementSibling
       : select?.parentElement?.querySelector('.choices');
     styleChoicesBox(box);
-
-    // Reaplica estilos cuando Choices inserte nodos nuevos (abrir dropdown, buscar, etc.)
     if (box) {
       const mo = new MutationObserver(() => styleChoicesBox(box));
       mo.observe(box, { childList: true, subtree: true });
