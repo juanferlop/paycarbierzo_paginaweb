@@ -134,12 +134,13 @@
       <figure
         class="relative w-full h-[400px] overflow-hidden rounded-xl shadow"
       >
+        <!-- ✅ IDs que el JS necesita -->
         <picture id="cc-picture" class="absolute inset-0">
           <source id="cc-avif" type="image/avif" sizes="100vw" />
           <source id="cc-webp" type="image/webp" sizes="100vw" />
           <img
             id="cc-img"
-            src="assets/img/webp/cubicos-4-1280.webp"
+            src="/assets/img/webp/cubicos-4-1280.webp"
             alt="Obra de encofrado y estructura de hormigón"
             class="w-full h-full object-cover transition-opacity duration-500 opacity-100"
             width="1920"
@@ -155,17 +156,6 @@
           Bierzo.
         </figcaption>
       </figure>
-
-      <!-- Fallback sin JS -->
-      <noscript>
-        <img
-          src="assets/img/webp/cubicos-4-1280.webp"
-          alt="Obra de encofrado y estructura de hormigón"
-          class="w-full h-[400px] object-cover rounded-xl shadow"
-          width="1920"
-          height="1080"
-        />
-      </noscript>
     </section>
 
     <!-- Sección de Contacto -->
