@@ -1,9 +1,11 @@
-// carrusel-contacto.js (responsive + fade + pausa fuera de viewport)
+// carrusel-contacto.js — robusto para Pages + Cloudflare
 (() => {
-  const DIR = 'assets/img/webp';
+  // 1) rutas absolutas + versión para bustear cache
+  const DIR = '/assets/img/webp'; // OJO: barra inicial (absoluta)
+  const V = 'v=2025-08-30-a'; // cambia cuando subas cambios
+
   const WIDTHS = [640, 1024, 1280, 1536, 1920];
 
-  // Slides con texto (SEO/a11y)
   const SLIDES = [
     {
       base: 'cubicos-4',
@@ -38,15 +40,38 @@
   const $cap = document.getElementById('cc-caption');
   const $wrap = document.getElementById('cc-picture');
 
-  const srcset = (base, ext) =>
-    WIDTHS.map((w) => `${DIR}/${base}-${w}.${ext} ${w}w`).join(', ');
+  if (!$img || !$avif || !$webp) {
+    console.warn('[carrusel] faltan nodos en el HTML');
+    return;
+  }
 
-  // precarga ligera (solo la siguiente)
-  const preload = (url) => {
+  const url = (base, w, ext) => `${DIR}/${base}-${w}.${ext}?${V}`;
+  const srcset = (base, ext) =>
+    WIDTHS.map((w) => `${url(base, w, ext)} ${w}w`).join(', ');
+  const fallbackChain = (base) => [
+    url(base, 1280, 'webp'),
+    `${DIR}/${base}.webp?${V}`,
+    `${DIR}/${base}.jpg?${V}`,
+    `${DIR}/${base}.png?${V}`,
+  ];
+
+  // Pre-carga (suave) de una URL
+  const preload = (u) => {
     const i = new Image();
-    i.src = url;
+    i.src = u;
     return i.decode?.().catch(() => {}) || Promise.resolve();
   };
+
+  // Si falla una imagen, intentamos otras rutas
+  function attachErrorFallback(imgEl, base) {
+    const tries = fallbackChain(base);
+    let i = 0;
+    imgEl.addEventListener('error', () => {
+      if (i < tries.length) {
+        imgEl.src = tries[i++];
+      }
+    });
+  }
 
   let idx = 0;
   let timer = null;
@@ -55,54 +80,49 @@
   function applySlide(i) {
     const s = SLIDES[i % SLIDES.length];
 
-    // construir srcset para que el navegador elija el tamaño óptimo
+    // srcset AVIF/WebP (el navegador elige el tamaño óptimo)
     $avif.setAttribute('srcset', srcset(s.base, 'avif'));
     $webp.setAttribute('srcset', srcset(s.base, 'webp'));
 
-    // actualizar alt/caption
+    // Fallback del <img> (para navegadores sin AVIF/WebP)
+    $img.src = url(s.base, 1280, 'webp');
+
+    // alt/caption
     if (s.alt) $img.alt = s.alt;
     if ($cap && s.cap) $cap.textContent = s.cap;
 
-    // fallback para navegadores sin AVIF/WebP
-    $img.src = `${DIR}/${s.base}-1280.webp`;
+    // fallback en cadena si falta el archivo
+    attachErrorFallback($img, s.base);
   }
 
   async function next() {
-    // fade-out
     $img.classList.add('opacity-0');
 
-    // siguiente índice y precarga
     const nextIdx = (idx + 1) % SLIDES.length;
-    const nextBase = SLIDES[nextIdx].base;
-    const nextFallback = `${DIR}/${nextBase}-1280.webp`;
-    await preload(nextFallback);
+    await preload(url(SLIDES[nextIdx].base, 1280, 'webp'));
 
-    // aplicar slide y fade-in
     idx = nextIdx;
     applySlide(idx);
-    requestAnimationFrame(() => {
-      // una vez actualizado el DOM, quitamos el fade
-      $img.classList.remove('opacity-0');
-    });
 
-    // precarga de la siguiente siguiente (suave, no bloqueante)
+    requestAnimationFrame(() => $img.classList.remove('opacity-0'));
+
     const afterIdx = (idx + 1) % SLIDES.length;
-    preload(`${DIR}/${SLIDES[afterIdx].base}-1280.webp`);
+    preload(url(SLIDES[afterIdx].base, 1280, 'webp'));
   }
 
   function start() {
-    if (timer) return;
-    timer = setInterval(next, INTERVAL);
+    if (!timer) timer = setInterval(next, INTERVAL);
   }
-
   function stop() {
-    if (!timer) return;
-    clearInterval(timer);
-    timer = null;
+    if (timer) {
+      clearInterval(timer);
+      timer = null;
+    }
   }
 
-  // Pausa si no está en viewport (ahorra CPU/batería)
-  if ('IntersectionObserver' in window) {
+  // 2) Arranca SIEMPRE, y luego pausa con IntersectionObserver
+  start();
+  if ('IntersectionObserver' in window && $wrap) {
     const io = new IntersectionObserver(
       (entries) => {
         const visible = entries.some((e) => e.isIntersecting);
@@ -111,10 +131,10 @@
       { threshold: 0.2 }
     );
     io.observe($wrap);
-  } else {
-    start();
   }
 
-  // Primer slide
+  // 3) Primer slide ya con versionado
   applySlide(idx);
+
+  console.info('[carrusel] versión', V);
 })();
