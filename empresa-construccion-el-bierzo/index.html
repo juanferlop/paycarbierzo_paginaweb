@@ -32,7 +32,7 @@
 
     <!-- 1) Fijar tema antes de pintar nada 
     antes de que cargue Tailwind CSS para evitar el “flash” de color al iniciar-->
-    <script src="/js/theme-init.js"></script>
+    <script src="/js/theme-init.js" defer></script>
     <!-- Tailwind -->
     <script src="https://cdn.tailwindcss.com"></script>
     <!-- 2) Config de Tailwind para CDN -->
@@ -358,11 +358,11 @@
     </button>
 
     <!-- Carga del header/footer desde subcarpeta -->
-    <script src="/js/cargar-header.js"></script>
-    <script src="/js/cargar-footer.js"></script>
-    <script src="/js/fecha-footer.js"></script>
+    <script src="/js/cargar-header.js" defer></script>
+    <script src="/js/cargar-footer.js" defer></script>
+    <script src="/js/fecha-footer.js" defer></script>
     <script src="/js/theme-toggle.js" defer></script>
-    <script src="/js/menu-responsive.js"></script>
+    <script src="/js/menu-responsive.js" defer></script>
     <script src="js/comprobacion-email.js" defer></script>
   </body>
 </html>
