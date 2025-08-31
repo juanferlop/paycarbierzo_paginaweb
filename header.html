@@ -235,11 +235,19 @@
           aria-label="Ir a inicio"
         >
           <img
-            src="/assets/img/webp/logo.webp"
-            alt="Logo Paycar Bierzo"
-            class="h-10 w-auto transition-transform duration-150 ease-out group-hover:-translate-y-0.5 group-focus-visible:-translate-y-0.5 group-active:-translate-y-0.5 motion-reduce:transition-none motion-reduce:transform-none"
+            src="/assets/img/webp/logo-128.webp"
+            srcset="
+              /assets/img/webp/logo-64.webp   64w,
+              /assets/img/webp/logo-128.webp 128w,
+              /assets/img/webp/logo-256.webp 256w
+            "
+            sizes="(max-width: 640px) 36px, 40px"
+            alt="Paycar Bierzo S.L."
+            width="40"
+            height="40"
+            decoding="async"
+            fetchpriority="low"
           />
-
           <span
             class="relative whitespace-nowrap text-xl md:text-2xl font-semibold tracking-tight"
           >

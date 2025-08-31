@@ -41,19 +41,18 @@
     />
 
     <!-- Imágenes del hero (mejora LCP) -->
+    <!-- Preload SOLO de la 1ª imagen visible del carrusel (AVIF) -->
     <link
       rel="preload"
       as="image"
-      href="/assets/img/webp/cubicos-5-1280.webp"
-      imagesrcset="/assets/img/webp/cubicos-5-1024.webp 1024w, /assets/img/webp/cubicos-5-1280.webp 1280w, /assets/img/webp/cubicos-5-1920.webp 1920w"
-      imagesizes="100vw"
+      media="(max-width: 767px)"
+      href="/assets/img/webp/magazDeAbajo_2-2-1024.avif"
     />
     <link
       rel="preload"
       as="image"
-      href="/assets/img/webp/magazDeAbajo_2-2-1280.webp"
-      imagesrcset="/assets/img/webp/magazDeAbajo_2-2-1024.webp 1024w, /assets/img/webp/magazDeAbajo_2-2-1280.webp 1280w, /assets/img/webp/magazDeAbajo_2-2-1920.webp 1920w"
-      imagesizes="100vw"
+      media="(min-width: 768px)"
+      href="/assets/img/webp/magazDeAbajo_2-2-1280.avif"
     />
 
     <!-- 4) CSS único (Tailwind compilado + @font-face dentro) -->
@@ -330,6 +329,7 @@
             height="1080"
             decoding="async"
             loading="lazy"
+            fetchpriority="low"
           />
         </picture>
 
