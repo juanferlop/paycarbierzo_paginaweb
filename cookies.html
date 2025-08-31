@@ -6,7 +6,6 @@
       - Metadatos críticos al inicio
       - Tipografía: se aplica con Tailwind (font-sans) asumiendo que en tu tailwind.config.js ya has definido la familia de tu sitio en theme.fontFamily.sans
       - Tailwind: usando la hoja compilada (NO CDN)
-      - theme-init.js: antes del CSS para evitar "flash" de tema
       - Favicon / PWA agrupados
       - Datos estructurados (BreadcrumbList)
     -->
@@ -19,9 +18,6 @@
       name="description"
       content="Política de Cookies completa de Paycar Bierzo S.L.: definición, tipos, legitimación, gestión y tabla de cookies (incluye Google Analytics)."
     />
-
-    <!-- 2) Pre-carga del tema (evita FOUC de modo oscuro/claro) -->
-    <script src="js/theme-init.js"></script>
 
     <!-- 3) CSS: Tailwind compilado del proyecto (ajusta la ruta si usas otra) -->
     <link rel="stylesheet" href="/assets/css/styles.css" />
