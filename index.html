@@ -145,16 +145,45 @@
         aria-label="Trabajos destacados en estructuras de hormigón — Paycar Bierzo"
       >
         <figure class="w-full h-full m-0">
+          <!-- Prellénalos con la primera foto (magazDeAbajo_2-2), así el navegador ya tiene srcset + sizes desde el HTML 
+            y puede elegir el mejor fichero antes de que corra el JS. -->
           <picture id="carrusel">
-            <source id="carrusel-avif" type="image/avif" sizes="100vw" />
-            <source id="carrusel-webp" type="image/webp" sizes="100vw" />
+            <!-- AVIF -->
+            <source
+              id="carrusel-avif"
+              type="image/avif"
+              sizes="100vw"
+              srcset="
+                /assets/img/webp/magazDeAbajo_2-2-640.avif   640w,
+                /assets/img/webp/magazDeAbajo_2-2-1024.avif 1024w,
+                /assets/img/webp/magazDeAbajo_2-2-1280.avif 1280w,
+                /assets/img/webp/magazDeAbajo_2-2-1536.avif 1536w,
+                /assets/img/webp/magazDeAbajo_2-2-1920.avif 1920w,
+                /assets/img/webp/magazDeAbajo_2-2-2560.avif 2560w
+              "
+            />
+            <!-- WebP -->
+            <source
+              id="carrusel-webp"
+              type="image/webp"
+              sizes="100vw"
+              srcset="
+                /assets/img/webp/magazDeAbajo_2-2-640.webp   640w,
+                /assets/img/webp/magazDeAbajo_2-2-1024.webp 1024w,
+                /assets/img/webp/magazDeAbajo_2-2-1280.webp 1280w,
+                /assets/img/webp/magazDeAbajo_2-2-1536.webp 1536w,
+                /assets/img/webp/magazDeAbajo_2-2-1920.webp 1920w,
+                /assets/img/webp/magazDeAbajo_2-2-2560.webp 2560w
+              "
+            />
             <img
               id="carrusel-img"
-              src="assets/img/webp/magazDeAbajo_2-2-1280.webp"
+              src="/assets/img/webp/magazDeAbajo_2-2-1280.webp"
               alt="Estructura de hormigón en obra — Paycar Bierzo"
               class="w-full h-full object-cover"
               width="1920"
               height="1080"
+              decoding="async"
               fetchpriority="high"
             />
           </picture>
@@ -490,7 +519,7 @@
     <script src="/js/cargar-header.js" defer></script>
     <script src="/js/comprobacion-email.js" defer></script>
 
-    <script src="/js/carrusel-responsive.js" defer></script>
+    <script src="/js/carrusel-index.js" defer></script>
     <script src="/js/image-hero-observer.js" defer></script>
     <script src="/js/menu-responsive.js" defer></script>
     <script src="/js/theme-toggle.js" defer></script>
