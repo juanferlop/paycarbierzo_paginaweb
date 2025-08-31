@@ -1,6 +1,17 @@
 <!doctype html>
 <html lang="es" class="scroll-smooth">
   <head>
+    <!--
+      ✅ HEAD ORDENADO Y COMENTADO
+      - Metadatos críticos al inicio
+      - Tipografía: se aplica con Tailwind (font-sans) asumiendo que en tu tailwind.config.js ya has definido la familia de tu sitio en theme.fontFamily.sans
+      - Tailwind: usando la hoja compilada (NO CDN)
+      - theme-init.js: antes del CSS para evitar "flash" de tema
+      - Favicon / PWA agrupados
+      - Datos estructurados (BreadcrumbList)
+    -->
+
+    <!-- 1) Metadatos base -->
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width,initial-scale=1" />
     <title>Política de Cookies | Paycar Bierzo</title>
@@ -8,14 +19,47 @@
       name="description"
       content="Política de Cookies completa de Paycar Bierzo S.L.: definición, tipos, legitimación, gestión y tabla de cookies (incluye Google Analytics)."
     />
+
+    <!-- 2) Pre-carga del tema (evita FOUC de modo oscuro/claro) -->
+    <script src="js/theme-init.js"></script>
+
+    <!-- 3) CSS: Tailwind compilado del proyecto (ajusta la ruta si usas otra) -->
+    <link rel="stylesheet" href="/assets/css/styles.css" />
+
+    <!-- 4) (Opcional) Favicon adicional en WEBP para navegadores modernos -->
     <link rel="icon" type="image/webp" href="assets/img/webp/logo.webp" />
-    <script src="js/theme-init.js" defer></script>
-    <!-- Tailwind (misma configuración que el resto del sitio) -->
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script>
-      tailwind.config = { darkMode: 'class' };
-    </script>
-    <!-- BreadcrumbList (migas de pan) en JSON-LD ayuda a Google a entender la jerarquía de tu sitio. -->
+
+    <!-- 5) FAVICON / PWA PACK -->
+    <!-- INICIO ETIQUETAS FAVICON -->
+    <link rel="icon" href="/favicon.ico" sizes="any" />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="/assets/icons/favicon-32x32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="/assets/icons/favicon-16x16.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="/assets/icons/apple-touch-icon.png"
+    />
+    <link rel="manifest" href="/site.webmanifest" />
+    <link
+      rel="mask-icon"
+      href="/assets/icons/safari-pinned-tab.svg"
+      color="#f97316"
+    />
+    <meta name="theme-color" content="#ffffff" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+    <!-- FIN ETIQUETAS FAVICON -->
+
+    <!-- 6) Datos estructurados: BreadcrumbList (migas de pan) -->
     <script type="application/ld+json">
       {
         "@context": "https://schema.org",
@@ -36,59 +80,31 @@
         ]
       }
     </script>
-    <!-- INICIO ETIQUETAS FAVICON -->
-    <!-- Favicon básico -->
-    <link rel="icon" href="/favicon.ico" sizes="any" />
-    <link
-      rel="icon"
-      type="image/png"
-      sizes="32x32"
-      href="/assets/icons/favicon-32x32.png"
-    />
-    <link
-      rel="icon"
-      type="image/png"
-      sizes="16x16"
-      href="/assets/icons/favicon-16x16.png"
-    />
-
-    <!-- iOS (anclado a pantalla de inicio) -->
-    <link
-      rel="apple-touch-icon"
-      sizes="180x180"
-      href="/assets/icons/apple-touch-icon.png"
-    />
-
-    <!-- Android / PWA -->
-    <link rel="manifest" href="/site.webmanifest" />
-
-    <!-- Safari pinned tab (opcional si tienes SVG monocromo) -->
-    <link
-      rel="mask-icon"
-      href="/assets/icons/safari-pinned-tab.svg"
-      color="#f97316"
-    />
-
-    <!-- Colores del navegador (opcional) -->
-    <meta name="theme-color" content="#ffffff" />
-    <meta name="apple-mobile-web-app-status-bar-style" content="default" />
-    <!-- FIN ETIQUETAS FAVICON -->
   </head>
+
   <body
-    class="bg-gray-100 dark:bg-black text-gray-800 dark:text-gray-100 transition-colors duration-300"
+    class="font-sans tracking-normal bg-gray-100 dark:bg-black text-gray-800 dark:text-gray-100 transition-colors duration-300"
   >
-    <!-- Header -->
+    <!--
+      HEADER DINÁMICO
+      Se inyecta desde js/cargar-header.js para reutilizar en todas las páginas.
+    -->
     <div id="header"></div>
 
-    <!-- Hero -->
+    <!-- Hero / Cabecera de la página -->
     <section
       class="bg-white/70 dark:bg-gray-900/90 mt-8 backdrop-blur border-b dark:border-gray-800"
     >
       <div class="max-w-6xl mx-auto px-4 py-8">
-        <nav class="text-sm text-gray-600 dark:text-gray-300 mb-2">
+        <nav
+          class="text-sm text-gray-600 dark:text-gray-300 mb-2"
+          aria-label="Migas de pan"
+        >
           <a href="/" class="hover:text-orange-500">Inicio</a>
-          <span class="mx-2">/</span>
-          <span class="font-medium">Política de cookies</span>
+          <span class="mx-2" aria-hidden="true">/</span>
+          <span class="font-medium" aria-current="page"
+            >Política de cookies</span
+          >
         </nav>
         <h1 class="text-3xl md:text-4xl font-extrabold">Política de Cookies</h1>
         <p class="text-sm text-gray-600 dark:text-gray-300 mt-1">
@@ -100,17 +116,21 @@
 
     <!-- Contenido principal con índice lateral -->
     <main class="max-w-6xl mx-auto px-4 py-10 grid lg:grid-cols-12 gap-8">
-      <!-- Índice sticky -->
+      <!-- Índice sticky (se rellena con js/toc.js leyendo #content) -->
       <aside class="lg:col-span-4">
         <div
           class="bg-white dark:bg-gray-900 rounded-2xl shadow-md p-5 border border-gray-200 dark:border-gray-800 lg:sticky lg:top-24"
         >
           <h2 class="text-base font-semibold mb-3">Contenido</h2>
-          <nav id="toc" class="text-sm space-y-2"></nav>
+          <nav
+            id="toc"
+            class="text-sm space-y-2"
+            aria-label="Índice de contenidos"
+          ></nav>
         </div>
       </aside>
 
-      <!-- Artículo -->
+      <!-- Artículo (TEXTO ORIGINAL RESPETADO) -->
       <article id="content" class="lg:col-span-8 space-y-8 leading-relaxed">
         <!-- Uso de cookies -->
         <section>
@@ -159,7 +179,6 @@
             </p>
           </div>
         </section>
-
         <!-- Legitimación -->
         <section>
           <h2 class="text-2xl font-bold mb-4">
@@ -172,13 +191,13 @@
           </p>
         </section>
 
-        <!-- Tipos por gestión -->
+        <!-- Tipos de cookies según su gestión -->
         <section>
           <h2 class="text-2xl font-bold mb-4">
             Tipos de cookies según su gestión
           </h2>
           <h3 class="text-xl font-semibold mb-2">Cookies propias</h3>
-          <p class="text-gray-700 dark:text-gray-300 mb-4">
+          <p class="text-gray-700 dark:text-gray-300 mb-3">
             Enviadas al dispositivo del usuario y gestionadas exclusivamente por
             PAYCAR BIERZO S.L. para mejorar el funcionamiento del sitio y
             adaptar contenidos a preferencias.
@@ -191,13 +210,13 @@
           </p>
         </section>
 
-        <!-- Tipos por duración -->
+        <!-- Tipos de cookies según su duración -->
         <section>
           <h2 class="text-2xl font-bold mb-4">
             Tipos de cookies según su duración
           </h2>
           <h3 class="text-xl font-semibold mb-2">Cookies de sesión</h3>
-          <p class="text-gray-700 dark:text-gray-300 mb-4">
+          <p class="text-gray-700 dark:text-gray-300 mb-3">
             Recaban y almacenan datos mientras navegas y desaparecen al cerrar
             la sesión.
           </p>
@@ -208,12 +227,12 @@
           </p>
         </section>
 
-        <!-- Tipos por finalidad -->
+        <!-- Tipos de cookies según su finalidad -->
         <section>
           <h2 class="text-2xl font-bold mb-4">
             Tipos de cookies según su finalidad
           </h2>
-          <ul class="list-disc pl-6 space-y-3 text-gray-700 dark:text-gray-300">
+          <ul class="list-disc pl-6 space-y-2 text-gray-700 dark:text-gray-300">
             <li>
               <strong>Técnicas:</strong> permiten la navegación y el uso de
               servicios.
@@ -245,7 +264,7 @@
 
           <!-- Vista móvil: tarjetas (sin scroll horizontal) -->
           <div class="sm:hidden space-y-4">
-            <!-- Card -->
+            <!-- Card: _ga -->
             <div
               class="rounded-xl border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-900 p-4 shadow-sm"
             >
@@ -274,7 +293,7 @@
               </dl>
             </div>
 
-            <!-- Repite una card por cada fila de la tabla -->
+            <!-- Card: _gat -->
             <div
               class="rounded-xl border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-900 p-4 shadow-sm"
             >
@@ -301,7 +320,7 @@
               </dl>
             </div>
 
-            <!-- _gld -->
+            <!-- Card: _gld -->
             <div
               class="rounded-xl border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-900 p-4 shadow-sm"
             >
@@ -328,7 +347,7 @@
               </dl>
             </div>
 
-            <!-- _collet (Pixel tracker) -->
+            <!-- Card: _collet (Pixel tracker) -->
             <div
               class="rounded-xl border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-900 p-4 shadow-sm"
             >
@@ -357,7 +376,7 @@
               </dl>
             </div>
 
-            <!-- _utm.gif (Pixel tracker) -->
+            <!-- Card: _utm.gif (Pixel tracker) -->
             <div
               class="rounded-xl border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-900 p-4 shadow-sm"
             >
@@ -384,7 +403,7 @@
               </dl>
             </div>
 
-            <!-- _utma -->
+            <!-- Card: _utma -->
             <div
               class="rounded-xl border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-900 p-4 shadow-sm"
             >
@@ -411,7 +430,7 @@
               </dl>
             </div>
 
-            <!-- _utmb -->
+            <!-- Card: _utmb -->
             <div
               class="rounded-xl border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-900 p-4 shadow-sm"
             >
@@ -438,7 +457,7 @@
               </dl>
             </div>
 
-            <!-- _utmc -->
+            <!-- Card: _utmc -->
             <div
               class="rounded-xl border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-900 p-4 shadow-sm"
             >
@@ -465,7 +484,7 @@
               </dl>
             </div>
 
-            <!-- _utmt -->
+            <!-- Card: _utmt -->
             <div
               class="rounded-xl border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-900 p-4 shadow-sm"
             >
@@ -492,7 +511,7 @@
               </dl>
             </div>
 
-            <!-- _utmz -->
+            <!-- Card: _utmz -->
             <div
               class="rounded-xl border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-900 p-4 shadow-sm"
             >
@@ -515,13 +534,13 @@
                 <div class="grid grid-cols-3 gap-2 py-1">
                   <dt class="col-span-1 font-medium">Finalidad</dt>
                   <dd class="col-span-2">
-                    Origen del usuario (buscador, enlace...)
+                    Origen del usuario (buscador, enlace…)
                   </dd>
                 </div>
               </dl>
             </div>
 
-            <!-- _utmv -->
+            <!-- Card: _utmv -->
             <div
               class="rounded-xl border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-900 p-4 shadow-sm"
             >
@@ -549,7 +568,7 @@
             </div>
           </div>
 
-          <!-- Vista escritorio/tablet: tabla normal -->
+          <!-- Vista escritorio/tablet: tabla (con overflow-x para evitar scroll horizontal del body) -->
           <div class="hidden sm:block">
             <div class="overflow-x-auto">
               <table
@@ -772,17 +791,44 @@
             competente.
           </p>
         </section>
+        <!-- Enlaces legales y servicios (contenido original conservado) -->
+        <section>
+          <h2 class="sr-only">Enlaces legales y servicios</h2>
+          <ul class="flex flex-wrap gap-4 text-sm mt-8">
+            <li>
+              <a href="/legal.html" class="underline hover:no-underline"
+                >Aviso Legal</a
+              >
+            </li>
+            <li>
+              <a href="/privacidad.html" class="underline hover:no-underline"
+                >Privacidad</a
+              >
+            </li>
+            <li>
+              <a href="/cookies.html" class="underline hover:no-underline"
+                >Cookies</a
+              >
+            </li>
+            <li>
+              <span class="font-medium">Servicios por zona:</span> Construcción
+              en Ponferrada
+            </li>
+          </ul>
+        </section>
       </article>
     </main>
 
-    <!-- Footer -->
+    <!-- Footer (inyectado) -->
     <div id="footer"></div>
 
-    <!-- Botón tema -->
+    <!-- Botón flotante para tema (UI FAB) -->
     <button
       id="theme-toggle"
+      data-ui-fab
       type="button"
       class="fixed bottom-6 right-6 z-50 inline-flex items-center justify-center rounded-full border shadow-lg p-3 bg-white/90 border-gray-200 text-gray-800 hover:scale-105 active:scale-95 transition dark:bg-gray-900/90 dark:border-gray-700 dark:text-gray-100"
+      aria-label="Cambiar tema"
     >
       <svg
         id="theme-icon"
@@ -796,7 +842,14 @@
       ></svg>
     </button>
 
-    <!-- Scripts -->
+    <!--
+      SCRIPTS ORDENADOS (todos con defer)
+      - Carga de header/footer reutilizables
+      - Utilidades de fechas
+      - Tema y menú responsive
+      - TOC automático y validación email (si aplica en la página)
+      - Consentimiento + inyección GA tras aceptar (configurable por data attributes)
+    -->
     <script src="js/cargar-header.js" defer></script>
     <script src="js/cargar-footer.js" defer></script>
     <script src="js/fecha-footer.js" defer></script>
@@ -805,5 +858,12 @@
     <script src="js/fecha-ultima-actualizacion.js" defer></script>
     <script src="js/toc.js" defer></script>
     <script src="js/comprobacion-email.js" defer></script>
+
+    <!-- Consentimiento + inyección de GA tras aceptar -->
+    <script
+      src="/js/consent-analytics.js"
+      defer
+      data-ga-id="G-4R8T9VP3Y7"
+    ></script>
   </body>
 </html>

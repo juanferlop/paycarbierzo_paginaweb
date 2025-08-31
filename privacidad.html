@@ -1,6 +1,7 @@
 <!doctype html>
 <html lang="es" class="scroll-smooth">
   <head>
+    <!-- ✅ HEAD ORDENADO (Tailwind compilado, tipografía y SEO) -->
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width,initial-scale=1" />
     <title>Política de Privacidad | Paycar Bierzo</title>
@@ -8,14 +9,45 @@
       name="description"
       content="Política de Privacidad y Aviso Legal de Paycar Bierzo S.L.: información general, términos de uso, RGPD/LSSI, derechos, plazos y contacto."
     />
-    <link rel="icon" type="image/webp" href="assets/img/webp/logo.webp" />
-    <script src="js/theme-init.js" defer></script>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script>
-      tailwind.config = { darkMode: 'class' };
-    </script>
 
-    <!-- BreadcrumbList (migas de pan) en JSON-LD ayuda a Google a entender la jerarquía de tu sitio. -->
+    <!-- 1) Tema antes del CSS para evitar FOUC de modo oscuro/claro -->
+    <script src="js/theme-init.js"></script>
+
+    <!-- 2) Tailwind COMPILADO del proyecto (ajusta la ruta si usas otra) -->
+    <link rel="stylesheet" href="/assets/css/styles.css" />
+
+    <!-- 3) Icono rápido -->
+    <link rel="icon" type="image/webp" href="assets/img/webp/logo.webp" />
+
+    <!-- 4) FAVICON / PWA PACK -->
+    <link rel="icon" href="/favicon.ico" sizes="any" />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="/assets/icons/favicon-32x32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="/assets/icons/favicon-16x16.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="/assets/icons/apple-touch-icon.png"
+    />
+    <link rel="manifest" href="/site.webmanifest" />
+    <link
+      rel="mask-icon"
+      href="/assets/icons/safari-pinned-tab.svg"
+      color="#f97316"
+    />
+    <meta name="theme-color" content="#ffffff" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+
+    <!-- 5) BreadcrumbList JSON-LD -->
     <script type="application/ld+json">
       {
         "@context": "https://schema.org",
@@ -36,46 +68,9 @@
         ]
       }
     </script>
-    <!-- INICIO ETIQUETAS FAVICON -->
-    <!-- Favicon básico -->
-    <link rel="icon" href="/favicon.ico" sizes="any" />
-    <link
-      rel="icon"
-      type="image/png"
-      sizes="32x32"
-      href="/assets/icons/favicon-32x32.png"
-    />
-    <link
-      rel="icon"
-      type="image/png"
-      sizes="16x16"
-      href="/assets/icons/favicon-16x16.png"
-    />
-
-    <!-- iOS (anclado a pantalla de inicio) -->
-    <link
-      rel="apple-touch-icon"
-      sizes="180x180"
-      href="/assets/icons/apple-touch-icon.png"
-    />
-
-    <!-- Android / PWA -->
-    <link rel="manifest" href="/site.webmanifest" />
-
-    <!-- Safari pinned tab (opcional si tienes SVG monocromo) -->
-    <link
-      rel="mask-icon"
-      href="/assets/icons/safari-pinned-tab.svg"
-      color="#f97316"
-    />
-
-    <!-- Colores del navegador (opcional) -->
-    <meta name="theme-color" content="#ffffff" />
-    <meta name="apple-mobile-web-app-status-bar-style" content="default" />
-    <!-- FIN ETIQUETAS FAVICON -->
   </head>
   <body
-    class="bg-gray-100 dark:bg-black text-gray-800 dark:text-gray-100 transition-colors duration-300"
+    class="font-sans bg-gray-100 dark:bg-black text-gray-800 dark:text-gray-100 transition-colors duration-300"
   >
     <!-- Header -->
     <div id="header"></div>
@@ -85,10 +80,15 @@
       class="bg-white/70 dark:bg-gray-900/90 backdrop-blur mt-8 border-b dark:border-gray-800"
     >
       <div class="max-w-6xl mx-auto px-4 py-8">
-        <nav class="text-sm text-gray-600 dark:text-gray-300 mb-2">
+        <nav
+          class="text-sm text-gray-600 dark:text-gray-300 mb-2"
+          aria-label="Migas de pan"
+        >
           <a href="/" class="hover:text-orange-500">Inicio</a>
-          <span class="mx-2">/</span>
-          <span class="font-medium">Política de privacidad</span>
+          <span class="mx-2" aria-hidden="true">/</span>
+          <span class="font-medium" aria-current="page"
+            >Política de privacidad</span
+          >
         </nav>
         <h1 class="text-3xl md:text-4xl font-extrabold">
           Política de Privacidad
@@ -108,11 +108,15 @@
           class="bg-white dark:bg-gray-900 rounded-2xl shadow-md p-5 border border-gray-200 dark:border-gray-800 lg:sticky lg:top-24"
         >
           <h2 class="text-base font-semibold mb-3">Contenido</h2>
-          <nav id="toc" class="text-sm space-y-2"></nav>
+          <nav
+            id="toc"
+            class="text-sm space-y-2"
+            aria-label="Índice de contenidos"
+          ></nav>
         </div>
       </aside>
 
-      <!-- Artículo -->
+      <!-- Artículo (TEXTO ORIGINAL RESPETADO) -->
       <article id="content" class="lg:col-span-8 space-y-8 leading-relaxed">
         <!-- Info general -->
         <section>
@@ -410,8 +414,10 @@
     <!-- Botón tema -->
     <button
       id="theme-toggle"
+      data-ui-fab
       type="button"
       class="fixed bottom-6 right-6 z-50 inline-flex items-center justify-center rounded-full border shadow-lg p-3 bg-white/90 border-gray-200 text-gray-800 hover:scale-105 active:scale-95 transition dark:bg-gray-900/90 dark:border-gray-700 dark:text-gray-100"
+      aria-label="Cambiar tema"
     >
       <svg
         id="theme-icon"
@@ -434,5 +440,12 @@
     <script src="js/fecha-ultima-actualizacion.js" defer></script>
     <script src="js/toc.js" defer></script>
     <script src="js/comprobacion-email.js" defer></script>
+
+    <!-- Consentimiento + inyección de GA tras aceptar -->
+    <script
+      src="/js/consent-analytics.js"
+      defer
+      data-ga-id="G-4R8T9VP3Y7"
+    ></script>
   </body>
 </html>

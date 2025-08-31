@@ -1,93 +1,125 @@
 <!doctype html>
 <html lang="es" class="scroll-smooth">
   <head>
+    <!-- =======================
+         Metadatos básicos
+    ======================== -->
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width,initial-scale=1" />
 
     <title>Empresa de construcción en El Bierzo | Paycar Bierzo S.L.</title>
     <meta
       name="description"
-      content="Paycar Bierzo S.L., empresa de construcción en El Bierzo con enfoque en Ponferrada capital y capacidad de actuación en toda la comarca y alrededores. Reformas, obra civil y estructuras de hormigón."
+      content="Especialistas en estructuras de hormigón en Ponferrada y El Bierzo. Cimentaciones, forjados, naves y obra civil. También construimos casas llave en mano. Llámanos: 679 491 360."
+    />
+    <link rel="canonical" href="https://paycarbierzo.es/" />
+    <meta name="robots" content="index,follow,max-image-preview:large" />
+    <meta name="theme-color" content="#ffffff" />
+
+    <!-- =======================
+         Tema oscuro/claro sin FOUC
+         (aplica .dark antes de pintar)
+    ======================== -->
+    <script>
+      (function () {
+        try {
+          var pref = localStorage.getItem('theme');
+          if (!pref) {
+            pref = matchMedia('(prefers-color-scheme: dark)').matches
+              ? 'dark'
+              : 'light';
+          }
+          document.documentElement.classList.toggle('dark', pref === 'dark');
+        } catch (_) {}
+      })();
+    </script>
+
+    <!-- Mira si tienes guardada la preferencia de tema en localStorage bajo la clave "theme".
+        Si no la tienes, usa la preferencia del sistema (si tu PC/móvil está en modo oscuro).
+        Añade o quita la clase dark en la etiqueta <html>.
+    -->
+    <script src="js/theme-init.js"></script>
+
+    <!-- =======================
+         Preloads críticos de FUENTES (coinciden con tus @font-face)
+    ======================== -->
+    <link
+      rel="preload"
+      href="/assets/fonts/Inter-400.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin
     />
     <link
-      rel="canonical"
-      href="https://paycarbierzo.es/empresa-construccion-el-bierzo/"
+      rel="preload"
+      href="/assets/fonts/Inter-600.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin
     />
-    <meta name="robots" content="index,follow,max-image-preview:large" />
-
-    <!-- Open Graph -->
-    <meta property="og:type" content="website" />
-    <meta
-      property="og:title"
-      content="Empresa de construcción en El Bierzo | Paycar Bierzo S.L."
-    />
-    <meta
-      property="og:description"
-      content="Constructora en El Bierzo con base en Ponferrada: reformas, obra civil y estructuras de hormigón. Presupuestos claros y plazos comprometidos."
-    />
-    <meta
-      property="og:url"
-      content="https://paycarbierzo.es/empresa-construccion-el-bierzo/"
+    <link
+      rel="preload"
+      href="/assets/fonts/Montserrat-700.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin
     />
 
-    <!-- 1) Fijar tema antes de pintar nada 
-    antes de que cargue Tailwind CSS para evitar el “flash” de color al iniciar-->
-    <script src="/js/theme-init.js" defer></script>
-    <!-- Tailwind -->
-    <script src="https://cdn.tailwindcss.com"></script>
-    <!-- 2) Config de Tailwind para CDN -->
-    <script>
-      // Coloca este bloque en <head>, ANTES del CDN
-      window.tailwind = window.tailwind || {};
-      window.tailwind.config = {
-        darkMode: 'class',
-      };
-    </script>
+    <!-- =======================
+         CSS (Tailwind COMPILADO + tus fuentes/tema/base)
+    ======================== -->
+    <link rel="stylesheet" href="/assets/css/styles.css" />
 
-    <!-- BreadcrumbList JSON-LD -->
+    <!-- =======================
+         Favicons / PWA
+    ======================== -->
+    <link rel="icon" href="/favicon.ico" sizes="any" />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="/assets/icons/favicon-32x32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="/assets/icons/favicon-16x16.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="/assets/icons/apple-touch-icon.png"
+    />
+    <link rel="manifest" href="/site.webmanifest" />
+    <link
+      rel="mask-icon"
+      href="/assets/icons/safari-pinned-tab.svg"
+      color="#f97316"
+    />
+    <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+
+    <!-- =======================
+         Datos estructurados mínimos (ajusta si ya usas otros)
+    ======================== -->
     <script type="application/ld+json">
       {
         "@context": "https://schema.org",
-        "@type": "BreadcrumbList",
-        "itemListElement": [
-          {
-            "@type": "ListItem",
-            "position": 1,
-            "name": "Inicio",
-            "item": "https://paycarbierzo.es/"
-          },
-          {
-            "@type": "ListItem",
-            "position": 2,
-            "name": "Empresa de construcción en El Bierzo",
-            "item": "https://paycarbierzo.es/empresa-construccion-el-bierzo/"
-          }
-        ]
-      }
-    </script>
-
-    <!-- ConstructionCompany / Local SEO JSON-LD -->
-    <script type="application/ld+json">
-      {
-        "@context": "https://schema.org",
-        "@type": "ConstructionCompany",
+        "@type": "Organization",
         "name": "Paycar Bierzo S.L.",
         "url": "https://paycarbierzo.es/",
-        "telephone": "+34 679491360",
-        "areaServed": [
-          { "@type": "City", "name": "Ponferrada" },
-          { "@type": "AdministrativeArea", "name": "El Bierzo" },
-          { "@type": "AdministrativeArea", "name": "León" }
-        ],
-        "sameAs": []
+        "logo": "https://paycarbierzo.es/assets/img/webp/logo.webp",
+        "telephone": "+34 679491360"
       }
     </script>
   </head>
 
-  <body
-    class="bg-gray-100 dark:bg-black text-gray-800 dark:text-gray-100 transition-colors duration-300"
-  >
-    <!-- Header -->
+  <body class="bg-white dark:bg-gray-900 text-gray-800 dark:text-gray-100">
+    <!-- ======================================================
+         INICIO CONTENIDO 
+    ======================================================= -->
+
+    <!-- Header (inyectado por fetch) -->
     <div id="header"></div>
 
     <main id="main" class="min-h-[60vh]">
@@ -174,6 +206,7 @@
               planificación realista.
             </p>
           </article>
+
           <article
             class="rounded-2xl border border-orange-200 dark:border-orange-800 p-6 bg-white dark:bg-orange-900/10"
           >
@@ -187,6 +220,7 @@
               de proyecto y obra.
             </p>
           </article>
+
           <article
             class="rounded-2xl border border-orange-200 dark:border-orange-800 p-6 bg-white dark:bg-orange-900/10"
           >
@@ -202,13 +236,14 @@
             <a
               href="/estructuras-hormigon-el-bierzo/"
               class="mt-3 inline-block text-sm text-orange-700 hover:underline dark:text-orange-300"
-              >Ver detalles</a
             >
+              Ver detalles
+            </a>
           </article>
         </div>
       </section>
 
-      <!-- Zonas -->
+      <!-- Cobertura -->
       <section
         class="bg-orange-50 dark:bg-orange-900/10 border-y border-orange-200/70 dark:border-orange-800/50"
       >
@@ -225,7 +260,8 @@
           </p>
         </div>
       </section>
-      <!-- Proceso (fondo claro con divisor) -->
+
+      <!-- Proceso -->
       <section
         class="bg-white dark:bg-black/20 border-t border-orange-200/70 dark:border-orange-800/50"
       >
@@ -295,7 +331,7 @@
         </div>
       </section>
 
-      <!-- CTA final (mismo tono que la sección Cobertura) -->
+      <!-- CTA final -->
       <section
         class="bg-orange-50 dark:bg-orange-900/10 border-t border-orange-200/70 dark:border-orange-800/50"
       >
@@ -329,21 +365,21 @@
         </div>
       </section>
 
-      <!-- Separación extra antes del footer -->
       <div class="mb-16"></div>
     </main>
 
-    <!-- Footer -->
+    <!-- Footer (inyectado por fetch) -->
     <div id="footer"></div>
-    <!-- Botón de cambio de aspecto (claro /) -->
+
+    <!-- Botón de tema (claro/oscuro) -->
     <button
       id="theme-toggle"
+      data-ui-fab
       type="button"
       aria-label="Cambiar tema"
       aria-pressed="false"
       class="fixed bottom-6 right-6 z-50 inline-flex items-center justify-center rounded-full border shadow-lg p-3 bg-white/90 border-gray-200 text-gray-800 hover:scale-105 active:scale-95 transition dark:bg-gray-900/90 dark:border-gray-700 dark:text-gray-100"
     >
-      <!-- El JS actualizará este SVG (sol/luna) vía innerHTML -->
       <svg
         id="theme-icon"
         xmlns="http://www.w3.org/2000/svg"
@@ -357,12 +393,28 @@
       ></svg>
     </button>
 
-    <!-- Carga del header/footer desde subcarpeta -->
+    <!-- ======================================================
+         FIN CONTENIDO
+    ======================================================= -->
+
+    <!-- =======================
+         Scripts (defer, no bloquean)
+    ======================== -->
+    <!-- Carga header/footer por fetch -->
     <script src="/js/cargar-header.js" defer></script>
     <script src="/js/cargar-footer.js" defer></script>
+
+    <!-- Utilidades globales -->
     <script src="/js/fecha-footer.js" defer></script>
     <script src="/js/theme-toggle.js" defer></script>
     <script src="/js/menu-responsive.js" defer></script>
-    <script src="js/comprobacion-email.js" defer></script>
+    <script src="/js/comprobacion-email.js" defer></script>
+
+    <!-- Consentimiento + GA inyectado tras aceptar -->
+    <script
+      src="/js/consent-analytics.js"
+      defer
+      data-ga-id="G-4R8T9VP3Y7"
+    ></script>
   </body>
 </html>

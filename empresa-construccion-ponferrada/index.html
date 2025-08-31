@@ -1,6 +1,9 @@
 <!doctype html>
 <html lang="es" class="scroll-smooth">
   <head>
+    <!-- =======================
+         Metadatos básicos
+    ======================== -->
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width,initial-scale=1" />
 
@@ -14,8 +17,11 @@
       href="https://paycarbierzo.es/empresa-construccion-ponferrada/"
     />
     <meta name="robots" content="index,follow,max-image-preview:large" />
+    <meta name="theme-color" content="#ffffff" />
 
-    <!-- Open Graph -->
+    <!-- =======================
+         Open Graph / Social
+    ======================== -->
     <meta property="og:type" content="website" />
     <meta
       property="og:title"
@@ -30,13 +36,15 @@
       content="https://paycarbierzo.es/empresa-construccion-ponferrada/"
     />
 
-    <!-- Verificación de Google -->
+    <!-- Verificación Google -->
     <meta
       name="google-site-verification"
       content="ACggjehFjhjZ_H8ulDhwIPd_3cYFKteh7Zn7mIh2D60"
     />
 
-    <!-- INICIO ETIQUETAS FAVICON -->
+    <!-- =======================
+         Favicons / PWA
+    ======================== -->
     <link rel="icon" href="/favicon.ico" sizes="any" />
     <link
       rel="icon"
@@ -61,24 +69,65 @@
       href="/assets/icons/safari-pinned-tab.svg"
       color="#f97316"
     />
-    <meta name="theme-color" content="#ffffff" />
     <meta name="apple-mobile-web-app-status-bar-style" content="default" />
-    <!-- FIN ETIQUETAS FAVICON -->
 
-    <!-- 1) Fijar tema antes de pintar nada 
-    antes de que cargue Tailwind CSS para evitar el “flash” de color al iniciar-->
-    <script src="/js/theme-init.js" defer></script>
-    <!-- Tailwind -->
-    <script src="https://cdn.tailwindcss.com"></script>
-    <!-- 2) Config de Tailwind para CDN -->
+    <!-- =======================
+         Tema oscuro/claro sin FOUC
+         (aplica .dark antes de pintar)
+    ======================== -->
     <script>
-      // Coloca este bloque en <head>, ANTES del CDN
-      window.tailwind = window.tailwind || {};
-      window.tailwind.config = {
-        darkMode: 'class',
-      };
+      (function () {
+        try {
+          var pref = localStorage.getItem('theme');
+          if (!pref) {
+            pref = matchMedia('(prefers-color-scheme: dark)').matches
+              ? 'dark'
+              : 'light';
+          }
+          document.documentElement.classList.toggle('dark', pref === 'dark');
+        } catch (_) {}
+      })();
     </script>
 
+    <!-- Mira si tienes guardada la preferencia de tema en localStorage bajo la clave "theme".
+        Si no la tienes, usa la preferencia del sistema (si tu PC/móvil está en modo oscuro).
+        Añade o quita la clase dark en la etiqueta <html>.
+    -->
+    <script src="js/theme-init.js"></script>
+
+    <!-- =======================
+         Fuentes propias (preload) — deben existir
+    ======================== -->
+    <link
+      rel="preload"
+      href="/assets/fonts/Inter-400.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin
+    />
+    <link
+      rel="preload"
+      href="/assets/fonts/Inter-600.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin
+    />
+    <link
+      rel="preload"
+      href="/assets/fonts/Montserrat-700.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin
+    />
+
+    <!-- =======================
+         CSS (Tailwind COMPILADO + @font-face/@theme/@base)
+    ======================== -->
+    <link rel="stylesheet" href="/assets/css/styles.css" />
+
+    <!-- =======================
+         Datos estructurados
+    ======================== -->
     <!-- BreadcrumbList JSON-LD -->
     <script type="application/ld+json">
       {
@@ -218,15 +267,11 @@
               height="1440"
             />
           </picture>
-
-          <!-- Caption accesible (no visible) -->
           <figcaption class="sr-only">
             Fotografía panorámica de Ponferrada, referencia visual de la comarca
             del Bierzo.
           </figcaption>
         </figure>
-
-        <!-- Fallback sin JS -->
         <noscript>
           <img
             src="/assets/img/webp/panoramica-ponferrada-1280.webp"
@@ -315,7 +360,6 @@
             itemtype="https://schema.org/ImageObject"
           >
             <picture>
-              <!-- AVIF -->
               <source
                 type="image/avif"
                 srcset="
@@ -327,7 +371,6 @@
                 "
                 sizes="(max-width: 640px) 100vw, (max-width: 768px) 50vw, 33vw"
               />
-              <!-- WebP -->
               <source
                 type="image/webp"
                 srcset="
@@ -339,7 +382,6 @@
                 "
                 sizes="(max-width: 640px) 100vw, (max-width: 768px) 50vw, 33vw"
               />
-              <!-- Fallback -->
               <img
                 itemprop="contentUrl"
                 src="/assets/img/webp/cubicos-12-1280.webp"
@@ -351,7 +393,6 @@
                 height="1200"
               />
             </picture>
-
             <figcaption class="p-4" itemprop="caption">
               <h3 class="text-base font-semibold">Edificios residenciales</h3>
               <p class="text-sm text-gray-600 dark:text-gray-300">
@@ -401,7 +442,6 @@
                 height="1200"
               />
             </picture>
-
             <figcaption class="p-4" itemprop="caption">
               <h3 class="text-base font-semibold">Chalets</h3>
               <p class="text-sm text-gray-600 dark:text-gray-300">
@@ -451,7 +491,6 @@
                 height="1200"
               />
             </picture>
-
             <figcaption class="p-4" itemprop="caption">
               <h3 class="text-base font-semibold">Obra civil</h3>
               <p class="text-sm text-gray-600 dark:text-gray-300">
@@ -482,15 +521,13 @@
               <a
                 href="/contacto.html"
                 class="inline-flex items-center justify-center rounded-2xl px-6 py-3 border border-transparent shadow-sm bg-orange-600 text-white hover:bg-orange-700 transition font-medium"
+                >Contactar</a
               >
-                Contactar
-              </a>
               <a
                 href="tel:+34619761685"
                 class="inline-flex items-center justify-center rounded-2xl px-6 py-3 border border-orange-300 text-orange-700 hover:bg-orange-100 dark:border-orange-700 dark:text-orange-300 dark:hover:bg-orange-900/30 transition font-medium"
+                >Llamar 619 76 16 85</a
               >
-                Llamar 619 76 16 85
-              </a>
             </div>
           </div>
         </div>
@@ -500,15 +537,15 @@
     <!-- Footer -->
     <div id="footer"></div>
 
-    <!-- Botón de cambio de aspecto (claro /) -->
+    <!-- Botón de cambio de aspecto (claro / oscuro) -->
     <button
       id="theme-toggle"
+      data-ui-fab
       type="button"
       aria-label="Cambiar tema"
       aria-pressed="false"
       class="fixed bottom-6 right-6 z-50 inline-flex items-center justify-center rounded-full border shadow-lg p-3 bg-white/90 border-gray-200 text-gray-800 hover:scale-105 active:scale-95 transition dark:bg-gray-900/90 dark:border-gray-700 dark:text-gray-100"
     >
-      <!-- El JS actualizará este SVG (sol/luna) vía innerHTML -->
       <svg
         id="theme-icon"
         xmlns="http://www.w3.org/2000/svg"
@@ -522,12 +559,21 @@
       ></svg>
     </button>
 
-    <!-- Loaders -->
+    <!-- =======================
+         Scripts (defer, no bloquean)
+    ======================== -->
     <script src="/js/cargar-header.js" defer></script>
     <script src="/js/cargar-footer.js" defer></script>
     <script src="/js/fecha-footer.js" defer></script>
     <script src="/js/theme-toggle.js" defer></script>
     <script src="/js/menu-responsive.js" defer></script>
     <script src="js/comprobacion-email.js" defer></script>
+
+    <!-- Consentimiento + inyección de GA tras aceptar -->
+    <script
+      src="/js/consent-analytics.js"
+      defer
+      data-ga-id="G-4R8T9VP3Y7"
+    ></script>
   </body>
 </html>

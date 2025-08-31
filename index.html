@@ -1,94 +1,71 @@
 <!doctype html>
 <html lang="es" class="">
   <head>
-    <!-- Google tag (gtag.js) -->
-    <script
-      async
-      src="https://www.googletagmanager.com/gtag/js?id=G-4R8T9VP3Y7"
-    ></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag() {
-        dataLayer.push(arguments);
-      }
-      gtag('js', new Date());
-
-      gtag('config', 'G-4R8T9VP3Y7');
-    </script>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- 1) Documento -->
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Inicio | Paycar Bierzo</title>
-
-    <link rel="icon" type="image/webp" href="assets/img/webp/logo.webp" />
-    <!-- Fuentes tipográficas -->
-    <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Merriweather:wght@400;600;700&family=Roboto+Mono:wght@400;500&display=swap"
-      rel="stylesheet"
-    />
-    <!-- <link rel="stylesheet" href="assets/css/output.css" /> -->
-    <!-- 1) Fijar tema antes de pintar nada 
-    antes de que cargue Tailwind CSS para evitar el “flash” de color al iniciar-->
-    <script src="js/theme-init.js" defer></script>
-    <!-- Tailwind -->
-    <script src="https://cdn.tailwindcss.com"></script>
-    <!-- 2) Config de Tailwind para CDN -->
-    <script>
-      // Coloca este bloque en <head>, ANTES del CDN
-      window.tailwind = window.tailwind || {};
-      window.tailwind.config = {
-        darkMode: 'class',
-      };
-    </script>
-    <!-- Verificación de Google -->
-    <meta
-      name="google-site-verification"
-      content="ACggjehFjhjZ_H8ulDhwIPd_3cYFKteh7Zn7mIh2D60"
-    />
-
-    <!-- SEO, redes sociales y rendimiento web. -->
-
-    <!-- Permitir miniaturas grandes en Google -->
-    <meta name="robots" content="index,follow,max-image-preview:large" />
-
-    <!-- Open Graph -->
-    <meta property="og:type" content="website" />
-    <meta property="og:locale" content="es_ES" />
-    <meta property="og:site_name" content="Paycar Bierzo" />
-    <meta
-      property="og:title"
-      content="Estructuras de hormigón en Ponferrada y El Bierzo | Paycar Bierzo"
-    />
-
-    <meta
-      property="og:description"
-      content="Estructuras de hormigón y obra civil en Ponferrada y El Bierzo. Construcción de casas y reformas. Presupuesto claro y plazos comprometidos."
-    />
-
-    <meta property="og:url" content="https://paycarbierzo.es/" />
-    <meta property="og:image:width" content="1200" />
-    <meta property="og:image:height" content="630" />
-    <meta
-      property="og:image:alt"
-      content="Equipo de Paycar Bierzo montando estructura en obra"
-    />
-
-    <!-- Twitter -->
-    <meta name="twitter:card" content="summary_large_image" />
-    <meta
-      name="twitter:title"
-      content="Estructuras de hormigón en Ponferrada y El Bierzo | Paycar Bierzo"
-    />
-    <meta
-      name="twitter:description"
-      content="Estructuras de hormigón, construcción de casas y reformas en Ponferrada y El Bierzo."
-    />
-
     <meta
       name="description"
       content="Especialistas en estructuras de hormigón en Ponferrada y El Bierzo. Cimentaciones, forjados, naves y obra civil. También construimos casas llave en mano. Llámanos: 679 491 360."
     />
-    <!-- INICIO ETIQUETAS FAVICON -->
-    <!-- Favicon básico -->
+    <link rel="canonical" href="https://paycarbierzo.es/" />
+
+    <!-- 2) Tema antes de pintar (evita flash de modo) -->
+    <script>
+      (function () {
+        try {
+          var ls = localStorage.getItem('theme');
+          var mql = window.matchMedia('(prefers-color-scheme: dark)').matches;
+          if (ls === 'dark' || (!ls && mql))
+            document.documentElement.classList.add('dark');
+        } catch (e) {}
+      })();
+    </script>
+
+    <!-- Mira si tienes guardada la preferencia de tema en localStorage bajo la clave "theme".
+        Si no la tienes, usa la preferencia del sistema (si tu PC/móvil está en modo oscuro).
+        Añade o quita la clase dark en la etiqueta <html>.
+    -->
+    <script src="js/theme-init.js"></script>
+
+    <!-- 3) Conexiones/preloads críticos -->
+    <!-- Fuentes autohospedadas (WOFF2) -->
+    <link
+      rel="preload"
+      href="/assets/fonts/Inter-400.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin
+    />
+    <link
+      rel="preload"
+      href="/assets/fonts/Montserrat-700.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin
+    />
+
+    <!-- Imágenes del hero (mejora LCP) -->
+    <link
+      rel="preload"
+      as="image"
+      href="/assets/img/webp/cubicos-5-1280.webp"
+      imagesrcset="/assets/img/webp/cubicos-5-1024.webp 1024w, /assets/img/webp/cubicos-5-1280.webp 1280w, /assets/img/webp/cubicos-5-1920.webp 1920w"
+      imagesizes="100vw"
+    />
+    <link
+      rel="preload"
+      as="image"
+      href="/assets/img/webp/magazDeAbajo_2-2-1280.webp"
+      imagesrcset="/assets/img/webp/magazDeAbajo_2-2-1024.webp 1024w, /assets/img/webp/magazDeAbajo_2-2-1280.webp 1280w, /assets/img/webp/magazDeAbajo_2-2-1920.webp 1920w"
+      imagesizes="100vw"
+    />
+
+    <!-- 4) CSS único (Tailwind compilado + @font-face dentro) -->
+    <link rel="stylesheet" href="/assets/css/styles.css" />
+
+    <!-- 5) Iconos / PWA -->
     <link rel="icon" href="/favicon.ico" sizes="any" />
     <link
       rel="icon"
@@ -102,47 +79,59 @@
       sizes="16x16"
       href="/assets/icons/favicon-16x16.png"
     />
-
-    <!-- iOS (anclado a pantalla de inicio) -->
     <link
       rel="apple-touch-icon"
       sizes="180x180"
       href="/assets/icons/apple-touch-icon.png"
     />
-
-    <!-- Android / PWA -->
     <link rel="manifest" href="/site.webmanifest" />
-
-    <!-- Safari pinned tab (opcional si tienes SVG monocromo) -->
     <link
       rel="mask-icon"
       href="/assets/icons/safari-pinned-tab.svg"
       color="#f97316"
     />
-
-    <!-- Colores del navegador (opcional) -->
     <meta name="theme-color" content="#ffffff" />
     <meta name="apple-mobile-web-app-status-bar-style" content="default" />
-    <!-- FIN ETIQUETAS FAVICON -->
-    <!-- Preload del hero para bajar LCP -->
-    <link
-      rel="preload"
-      as="image"
-      href="/assets/img/webp/cubicos-5-1280.webp"
-      imagesrcset="/assets/img/webp/cubicos-5-1024.webp 1024w, /assets/img/webp/cubicos-5-1280.webp 1280w, /assets/img/webp/cubicos-5-1920.webp 1920w"
-      imagesizes="100vw"
+
+    <!-- 6) SEO / Social -->
+    <meta name="robots" content="index,follow,max-image-preview:large" />
+    <meta property="og:type" content="website" />
+    <meta property="og:locale" content="es_ES" />
+    <meta property="og:site_name" content="Paycar Bierzo" />
+    <meta
+      property="og:title"
+      content="Estructuras de hormigón en Ponferrada y El Bierzo | Paycar Bierzo"
     />
-    <!-- Preload (mejora LCP y refuerza SEO de imagen)-->
-    <link
-      rel="preload"
-      as="image"
-      href="/assets/img/webp/magazDeAbajo_2-2-1280.webp"
-      imagesrcset="/assets/img/webp/magazDeAbajo_2-2-1024.webp 1024w, /assets/img/webp/magazDeAbajo_2-2-1280.webp 1280w, /assets/img/webp/magazDeAbajo_2-2-1920.webp 1920w"
-      imagesizes="100vw"
+    <meta
+      property="og:description"
+      content="Estructuras de hormigón y obra civil en Ponferrada y El Bierzo. Construcción de casas y reformas. Presupuesto claro y plazos comprometidos."
+    />
+    <meta property="og:url" content="https://paycarbierzo.es/" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta
+      property="og:image:alt"
+      content="Equipo de Paycar Bierzo montando estructura en obra"
+    />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta
+      name="twitter:title"
+      content="Estructuras de hormigón en Ponferrada y El Bierzo | Paycar Bierzo"
+    />
+    <meta
+      name="twitter:description"
+      content="Estructuras de hormigón, construcción de casas y reformas en Ponferrada y El Bierzo."
+    />
+
+    <!-- Verificación Google (si la usas) -->
+    <meta
+      name="google-site-verification"
+      content="ACggjehFjhjZ_H8ulDhwIPd_3cYFKteh7Zn7mIh2D60"
     />
   </head>
+
   <body
-    class="bg-gray-100 dark:bg-black text-gray-800 dark:text-gray-100 transition-colors duration-300"
+    class="font-sans bg-gray-100 dark:bg-black text-gray-800 dark:text-gray-100 transition-colors duration-300"
   >
     <!-- Header -->
     <div id="header"></div>
@@ -248,7 +237,7 @@
 
           <!-- H1 -->
           <h1
-            class="mt-2 font-serif text-3xl md:text-5xl font-extrabold tracking-tight text-gray-900 dark:text-gray-100 [text-wrap:balance]"
+            class="mt-2 font-title text-3xl md:text-5xl font-bold tracking-tight text-gray-900 dark:text-gray-100 [text-wrap:balance]"
           >
             Empresa de construcción en El Bierzo
           </h1>
@@ -326,7 +315,7 @@
           data-image-overlay
           class="absolute inset-0 flex flex-col justify-center items-center text-center px-6 text-white opacity-0 pointer-events-none transition-opacity duration-500 group-hover:opacity-100 group-hover:pointer-events-auto"
         >
-          <h2 class="text-4xl font-extrabold mb-4">
+          <h2 class="font-title text-4xl font-bold mb-4">
             Bienvenidos a Nuestra Web
           </h2>
           <p class="text-lg max-w-2xl">
@@ -355,7 +344,7 @@
               Nuestros servicios
             </span>
             <h2
-              class="font-serif text-3xl md:text-4xl font-extrabold text-gray-900 dark:text-gray-100"
+              class="font-title text-3xl md:text-4xl font-bold text-gray-900 dark:text-gray-100"
             >
               Servicios de construcción en Ponferrada y todo El Bierzo
             </h2>
@@ -378,7 +367,7 @@
               class="group rounded-2xl border border-gray-200 dark:border-gray-800 bg-white dark:bg-gray-900 p-6 flex flex-col h-full hover:shadow-xl hover:-translate-y-1 transition"
             >
               <div>
-                <h3 class="text-lg md:text-xl font-semibold mb-2 font-serif">
+                <h3 class="font-title text-lg md:text-xl font-bold mb-2">
                   Estructuras de hormigón
                 </h3>
                 <p class="text-sm text-gray-600 dark:text-gray-300">
@@ -412,7 +401,7 @@
               class="group rounded-2xl border border-gray-200 dark:border-gray-800 bg-white dark:bg-gray-900 p-6 flex flex-col h-full hover:shadow-xl hover:-translate-y-1 transition"
             >
               <div>
-                <h3 class="text-lg md:text-xl font-semibold mb-2 font-serif">
+                <h3 class="font-title text-lg md:text-xl font-bold mb-2">
                   Empresa de construcción
                 </h3>
                 <p class="text-sm text-gray-600 dark:text-gray-300">
@@ -443,7 +432,7 @@
               class="group rounded-2xl border border-gray-200 dark:border-gray-800 bg-white dark:bg-gray-900 p-6 flex flex-col h-full hover:shadow-xl hover:-translate-y-1 transition"
             >
               <div>
-                <h3 class="text-lg md:text-xl font-semibold mb-2 font-serif">
+                <h3 class="font-title text-lg md:text-xl font-bold mb-2">
                   Empresa de construcción en Ponferrada
                 </h3>
                 <p class="text-sm text-gray-600 dark:text-gray-300">
@@ -477,6 +466,7 @@
     <!-- Botón de cambio de aspecto (claro /) -->
     <button
       id="theme-toggle"
+      data-ui-fab
       type="button"
       aria-label="Cambiar tema"
       aria-pressed="false"
@@ -497,75 +487,23 @@
     </button>
 
     <!-- Scripts de carga -->
-    <script src="/js/carrusel-index.js" defer></script>
     <script src="/js/cargar-header.js" defer></script>
+    <script src="/js/comprobacion-email.js" defer></script>
+
+    <script src="/js/carrusel-responsive.js" defer></script>
+    <script src="/js/image-hero-observer.js" defer></script>
+    <script src="/js/menu-responsive.js" defer></script>
+    <script src="/js/theme-toggle.js" defer></script>
+
     <script src="/js/cargar-footer.js" defer></script>
     <script src="/js/fecha-footer.js" defer></script>
-    <script src="/js/theme-toggle.js" defer></script>
-    <script src="/js/menu-responsive.js" defer></script>
-    <script src="/js/image-hero-observer.js" defer></script>
-    <script src="js/comprobacion-email.js" defer></script>
 
-    <!-- Banner de Cookies -->
-    <div
-      id="cookie-banner"
-      class="fixed bottom-0 inset-x-0 z-50 bg-white dark:bg-gray-900 border-t border-gray-200 dark:border-gray-700 shadow-lg p-4 md:p-6 flex flex-col md:flex-row md:items-center md:justify-between gap-4 transition-transform duration-500 translate-y-full"
-    >
-      <div class="text-sm text-gray-700 dark:text-gray-300 max-w-3xl">
-        <p>
-          Usamos cookies propias y de terceros, incluyendo
-          <strong>Google Analytics</strong>, para analizar el tráfico y mejorar
-          tu experiencia. Puedes aceptar todas las cookies o rechazar su uso no
-          esencial.
-        </p>
-      </div>
-      <div class="flex gap-3 shrink-0">
-        <button
-          id="cookie-accept"
-          class="bg-orange-500 hover:bg-orange-600 text-white text-sm font-medium px-4 py-2 rounded-lg shadow transition"
-        >
-          Aceptar
-        </button>
-        <button
-          id="cookie-decline"
-          class="bg-gray-200 hover:bg-gray-300 text-gray-800 dark:bg-gray-700 dark:hover:bg-gray-600 dark:text-gray-100 text-sm font-medium px-4 py-2 rounded-lg transition"
-        >
-          Rechazar
-        </button>
-      </div>
-    </div>
-
-    <script>
-      (function () {
-        const banner = document.getElementById('cookie-banner');
-        const acceptBtn = document.getElementById('cookie-accept');
-        const declineBtn = document.getElementById('cookie-decline');
-        const storageKey = 'cookie-consent';
-
-        // Mostrar banner solo si no hay decisión previa
-        if (!localStorage.getItem(storageKey)) {
-          banner.classList.remove('translate-y-full');
-        }
-
-        // Aceptar cookies
-        acceptBtn.addEventListener('click', () => {
-          localStorage.setItem(storageKey, 'accepted');
-          banner.classList.add('translate-y-full');
-
-          // Aquí podrías inicializar Google Analytics si aceptan
-          console.log('Cookies aceptadas: activando GA');
-          // Ejemplo: gtag('config', 'TU-ID-DE-GA');
-        });
-
-        // Rechazar cookies
-        declineBtn.addEventListener('click', () => {
-          localStorage.setItem(storageKey, 'declined');
-          banner.classList.add('translate-y-full');
-          console.log('Cookies rechazadas: no se activa GA');
-        });
-      })();
-      defer;
-    </script>
+    <!-- Consentimiento + inyección de GA tras aceptar -->
+    <script
+      src="/js/consent-analytics.js"
+      defer
+      data-ga-id="G-4R8T9VP3Y7"
+    ></script>
 
     <!-- Datos estructurados (ayuda a miniatura, logo, marca y SEO local)-->
     <script type="application/ld+json">

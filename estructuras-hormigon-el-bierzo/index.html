@@ -1,6 +1,9 @@
 <!doctype html>
 <html lang="es" class="scroll-smooth">
   <head>
+    <!-- =======================
+         Metadatos básicos
+    ======================== -->
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width,initial-scale=1" />
 
@@ -14,8 +17,11 @@
       href="https://paycarbierzo.es/estructuras-hormigon-el-bierzo/"
     />
     <meta name="robots" content="index,follow,max-image-preview:large" />
+    <meta name="theme-color" content="#ffffff" />
 
-    <!-- Open Graph -->
+    <!-- =======================
+         Open Graph / Social
+    ======================== -->
     <meta property="og:type" content="website" />
     <meta
       property="og:title"
@@ -30,13 +36,15 @@
       content="https://paycarbierzo.es/estructuras-hormigon-el-bierzo/"
     />
 
-    <!-- Verificación de Google -->
+    <!-- Verificación Google -->
     <meta
       name="google-site-verification"
       content="ACggjehFjhjZ_H8ulDhwIPd_3cYFKteh7Zn7mIh2D60"
     />
 
-    <!-- INICIO ETIQUETAS FAVICON -->
+    <!-- =======================
+         Favicons / PWA
+    ======================== -->
     <link rel="icon" href="/favicon.ico" sizes="any" />
     <link
       rel="icon"
@@ -61,24 +69,67 @@
       href="/assets/icons/safari-pinned-tab.svg"
       color="#f97316"
     />
-    <meta name="theme-color" content="#ffffff" />
     <meta name="apple-mobile-web-app-status-bar-style" content="default" />
-    <!-- FIN ETIQUETAS FAVICON -->
 
-    <!-- 1) Fijar tema antes de pintar nada 
-    antes de que cargue Tailwind CSS para evitar el “flash” de color al iniciar-->
-    <script src="/js/theme-init.js" defer></script>
-    <!-- Tailwind -->
-    <script src="https://cdn.tailwindcss.com"></script>
-    <!-- 2) Config de Tailwind para CDN -->
+    <!-- =======================
+         Tema oscuro/claro sin FOUC
+         (aplica .dark antes de pintar)
+    ======================== -->
     <script>
-      // Coloca este bloque en <head>, ANTES del CDN
-      window.tailwind = window.tailwind || {};
-      window.tailwind.config = {
-        darkMode: 'class',
-      };
+      (function () {
+        try {
+          var pref = localStorage.getItem('theme');
+          if (!pref) {
+            pref = matchMedia('(prefers-color-scheme: dark)').matches
+              ? 'dark'
+              : 'light';
+          }
+          document.documentElement.classList.toggle('dark', pref === 'dark');
+        } catch (_) {}
+      })();
     </script>
 
+    <!-- Mira si tienes guardada la preferencia de tema en localStorage bajo la clave "theme".
+        Si no la tienes, usa la preferencia del sistema (si tu PC/móvil está en modo oscuro).
+        Añade o quita la clase dark en la etiqueta <html>.
+    -->
+    <script src="js/theme-init.js"></script>
+
+    <!-- =======================
+         Tipografías propias (preload)
+         Deben existir en /assets/fonts/ y estar declaradas en tu CSS
+    ======================== -->
+    <link
+      rel="preload"
+      href="/assets/fonts/Inter-400.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin
+    />
+    <link
+      rel="preload"
+      href="/assets/fonts/Inter-600.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin
+    />
+    <link
+      rel="preload"
+      href="/assets/fonts/Montserrat-700.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin
+    />
+
+    <!-- =======================
+         CSS (Tailwind COMPILADO + @font-face/@theme/@base)
+         Sustituye el CDN por tu hoja ya compilada
+    ======================== -->
+    <link rel="stylesheet" href="/assets/css/styles.css" />
+
+    <!-- =======================
+         Datos estructurados
+    ======================== -->
     <!-- Breadcrumb -->
     <script type="application/ld+json">
       {
@@ -122,9 +173,7 @@
     </script>
   </head>
 
-  <body
-    class="bg-gray-100 dark:bg-black text-gray-800 dark:text-gray-100 transition-colors duration-300"
-  >
+  <body class="bg-white dark:bg-gray-900 text-gray-800 dark:text-gray-100">
     <div id="header"></div>
 
     <main id="main" class="min-h-[60vh]">
@@ -308,15 +357,16 @@
     </main>
 
     <div id="footer"></div>
-    <!-- Botón de cambio de aspecto (claro /) -->
+
+    <!-- Botón de cambio de aspecto (claro / oscuro) -->
     <button
       id="theme-toggle"
+      data-ui-fab
       type="button"
       aria-label="Cambiar tema"
       aria-pressed="false"
       class="fixed bottom-6 right-6 z-50 inline-flex items-center justify-center rounded-full border shadow-lg p-3 bg-white/90 border-gray-200 text-gray-800 hover:scale-105 active:scale-95 transition dark:bg-gray-900/90 dark:border-gray-700 dark:text-gray-100"
     >
-      <!-- El JS actualizará este SVG (sol/luna) vía innerHTML -->
       <svg
         id="theme-icon"
         xmlns="http://www.w3.org/2000/svg"
@@ -329,11 +379,22 @@
         aria-hidden="true"
       ></svg>
     </button>
+
+    <!-- =======================
+         Scripts (defer, no bloquean)
+    ======================== -->
     <script src="/js/cargar-header.js" defer></script>
     <script src="/js/cargar-footer.js" defer></script>
     <script src="/js/fecha-footer.js" defer></script>
     <script src="/js/theme-toggle.js" defer></script>
     <script src="/js/menu-responsive.js" defer></script>
-    <script src="js/comprobacion-email.js" defer></script>
+    <script src="/js/comprobacion-email.js" defer></script>
+
+    <!-- Consentimiento + inyección de GA tras aceptar -->
+    <script
+      src="/js/consent-analytics.js"
+      defer
+      data-ga-id="G-4R8T9VP3Y7"
+    ></script>
   </body>
 </html>

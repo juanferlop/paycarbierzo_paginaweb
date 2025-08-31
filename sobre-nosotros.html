@@ -1,44 +1,83 @@
 <!doctype html>
 <html lang="es">
   <head>
-    <!-- Google tag (gtag.js) -->
-    <script
-      async
-      src="https://www.googletagmanager.com/gtag/js?id=G-4R8T9VP3Y7"
-    ></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag() {
-        dataLayer.push(arguments);
-      }
-      gtag('js', new Date());
-
-      gtag('config', 'G-4R8T9VP3Y7');
-    </script>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Documento -->
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="color-scheme" content="light dark" />
     <title>Sobre Nosotros | Paycar Bierzo</title>
-    <link rel="icon" type="image/webp" href="assets/img/webp/logo.webp" />
-    <!-- Fuentes tipográficas -->
-    <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Merriweather:wght@400;600;700&family=Roboto+Mono:wght@400;500&display=swap"
-      rel="stylesheet"
+    <meta
+      name="description"
+      content="Conoce la historia, el presente y la visión de Paycar Bierzo S.L.: especialistas en encofrado y estructuras de hormigón en El Bierzo (León)."
     />
-    <!-- 1) Fijar tema antes de pintar nada 
-    antes de que cargue Tailwind CSS para evitar el “flash” de color al iniciar-->
-    <script src="js/theme-init.js" defer></script>
-    <!-- Tailwind -->
-    <script src="https://cdn.tailwindcss.com"></script>
-    <!-- 2) Config de Tailwind para CDN -->
+    <link rel="canonical" href="https://paycarbierzo.es/sobre-nosotros.html" />
+
+    <!-- Fijar tema antes de pintar (evita flash) -->
     <script>
-      // Coloca este bloque en <head>, ANTES del CDN
-      window.tailwind = window.tailwind || {};
-      window.tailwind.config = {
-        darkMode: 'class',
-      };
+      (function () {
+        try {
+          var ls = localStorage.getItem('theme');
+          var mql = window.matchMedia('(prefers-color-scheme: dark)').matches;
+          if (ls === 'dark' || (!ls && mql))
+            document.documentElement.classList.add('dark');
+        } catch (e) {}
+      })();
     </script>
 
-    <!-- BreadcrumbList (migas de pan) en JSON-LD ayuda a Google a entender la jerarquía de tu sitio. -->
+    <!-- Mira si tienes guardada la preferencia de tema en localStorage bajo la clave "theme".
+        Si no la tienes, usa la preferencia del sistema (si tu PC/móvil está en modo oscuro).
+        Añade o quita la clase dark en la etiqueta <html>.
+    -->
+    <script src="js/theme-init.js"></script>
+
+    <!-- Preloads críticos (fuentes) -->
+    <link
+      rel="preload"
+      href="/assets/fonts/Inter-400.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin
+    />
+    <link
+      rel="preload"
+      href="/assets/fonts/Montserrat-700.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin
+    />
+
+    <!-- CSS único (Tailwind v4 compilado + @font-face) -->
+    <link rel="stylesheet" href="/assets/css/styles.css" />
+
+    <!-- Iconos / PWA -->
+    <link rel="icon" href="/favicon.ico" sizes="any" />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="/assets/icons/favicon-32x32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="/assets/icons/favicon-16x16.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="/assets/icons/apple-touch-icon.png"
+    />
+    <link rel="manifest" href="/site.webmanifest" />
+    <link
+      rel="mask-icon"
+      href="/assets/icons/safari-pinned-tab.svg"
+      color="#f97316"
+    />
+    <meta name="theme-color" content="#ffffff" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+
+    <!-- BreadcrumbList (JSON-LD inline recomendado) -->
     <script type="application/ld+json">
       {
         "@context": "https://schema.org",
@@ -59,52 +98,15 @@
         ]
       }
     </script>
-    <!-- INICIO ETIQUETAS FAVICON -->
-    <!-- Favicon básico -->
-    <link rel="icon" href="/favicon.ico" sizes="any" />
-    <link
-      rel="icon"
-      type="image/png"
-      sizes="32x32"
-      href="/assets/icons/favicon-32x32.png"
-    />
-    <link
-      rel="icon"
-      type="image/png"
-      sizes="16x16"
-      href="/assets/icons/favicon-16x16.png"
-    />
-
-    <!-- iOS (anclado a pantalla de inicio) -->
-    <link
-      rel="apple-touch-icon"
-      sizes="180x180"
-      href="/assets/icons/apple-touch-icon.png"
-    />
-
-    <!-- Android / PWA -->
-    <link rel="manifest" href="/site.webmanifest" />
-
-    <!-- Safari pinned tab (opcional si tienes SVG monocromo) -->
-    <link
-      rel="mask-icon"
-      href="/assets/icons/safari-pinned-tab.svg"
-      color="#f97316"
-    />
-
-    <!-- Colores del navegador (opcional) -->
-    <meta name="theme-color" content="#ffffff" />
-    <meta name="apple-mobile-web-app-status-bar-style" content="default" />
-    <!-- FIN ETIQUETAS FAVICON -->
   </head>
 
   <body
-    class="bg-gray-100 dark:bg-black text-gray-800 dark:text-gray-100 transition-colors duration-300"
+    class="font-sans bg-gray-100 dark:bg-black text-gray-800 dark:text-gray-100 transition-colors duration-300"
   >
     <!-- Header -->
     <div id="header"></div>
 
-    <!-- Banner con logo (responsive raster + SEO) -->
+    <!-- Banner con logo -->
     <section
       class="w-full py-12 flex justify-center bg-gradient-to-r from-orange-400 via-amber-300 to-orange-500"
       role="region"
@@ -140,7 +142,7 @@
           class="w-full max-w-xs md:max-w-md object-contain drop-shadow-lg"
           width="1280"
           height="400"
-          loading="lazy"
+          fetchpriority="high"
           decoding="async"
         />
       </picture>
@@ -148,13 +150,12 @@
 
     <!-- Main -->
     <main class="max-w-6xl mx-auto px-4 pt-8 space-y-16">
-      <!-- Pasado (SEO + rendimiento) -->
+      <!-- Pasado -->
       <section class="w-full" role="region" aria-labelledby="inicios-title">
         <div class="grid md:grid-cols-2 gap-16 items-center">
-          <!-- Imagen responsive y accesible -->
+          <!-- Imagen -->
           <figure class="m-0">
             <picture>
-              <!-- AVIF primero -->
               <source
                 type="image/avif"
                 srcset="
@@ -166,7 +167,6 @@
                 "
                 sizes="(max-width: 768px) 100vw, 50vw"
               />
-              <!-- WebP fallback moderno -->
               <source
                 type="image/webp"
                 srcset="
@@ -178,7 +178,6 @@
                 "
                 sizes="(max-width: 768px) 100vw, 50vw"
               />
-              <!-- Fallback -->
               <img
                 src="assets/img/webp/pasado-1280.webp"
                 alt="Nuestros inicios en 2007: primeras obras de estructuras de hormigón de Paycar Bierzo en El Bierzo (León)"
@@ -189,7 +188,6 @@
                 decoding="async"
               />
             </picture>
-            <!-- Caption accesible (no visible) -->
             <figcaption class="sr-only">
               Fotografía histórica de los comienzos de Paycar Bierzo en obras de
               hormigón.
@@ -200,7 +198,10 @@
           <div
             class="rounded-xl shadow px-6 py-6 border-l-4 border-orange-300 bg-white dark:bg-gray-900"
           >
-            <h2 id="inicios-title" class="text-3xl md:text-4xl font-bold mb-3">
+            <h2
+              id="inicios-title"
+              class="font-title text-3xl md:text-4xl font-bold mb-3"
+            >
               Nuestros Inicios
             </h2>
             <p class="text-gray-700 dark:text-gray-300 leading-relaxed">
@@ -215,13 +216,12 @@
         </div>
       </section>
 
-      <!-- Presente (SEO + rendimiento) -->
+      <!-- Presente -->
       <section class="w-full" role="region" aria-labelledby="presente-title">
         <div class="grid md:grid-cols-2 gap-16 items-center">
-          <!-- Imagen responsive y accesible (orden invertido en desktop) -->
+          <!-- Imagen (orden invertido en desktop) -->
           <figure class="m-0 md:order-last">
             <picture>
-              <!-- AVIF -->
               <source
                 type="image/avif"
                 srcset="
@@ -233,7 +233,6 @@
                 "
                 sizes="(max-width: 768px) 100vw, 50vw"
               />
-              <!-- WebP -->
               <source
                 type="image/webp"
                 srcset="
@@ -245,7 +244,6 @@
                 "
                 sizes="(max-width: 768px) 100vw, 50vw"
               />
-              <!-- Fallback -->
               <img
                 src="assets/img/webp/presente-1280.webp"
                 alt="Equipo de Paycar Bierzo ejecutando encofrado de hormigón en obra actual"
@@ -266,7 +264,10 @@
           <div
             class="rounded-xl shadow px-6 py-6 border-l-4 border-orange-300 bg-white dark:bg-gray-900"
           >
-            <h2 id="presente-title" class="text-3xl md:text-4xl font-bold mb-3">
+            <h2
+              id="presente-title"
+              class="font-title text-3xl md:text-4xl font-bold mb-3"
+            >
               Nuestro Presente
             </h2>
             <p class="text-gray-700 dark:text-gray-300 leading-relaxed">
@@ -285,13 +286,12 @@
         </div>
       </section>
 
-      <!-- Futuro (SEO + rendimiento) -->
+      <!-- Futuro -->
       <section class="w-full" role="region" aria-labelledby="vision-title">
         <div class="grid md:grid-cols-2 gap-16 items-center">
-          <!-- Imagen responsive y accesible -->
+          <!-- Imagen -->
           <figure class="m-0">
             <picture>
-              <!-- AVIF -->
               <source
                 type="image/avif"
                 srcset="
@@ -303,7 +303,6 @@
                 "
                 sizes="(max-width: 768px) 100vw, 50vw"
               />
-              <!-- WebP -->
               <source
                 type="image/webp"
                 srcset="
@@ -315,7 +314,6 @@
                 "
                 sizes="(max-width: 768px) 100vw, 50vw"
               />
-              <!-- Fallback -->
               <img
                 src="assets/img/webp/futuro-1280.webp"
                 alt="Visión de futuro en estructuras y encofrado de hormigón de Paycar Bierzo"
@@ -336,7 +334,10 @@
           <div
             class="rounded-xl shadow px-6 py-6 border-l-4 border-orange-300 bg-white dark:bg-gray-900"
           >
-            <h2 id="vision-title" class="text-3xl md:text-4xl font-bold mb-3">
+            <h2
+              id="vision-title"
+              class="font-title text-3xl md:text-4xl font-bold mb-3"
+            >
               Nuestra Visión
             </h2>
             <p class="text-gray-700 dark:text-gray-300 leading-relaxed">
@@ -361,6 +362,7 @@
     <!-- Botón flotante modo claro/oscuro -->
     <button
       id="theme-toggle"
+      data-ui-fab
       type="button"
       aria-label="Cambiar tema"
       aria-pressed="false"
@@ -378,12 +380,20 @@
       ></svg>
     </button>
 
-    <!-- Scripts de carga -->
-    <script src="js/cargar-header.js" defr></script>
+    <!-- Scripts (ordenados, con defer) -->
+    <script src="js/cargar-header.js" defer></script>
+    <script src="js/comprobacion-email.js" defer></script>
+
     <script src="js/cargar-footer.js" defer></script>
     <script src="js/fecha-footer.js" defer></script>
     <script src="js/theme-toggle.js" defer></script>
     <script src="js/menu-responsive.js" defer></script>
-    <script src="js/comprobacion-email.js" defer></script>
+
+    <!-- Consentimiento + inyección de GA tras aceptar -->
+    <script
+      src="/js/consent-analytics.js"
+      defer
+      data-ga-id="G-4R8T9VP3Y7"
+    ></script>
   </body>
 </html>
