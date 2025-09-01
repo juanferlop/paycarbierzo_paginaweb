@@ -190,8 +190,9 @@
         </figure>
 
         <!-- Controles (flechas). En móvil se ven siempre; en desktop aparecen al pasar el ratón o al enfocar. -->
+        <!-- pointer-events-none por z-10-->
         <div
-          class="absolute inset-0 flex items-center justify-between px-2 md:px-4 opacity-100 md:opacity-0 group-hover:opacity-100 focus-within:opacity-100 transition pointer-events-none"
+          class="absolute inset-0 z-10 flex items-center justify-between px-2 md:px-4 opacity-100 md:opacity-0 group-hover:opacity-100 focus-within:opacity-100 transition"
         >
           <button
             id="prev-slide"
