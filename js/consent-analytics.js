@@ -88,7 +88,7 @@
     scrim.className =
       'fixed inset-0 z-[9990] bg-black/35 backdrop-blur-[2px] hidden';
     scrim.style.pointerEvents = 'auto';
-
+    scrim.style.zIndex = '10990'; // por encima de header/menú, por debajo del panel
     document.body.appendChild(scrim);
     return scrim;
     // Nota: si tu build de Tailwind purga estas clases, añade estas cadenas
@@ -104,6 +104,8 @@
       'w-[min(92vw,520px)] max-h-[80dvh] overflow-auto rounded-2xl ' +
       'bg-white dark:bg-gray-900 shadow-2xl ring-1 ring-gray-200/80 dark:ring-gray-700/80 hidden';
     panel.style.pointerEvents = 'auto';
+    panel.style.zIndex = '11010'; // el más alto
+
     panel.setAttribute('tabindex', '-1');
     panel.setAttribute('role', 'dialog');
     panel.setAttribute('aria-modal', 'true');
@@ -275,8 +277,11 @@
     if (banner) return banner;
     banner = createEl('div', { id: 'cookie-banner' });
     banner.className =
-      'fixed left-0 right-0 bottom-0 z-[1200] bg-white/95 dark:bg-gray-900/95 backdrop-blur ' +
+      'fixed left-0 right-0 bottom-0 z-[11000] bg-white/95 dark:bg-gray-900/95 backdrop-blur ' +
       'border-t border-gray-200/80 dark:border-gray-700/70 shadow-lg';
+
+    banner.style.pointerEvents = 'auto'; // 👈 asegura que el banner recibe los taps
+    banner.style.zIndex = '11000'; // más que cualquier overlay de la página
 
     banner.innerHTML =
       '' +
@@ -297,19 +302,35 @@
 
     // Eventos banner
     var btnPrefs = banner.querySelector('#cm-prefs');
-    if (btnPrefs) btnPrefs.addEventListener('click', openPanel);
+    if (btnPrefs) {
+      btnPrefs.addEventListener('click', openPanel);
+      btnPrefs.addEventListener('pointerup', function (e) {
+        e.preventDefault();
+        openPanel();
+      });
+    }
 
     var btnAccept = banner.querySelector('#cm-accept');
-    if (btnAccept)
+    if (btnAccept) {
       btnAccept.addEventListener('click', function () {
         applyDecision('accepted');
       });
+      btnAccept.addEventListener('pointerup', function (e) {
+        e.preventDefault();
+        applyDecision('accepted');
+      });
+    }
 
     var btnReject = banner.querySelector('#cm-reject');
-    if (btnReject)
+    if (btnReject) {
       btnReject.addEventListener('click', function () {
         applyDecision('rejected');
       });
+      btnReject.addEventListener('pointerup', function (e) {
+        e.preventDefault();
+        applyDecision('rejected');
+      });
+    }
 
     return banner;
   }
@@ -321,6 +342,11 @@
 
   function showBanner() {
     ensureBanner().classList.remove('hidden');
+    // 🔒 Asegura que el overlay no intercepte taps cuando solo hay banner
+    var s = ensureScrim();
+    s.classList.add('hidden');
+    s.style.pointerEvents = 'none';
+    s.style.display = 'none';
   }
 
   // ---------- Init ----------
