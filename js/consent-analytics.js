@@ -143,7 +143,7 @@
       '</label>' +
       '</div>' +
       '</div>' +
-      '<div class="mt-5 flex items-center justify-end gap-3">' +
+      '<div class="mt-4 flex items-center justify-end gap-3">' +
       '<button type="button" id="cm-cancel" class="px-3 py-2 rounded-lg bg-gray-100 dark:bg-gray-800 text-gray-800 dark:text-gray-200 hover:opacity-90">Cancelar</button>' +
       '<button type="button" id="cm-save" class="px-3 py-2 rounded-lg bg-orange-600 text-white hover:opacity-90">Guardar preferencias</button>' +
       '</div>' +
