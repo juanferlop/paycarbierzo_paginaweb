@@ -1,6 +1,6 @@
 # Sitio Web para Paycar Bierzo S.L.
 
-Este es un pequeño sitio web estático desarrollado para **Paycar Bierzo S.L.**, una empresa dedicada al sector de la construcción. El sitio está diseñado con un enfoque visual y accesible, mostrando proyectos realizados mediante galerías e interactividad básica.
+Sitio web estático desarrollado para **Paycar Bierzo S.L.**, una empresa dedicada al sector de la construcción. Es un sitio web sencillo realizado para mejorar la imagen de la empresa y como portal para mostrar sus proyectos realizados.
 
 ## 🛠 Tecnologías utilizadas
 
@@ -16,10 +16,12 @@ Este es un pequeño sitio web estático desarrollado para **Paycar Bierzo S.L.**
 
 ## ✨ Funcionalidades destacadas
 
-- Carrusel automático de imágenes.
+- SEO optimizado.
 - Galerías de proyectos con visualización en lightbox.
 - Filtros personalizados para explorar proyectos realizados.
 - Diseño responsive con Tailwind CSS para compatibilidad móvil y de escritorio.
+- Modo claro / oscuro.
+- Parte legal : cookies, aviso legal, privacidad, etc.
 
 ## ✍️ Autor
 
