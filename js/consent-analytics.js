@@ -374,4 +374,12 @@
   } else {
     init();
   }
+
+  // Activar enlace con data-consent-manage
+  document.querySelectorAll('[data-consent-manage]').forEach(function (el) {
+    el.addEventListener('click', function (e) {
+      e.preventDefault();
+      openPanel();
+    });
+  });
 })();
