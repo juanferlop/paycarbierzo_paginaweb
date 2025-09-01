@@ -19,6 +19,18 @@
       content="Política de Cookies completa de Paycar Bierzo S.L.: definición, tipos, legitimación, gestión y tabla de cookies (incluye Google Analytics)."
     />
 
+    <!-- Fijar tema antes de pintar (evita flash) -->
+    <script>
+      (function () {
+        try {
+          var ls = localStorage.getItem('theme');
+          var mql = window.matchMedia('(prefers-color-scheme: dark)').matches;
+          if (ls === 'dark' || (!ls && mql))
+            document.documentElement.classList.add('dark');
+        } catch (e) {}
+      })();
+    </script>
+
     <!-- 3) CSS: Tailwind compilado del proyecto (ajusta la ruta si usas otra) -->
     <link rel="stylesheet" href="/assets/css/styles.css" />
 

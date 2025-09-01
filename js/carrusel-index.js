@@ -1,4 +1,4 @@
-// /js/carrusel-responsive.js
+// /js/carrusel-index.js
 const DIR = '/assets/img/webp';
 const WIDTHS = [640, 1024, 1280, 1536, 1920, 2560];
 
@@ -15,21 +15,32 @@ const SLIDES = [
 const $avif = document.getElementById('carrusel-avif');
 const $webp = document.getElementById('carrusel-webp');
 const $img = document.getElementById('carrusel-img');
+const $prev = document.getElementById('prev-slide');
+const $next = document.getElementById('next-slide');
 
-function srcset(base, ext) {
-  return WIDTHS.map((w) => `${DIR}/${base}-${w}.${ext} ${w}w`).join(', ');
-}
+const prefersReduced = window.matchMedia(
+  '(prefers-reduced-motion: reduce)'
+).matches;
 
-function setSlide(idx) {
-  const base = SLIDES[idx % SLIDES.length];
-  // Actualiza conjuntos responsive
-  $avif.setAttribute('srcset', srcset(base, 'avif'));
-  $webp.setAttribute('srcset', srcset(base, 'webp'));
+let current = 0; // ya se muestra SLIDES[0] en el HTML
+let timer = null;
+const INTERVAL = 7000; // autoplay
+
+const srcset = (base, ext) =>
+  WIDTHS.map((w) => `${DIR}/${base}-${w}.${ext} ${w}w`).join(', ');
+
+function applySlide(idx) {
+  current = (idx + SLIDES.length) % SLIDES.length;
+  const base = SLIDES[current];
+
+  // Actualiza sources responsive
+  $avif?.setAttribute('srcset', srcset(base, 'avif'));
+  $webp?.setAttribute('srcset', srcset(base, 'webp'));
   // Fallback razonable
-  $img.src = `${DIR}/${base}-1280.webp`;
+  if ($img) $img.src = `${DIR}/${base}-1280.webp`;
 
-  // Prefetch del siguiente slide (variante media)
-  const next = SLIDES[(idx + 1) % SLIDES.length];
+  // Prefetch del siguiente (variante media)
+  const next = SLIDES[(current + 1) % SLIDES.length];
   const link = document.createElement('link');
   link.rel = 'prefetch';
   link.as = 'image';
@@ -37,29 +48,33 @@ function setSlide(idx) {
   document.head.appendChild(link);
 }
 
-// Ergonomía: no marear a quien lo ha pedido y pausar en segundo plano
-const prefersReduced = window.matchMedia(
-  '(prefers-reduced-motion: reduce)'
-).matches;
-let i = 1; // ya hemos “mostrado” el 0º en el HTML
-let timer = null;
-
-function start() {
-  if (prefersReduced) return; // no rotar
-  if (timer) return; // ya está
-  timer = setInterval(() => setSlide(i++), 7000);
+function startAutoplay() {
+  if (prefersReduced || timer) return;
+  timer = setInterval(() => applySlide(current + 1), INTERVAL);
 }
-function stop() {
+function stopAutoplay() {
   clearInterval(timer);
   timer = null;
 }
+function bumpAutoplay() {
+  stopAutoplay();
+  setTimeout(startAutoplay, 4000); // pequeña pausa tras interacción
+}
 
-// Arrancar cuando esté visible
-document.addEventListener('visibilitychange', () => {
-  document.visibilityState === 'visible' ? start() : stop();
+// Eventos flechas
+$prev?.addEventListener('click', () => {
+  applySlide(current - 1);
+  bumpAutoplay();
+});
+$next?.addEventListener('click', () => {
+  applySlide(current + 1);
+  bumpAutoplay();
 });
 
-// Inicia cuando el DOM esté listo
-if (document.visibilityState === 'visible') {
-  start();
-}
+// Pausar si la pestaña no está visible
+document.addEventListener('visibilitychange', () => {
+  document.visibilityState === 'visible' ? startAutoplay() : stopAutoplay();
+});
+
+// Arrancar
+if (document.visibilityState === 'visible') startAutoplay();

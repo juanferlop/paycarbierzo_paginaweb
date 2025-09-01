@@ -133,9 +133,10 @@
     <main>
       <!-- 1 (Carrusel responsive + SEO) -->
       <section
-        class="carrusel min-h-[400px] h-[600px] flex items-center justify-center mb-8"
+        class="carrusel relative group min-h-[400px] h-[600px] flex items-center justify-center mb-8"
         role="region"
         aria-label="Trabajos destacados en estructuras de hormigón — Paycar Bierzo"
+        tabindex="0"
       >
         <figure class="w-full h-full m-0">
           <!-- Prellénalos con la primera foto (magazDeAbajo_2-2), así el navegador ya tiene srcset + sizes desde el HTML 
@@ -187,6 +188,42 @@
             hormigón de Paycar Bierzo en la provincia de León.
           </figcaption>
         </figure>
+
+        <!-- Controles (flechas). En móvil se ven siempre; en desktop aparecen al pasar el ratón o al enfocar. -->
+        <div
+          class="absolute inset-0 flex items-center justify-between px-2 md:px-4 opacity-100 md:opacity-0 group-hover:opacity-100 focus-within:opacity-100 transition pointer-events-none"
+        >
+          <button
+            id="prev-slide"
+            type="button"
+            aria-label="Imagen anterior"
+            class="pointer-events-auto inline-flex items-center justify-center h-10 w-10 md:h-12 md:w-12 rounded-full bg-white/80 dark:bg-gray-900/80 backdrop-blur border border-gray-200 dark:border-gray-700 shadow hover:scale-105 focus:outline-none focus-visible:ring-2 focus-visible:ring-orange-400"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              class="h-5 w-5"
+              viewBox="0 0 24 24"
+              fill="currentColor"
+            >
+              <path d="M15.41 7.41 14 6l-6 6 6 6 1.41-1.41L10.83 12z" />
+            </svg>
+          </button>
+          <button
+            id="next-slide"
+            type="button"
+            aria-label="Imagen siguiente"
+            class="pointer-events-auto inline-flex items-center justify-center h-10 w-10 md:h-12 md:w-12 rounded-full bg-white/80 dark:bg-gray-900/80 backdrop-blur border border-gray-200 dark:border-gray-700 shadow hover:scale-105 focus:outline-none focus-visible:ring-2 focus-visible:ring-orange-400"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              class="h-5 w-5"
+              viewBox="0 0 24 24"
+              fill="currentColor"
+            >
+              <path d="M8.59 16.59 13.17 12 8.59 7.41 10 6l6 6-6 6z" />
+            </svg>
+          </button>
+        </div>
 
         <!-- Fallback si el usuario desactiva JavaScript -->
         <noscript>

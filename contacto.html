@@ -13,6 +13,18 @@
     <meta name="robots" content="index,follow,max-image-preview:large" />
     <meta name="theme-color" content="#ffffff" />
 
+    <!-- Fijar tema antes de pintar (evita flash) -->
+    <script>
+      (function () {
+        try {
+          var ls = localStorage.getItem('theme');
+          var mql = window.matchMedia('(prefers-color-scheme: dark)').matches;
+          if (ls === 'dark' || (!ls && mql))
+            document.documentElement.classList.add('dark');
+        } catch (e) {}
+      })();
+    </script>
+
     <!-- ========= Favicons / PWA ========= -->
     <link rel="icon" href="/favicon.ico" sizes="any" />
     <link
@@ -120,6 +132,7 @@
       class="w-full mt-8"
       role="region"
       aria-labelledby="carrusel-contacto-title"
+      tabindex="0"
     >
       <h2 id="carrusel-contacto-title" class="sr-only">
         Galería de obras — Paycar Bierzo
@@ -142,6 +155,45 @@
             fetchpriority="low"
           />
         </picture>
+        <!-- Flechas laterales (sin bullets) -->
+        <div
+          class="absolute inset-0 flex items-center justify-between px-2 md:px-4 opacity-100 md:opacity-0 group-hover:opacity-100 focus-within:opacity-100 transition pointer-events-none"
+        >
+          <button
+            id="cc-prev"
+            type="button"
+            aria-label="Imagen anterior"
+            class="pointer-events-auto inline-flex items-center justify-center h-10 w-10 md:h-12 md:w-12 rounded-full bg-white/85 dark:bg-gray-900/85 backdrop-blur border border-gray-200 dark:border-gray-700 shadow hover:scale-105 focus:outline-none focus-visible:ring-2 focus-visible:ring-orange-400"
+          >
+            <!-- icono flecha izquierda -->
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              class="h-5 w-5"
+              viewBox="0 0 24 24"
+              fill="currentColor"
+            >
+              <path d="M15.41 7.41 14 6l-6 6 6 6 1.41-1.41L10.83 12z" />
+            </svg>
+          </button>
+
+          <button
+            id="cc-next"
+            type="button"
+            aria-label="Imagen siguiente"
+            class="pointer-events-auto inline-flex items-center justify-center h-10 w-10 md:h-12 md:w-12 rounded-full bg-white/85 dark:bg-gray-900/85 backdrop-blur border border-gray-200 dark:border-gray-700 shadow hover:scale-105 focus:outline-none focus-visible:ring-2 focus-visible:ring-orange-400"
+          >
+            <!-- icono flecha derecha -->
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              class="h-5 w-5"
+              viewBox="0 0 24 24"
+              fill="currentColor"
+            >
+              <path d="M8.59 16.59 13.17 12 8.59 7.41 10 6l6 6-6 6z" />
+            </svg>
+          </button>
+        </div>
+
         <figcaption id="cc-caption" class="sr-only">
           Obras recientes de estructuras de hormigón realizadas por Paycar
           Bierzo.

@@ -10,6 +10,18 @@
     <meta name="robots" content="index,follow,max-image-preview:large" />
     <meta name="theme-color" content="#ffffff" />
 
+    <!-- Fijar tema antes de pintar (evita flash) -->
+    <script>
+      (function () {
+        try {
+          var ls = localStorage.getItem('theme');
+          var mql = window.matchMedia('(prefers-color-scheme: dark)').matches;
+          if (ls === 'dark' || (!ls && mql))
+            document.documentElement.classList.add('dark');
+        } catch (e) {}
+      })();
+    </script>
+
     <!-- === Preloads críticos de fuentes (coinciden con tus @font-face) === -->
     <link
       rel="preload"

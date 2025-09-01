@@ -10,6 +10,18 @@
       content="Política de Privacidad y Aviso Legal de Paycar Bierzo S.L.: información general, términos de uso, RGPD/LSSI, derechos, plazos y contacto."
     />
 
+    <!-- Fijar tema antes de pintar (evita flash) -->
+    <script>
+      (function () {
+        try {
+          var ls = localStorage.getItem('theme');
+          var mql = window.matchMedia('(prefers-color-scheme: dark)').matches;
+          if (ls === 'dark' || (!ls && mql))
+            document.documentElement.classList.add('dark');
+        } catch (e) {}
+      })();
+    </script>
+
     <!-- 2) Tailwind COMPILADO del proyecto (ajusta la ruta si usas otra) -->
     <link rel="stylesheet" href="/assets/css/styles.css" />
 
