@@ -214,6 +214,8 @@
   function openPanel() {
     var s = ensureScrim();
     s.classList.remove('hidden');
+    s.style.pointerEvents = 'auto';
+    s.style.display = 'block'; // 👈 fuerza a mostrarse
 
     var p = ensurePanel();
     p.classList.remove('hidden');
