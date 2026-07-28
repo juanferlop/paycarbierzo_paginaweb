@@ -15,6 +15,9 @@ const filtroTipo = document.getElementById('filtro-tipo');
 
 let proyectos = [];
 
+// Config opcional para fuente remota (definida en js/proyectos-config.js)
+const REMOTE_CONFIG = window.PAYCAR_SUPABASE || null;
+
 // ---------------- Helpers: fetch con rutas de respaldo ----------------
 const JSON_CANDIDATES = [
   'data/proyectos.json', // relativo a la página
@@ -53,6 +56,52 @@ async function fetchJsonWithFallback(candidates) {
   );
 }
 
+function hasRemoteConfig() {
+  return Boolean(
+    REMOTE_CONFIG?.url &&
+      REMOTE_CONFIG?.anonKey &&
+      REMOTE_CONFIG?.tableName
+  );
+}
+
+function normalizeProyecto(raw) {
+  return {
+    pueblo: (raw?.pueblo || '').trim(),
+    tipo: (raw?.tipo || '').trim(),
+    fecha: (raw?.fecha || '').trim(),
+    imagenes: Array.isArray(raw?.imagenes)
+      ? raw.imagenes.filter((img) => typeof img === 'string' && img.trim())
+      : [],
+  };
+}
+
+async function fetchRemoteProyectos() {
+  if (!hasRemoteConfig()) return [];
+
+  const base = REMOTE_CONFIG.url.replace(/\/$/, '');
+  const table = encodeURIComponent(REMOTE_CONFIG.tableName);
+  const query = 'select=pueblo,tipo,fecha,imagenes';
+  const url = `${base}/rest/v1/${table}?${query}`;
+
+  const res = await fetch(url, {
+    headers: {
+      apikey: REMOTE_CONFIG.anonKey,
+      Authorization: `Bearer ${REMOTE_CONFIG.anonKey}`,
+    },
+  });
+
+  if (!res.ok) {
+    throw new Error(`Supabase ${res.status}: ${res.statusText}`);
+  }
+
+  const data = await res.json();
+  if (!Array.isArray(data)) return [];
+
+  return data
+    .map(normalizeProyecto)
+    .filter((p) => p.pueblo && p.tipo && p.fecha);
+}
+
 // ---------------- Utilidades de imágenes responsive ----------------
 const WIDTHS = [640, 1024, 1280, 1536, 1920]; // añade 2560 si usas pantallas 4K
 const THUMB_W = 640; // el tamaño más pequeño que generaste
@@ -82,6 +131,10 @@ function largeHref(base) {
   return `${base}-1920.webp`;
 }
 
+function isRemoteImage(path) {
+  return /^https?:\/\//i.test(path || '');
+}
+
 // ALT por defecto si no lo pasas en el JSON
 function buildAlt(p) {
   // ejemplo: "Vivienda Unifamiliar en Ponferrada (08-2024)"
@@ -95,7 +148,23 @@ function buildAlt(p) {
 // ---------------- Arranque ----------------
 (async function init() {
   try {
-    proyectos = await fetchJsonWithFallback(JSON_CANDIDATES); // :contentReference[oaicite:2]{index=2}
+    if (hasRemoteConfig()) {
+      try {
+        const remotos = await fetchRemoteProyectos();
+        if (remotos.length > 0) {
+          proyectos = remotos;
+          console.info('[proyectos] Datos cargados desde Supabase.');
+        } else {
+          proyectos = await fetchJsonWithFallback(JSON_CANDIDATES);
+          console.info('[proyectos] Supabase sin datos, usando JSON local.');
+        }
+      } catch (remoteErr) {
+        console.warn('[proyectos] Error remoto, usando JSON local:', remoteErr);
+        proyectos = await fetchJsonWithFallback(JSON_CANDIDATES);
+      }
+    } else {
+      proyectos = await fetchJsonWithFallback(JSON_CANDIDATES); // :contentReference[oaicite:2]{index=2}
+    }
 
     // Rellenar opciones de filtros
     cargarOpcionesFiltro(proyectos);
@@ -194,12 +263,24 @@ function render() {
       ? proyecto.imagenes
       : [principal];
 
-    const principalBase = toBase(principal);
+    const principalBase = isRemoteImage(principal) ? '' : toBase(principal);
     const alt = buildAlt(proyecto);
 
     // Miniaturas ligeras: usamos 320w para el <img> y enlazamos a 1920w en GLightbox
     const thumbsHtml = thumbsArr
       .map((imgPath) => {
+        if (isRemoteImage(imgPath)) {
+          return `
+      <a href="${imgPath}" class="glightbox-${idx}" data-gallery="galeria-${idx}">
+        <img
+          src="${imgPath}"
+          class="min-w-[4rem] w-16 h-16 object-cover rounded-lg border-2 border-gray-200 dark:border-gray-700 hover:border-orange-500 transition"
+          alt="${alt}"
+          loading="lazy" decoding="async" width="64" height="64"
+        >
+      </a>`;
+        }
+
         const base = toBase(imgPath); // p.ej. /assets/img/webp/cubicos-12
         return `
       <a href="${largeHref(base)}" class="glightbox-${idx}" data-gallery="galeria-${idx}">
@@ -215,6 +296,27 @@ function render() {
       })
       .join('');
 
+        const mainImageHtml = isRemoteImage(principal)
+       ? `
+       <img id="main-img-${idx}"
+         src="${principal}"
+         class="w-full h-full object-cover transition duration-300"
+         alt="${alt}"
+         loading="lazy" decoding="async" fetchpriority="low"
+         width="1200" height="1200">`
+       : `
+       <picture>
+         <source type="image/avif" srcset="${srcset(principalBase, 'avif')}" sizes="${SIZES_MAIN}">
+         <source type="image/webp" srcset="${srcset(principalBase, 'webp')}" sizes="${SIZES_MAIN}">
+         <img id="main-img-${idx}"
+           src="${principal}"
+           onerror="this.onerror=null; this.src='${principalBase}-1024.webp';"
+           class="w-full h-full object-cover transition duration-300"
+           alt="${alt}"
+           loading="lazy" decoding="async" fetchpriority="low"
+           width="1200" height="1200">
+       </picture>`;
+
     const template = `
   <div class="bg-white dark:bg-gray-800 rounded-2xl shadow-lg overflow-hidden flex flex-col gap-2 p-4">
     <div class="mb-2">
@@ -224,17 +326,7 @@ function render() {
     </div>
 
     <div class="relative w-full min-w-[16rem] aspect-square bg-gray-100 dark:bg-gray-700 rounded-xl overflow-hidden">
-      <picture>
-        <source type="image/avif" srcset="${srcset(principalBase, 'avif')}" sizes="${SIZES_MAIN}">
-        <source type="image/webp" srcset="${srcset(principalBase, 'webp')}" sizes="${SIZES_MAIN}">
-        <img id="main-img-${idx}"
-             src="${principal}"                             
-             onerror="this.onerror=null; this.src='${principalBase}-1024.webp';"
-             class="w-full h-full object-cover transition duration-300"
-             alt="${alt}"
-             loading="lazy" decoding="async" fetchpriority="low"
-             width="1200" height="1200">                  
-      </picture>
+      ${mainImageHtml}
     </div>
 
     ${
