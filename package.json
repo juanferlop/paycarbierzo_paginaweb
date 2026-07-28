@@ -8,7 +8,9 @@
     "format": "prettier --write .",
     "build:css": "@tailwindcss/cli -i assets/css/input.css -o assets/css/output.css --minify",
     "watch:css": "@tailwindcss/cli -i assets/css/input.css -o assets/css/output.css --watch",
-    "img:build": "node scripts/generar-variantes.mjs"
+    "img:build": "node scripts/generar-variantes.mjs",
+    "supabase:import-obras": "node scripts/migrar-proyectos-a-supabase.mjs",
+    "supabase:import-obras:apply": "node scripts/migrar-proyectos-a-supabase.mjs --apply"
   },
   "repository": {
     "type": "git",
