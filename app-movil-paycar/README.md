@@ -45,5 +45,53 @@ Luego:
 ## Notas
 
 - PIN simple en `App.js` (`APP_PIN`), sin login.
-- Tipos cerrados de obra definidos en `TIPOS_OBRA`.
+- Tipos base de obra definidos en `TIPOS_OBRA`, con opcion de crear tipos manuales desde la app.
+- Fecha con desplegable separado de mes y ano.
 - Si subes una obra y no sale al instante, recarga `trabajos.html`.
+
+## Compartir la app con empleados
+
+No tienen que montar todo como tu.
+
+### Opcion 1 (rapida, para pruebas): Expo Go + QR
+
+1. Tu ejecutas en tu ordenador:
+
+```bash
+npm run start
+```
+
+2. Les pasas el QR o el enlace de Expo.
+3. Ellos instalan `Expo Go` en su movil y abren ese QR.
+
+Limitacion: esta opcion depende de que la sesion de desarrollo este levantada.
+
+### Opcion 2 (recomendada para empleados): app instalada
+
+Generas un build instalable y compartes ese enlace/apk/ipa:
+
+1. Instalar EAS CLI:
+
+```bash
+npm install -g eas-cli
+```
+
+2. Loguearte:
+
+```bash
+eas login
+```
+
+3. Configurar builds:
+
+```bash
+eas build:configure
+```
+
+4. Generar build:
+
+```bash
+eas build -p android --profile preview
+```
+
+Luego compartes el enlace de instalacion con el equipo.

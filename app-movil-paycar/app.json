@@ -1,8 +1,9 @@
 {
   "expo": {
     "name": "Paycar Obras",
-    "slug": "app-movil-paycar",
+    "slug": "paginaweb_paycar",
     "version": "1.0.0",
+    "icon": "../assets/icons/apple-touch-icon.png",
     "orientation": "portrait",
     "userInterfaceStyle": "automatic",
     "assetBundlePatterns": [
@@ -11,6 +12,18 @@
     "ios": {
       "supportsTablet": false
     },
-    "android": {}
+    "android": {
+      "package": "com.paycarbierzo.obras",
+      "adaptiveIcon": {
+        "foregroundImage": "../assets/icons/apple-touch-icon.png",
+        "backgroundColor": "#fff7ed"
+      }
+    },
+    "extra": {
+      "eas": {
+        "projectId": "1228deba-03d3-41d9-a0e2-8aa423e6e0c0"
+      }
+    },
+    "owner": "juanfl"
   }
 }
